@@ -1,0 +1,169 @@
+:root {
+  --gold: linear-gradient(115deg, #E6B360, #FFFCC1, #E6B360);
+  --gold-solid: #E6B360;
+}
+
+.servicesSection {
+  position: relative;
+  background: #1A1B3A;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+/* רקע */
+.backgroundShape {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+
+  background-image: url('/images/logo-bg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  opacity: 0.05;
+}
+
+/* HEADER */
+.sectionHeader {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+
+  max-width: 1440px;
+  margin: 0 auto 35px;
+  padding: 0 60px;
+
+  color: #fff;
+}
+.sectionTitle{
+    color: rgba(255, 255, 255, 0.50);
+}
+/* גריד */
+.cardsWrapper {
+  position: relative;
+  z-index: 2;
+
+max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 min(60px, 5vw);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* כרטיס */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;   /* 👈 לימין */
+
+  direction: rtl;          /* 👈 ימין */
+  text-align: right;       /* 👈 ימין */
+
+  color: #fff;
+  border: 1px solid var(--gold-solid);
+  
+    padding: 
+    clamp(2.5px, 3vw, 35px)   /* top */
+    clamp(2.5px, 4vw, 55px)   /* sides */
+    clamp(2.5px, 5vw, 55px);  /* bottom */
+
+  min-height: 374px;
+  gap: 16px;
+}
+
+/* כל האלמנטים לימין */
+.tag,
+.card h3,
+.card button {
+  align-self: flex-end;
+}
+
+.card p {
+  text-align: right;
+  font-size: 16px;
+  line-height: 21px;
+  margin: 0;
+  opacity: 0.85;
+
+  width: 100%;
+  
+}
+/* תג */
+.tag {
+  font-size: 12px;
+  opacity: 0.6;
+  align-self: flex-start;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+
+
+
+.tag::after {
+  content: "";
+  position: absolute;
+  right: 0;          /* 👈 כי זה ימין */
+  bottom: 0;
+
+  width: 16px;       /* 👈 אורך הקו */
+  height: 1px;
+
+  background: #E6B360; /* צבע זהב */
+}
+
+/* כותרת */
+.card h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+
+  align-self: flex-start; /* 👈 לשמאל */
+
+  background: var(--gold);
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* כפתור */
+.card button {
+  margin-top: auto;
+  align-self: flex-start; /* 👈 לשמאל */
+  width: fit-content;
+
+  border: 1px solid var(--gold-solid);
+  background: transparent;
+
+  background-image: var(--gold);
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  padding: 6px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.card button:hover {
+  background: var(--gold);
+  
+  color: #1A1B3A;
+  -webkit-text-fill-color: #1A1B3A;
+
+  box-shadow: 0 4px 20px rgba(180, 130, 40, 0.35);
+
+  transform: translateY(-2px); /* 👈 מרחף */
+}
