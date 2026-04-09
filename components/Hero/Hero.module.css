@@ -1,105 +1,134 @@
 /* ===== HERO ===== */
 .hero {
-  position: relative;
-  width: 100%;
-  height: 840px;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 840px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 /* IMAGE */
 .hero-image {
-  object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 /* WRAPPER */
 .hero-image-wrapper {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
 }
 
 /* OVERLAY */
 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(26, 27, 58, 0.6);
-  z-index: 1;
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 27, 58, 0.6);
+    z-index: 1;
 }
 
 /* GRADIENT */
 .hero-gradient {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 450px;
-  background: linear-gradient(
-    180deg,
-    rgba(26, 27, 58, 0) 0%,
-    #1A1B3A 100%
-  );
-  z-index: 2;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 452px;
+    /* 👈 מדויק מהפיגמה */
+    background: linear-gradient(180deg,
+            rgba(26, 27, 58, 0) 0%,
+            #1A1B3A 100%);
+    z-index: 2;
 }
 
 /* CONTENT */
 .hero-content {
-  position: relative;
-  z-index: 3;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 44px;
-  text-align: center;
-  padding: 0 16px;
+    position: relative;
+    z-index: 3;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    justify-content: flex-end;
+    /* 👈 תחתית */
+    padding-bottom: 10px;
+    /* 👈 שליטה במיקום */
+
+    width: 680px;
+    margin: 0 auto;
+
+    text-align: center;
 }
 
 /* GOLD TITLE */
 .hero-title {
-  font-family: "Leon", sans-serif;
-  font-size: 76px;
-  font-weight: 700;
-  line-height: 85px;
+    font-family: "Leon", sans-serif;
+    font-size: 76.5px;
+    /* 👈 מדויק */
+    font-weight: 700;
+    line-height: 70px;
+    letter-spacing: 0;
 
-  background: linear-gradient(
-    115deg,
-    #E6B360 29.01%,
-    #FFFCC1 51.11%,
-    #E6B360 70%
-  );
-
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background: linear-gradient(115deg,
+            #E6B360 29.01%,
+            #FFFCC1 51.11%,
+            #E6B360 70%);
+    transform: scaleY(0.92);
+    margin-bottom: -40px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
+
 
 /* WHITE TITLE */
 .hero-subtitle {
-  font-family: "Leon", sans-serif;
-  font-size: 76px;
-  font-weight: 700;
-  color: #fff;
+    margin-top: 0;
+    font-family: "Leon", sans-serif;
+    font-size: 76.5px;
+    font-weight: 500;
+    line-height: 75px;
+    letter-spacing: 0;
+    color: #fff;
+    transform: scaleY(0.88);
 }
 
 /* TEXT */
 .hero-text {
-  font-family: "Leon", sans-serif;
-  font-size: 24px;
-  color: #fff;
-  max-width: 680px;
+    font-family: "Leon", sans-serif;
+    font-size: 24px;
+    line-height: 1.4;
+    letter-spacing: 0;
+    color: #fff;
+    max-width: 680px;
 }
 
 /* BUTTON */
 .hero-button {
-  border: 1px solid #E6B360;
-  color: #E6B360;
-  padding: 10px 28px;
-  border-radius: 999px;
-  background: transparent;
-  transition: 0.3s;
+    border: 1px solid #E6B360;
+    color: #E6B360;
+
+    padding: 6px 15px;
+    /* 👈 מהפיגמה */
+    border-radius: 18px;
+    /* 👈 מהפיגמה */
+
+    font-family: "Leon", sans-serif;
+    font-size: 14px;
+
+    background: transparent;
+    transition: all 0.3s ease;
 }
 
+/* HOVER */
 .hero-button:hover {
-  background: #E6B360;
-  color: black;
+    background: #E6B360;
+    color: #1A1B3A;
 }
