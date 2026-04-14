@@ -11,12 +11,20 @@
   align-items: center;
   justify-content: space-between;
   gap: 60px;
+
+  flex-direction: row-reverse;
+  /* 👈 הפוך */
 }
 
 /* ========= טקסט ========= */
 
 .textWrapper {
   max-width: 500px;
+  text-align: right;
+  /* 👈 חשוב ל-RTL */
+  margin-left: 150px;
+  
+  
 }
 
 .title {
@@ -24,6 +32,8 @@
   font-size: 30px;
   font-weight: 400;
   margin-bottom: 20px;
+  letter-spacing: 1.2px;
+  padding-top: 10px;
 
   background: linear-gradient(115deg, #E6B360 29.01%, #FFFCC1 51.11%, #E6B360 70.37%);
   -webkit-background-clip: text;
@@ -35,7 +45,8 @@
   font-family: "Ploni", sans-serif;
   font-size: 16px;
   line-height: 21px;
-  margin-bottom: 16px;
+  margin-bottom: 70px;
+
 }
 
 .subText {
@@ -57,6 +68,11 @@
 .buttons {
   display: flex;
   gap: 12px;
+  justify-content: flex-end;
+  position: relative;
+  right: -250px; 
+
+  margin-left: auto;
 }
 
 .primaryBtn {
@@ -67,6 +83,7 @@
   color: #1A1B3A;
   border: none;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .secondaryBtn {
@@ -77,6 +94,7 @@
   background: transparent;
   color: #fff;
   cursor: pointer;
+  font-size: 16px;
 }
 
 /* ========= ויזואל ========= */
@@ -94,8 +112,10 @@
   height: 483px;
   background: #212250;
   transform: rotate(90deg);
+
   top: 80px;
-  right: -120px;
+  left: -80px;
+  /* 👈 במקום right */
   z-index: 1;
 }
 
@@ -106,8 +126,10 @@
   height: 411px;
   border: 1px solid #E6B360;
   transform: rotate(90deg);
+
   top: 120px;
-  right: -100px;
+  left: 25px;
+  /* 👈 במקום right */
   z-index: 2;
 }
 

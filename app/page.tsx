@@ -6,17 +6,30 @@ import PropertyShowcase from "@/components/PropertyShowcase/PropertyShowcase"
 import Statement from "@/components/Statement/Statement"
 import Clients from "@/components/Clients/Clients"
 import InvestmentHero from "@/components/InvestmentHero/InvestmentHero"
+import CalculatorSection from "@/components/CalculatorSection/CalculatorSection";
+import ContactForm from "@/components/ContactForm/ContactForm"
 export default function Home() {
   return (
     <>
       <Header />
       <Hero />
-      <Services />
+      <section id="hero">
+        <Services />
+      </section>
       <GalleryShowcase />
-      <PropertyShowcase />
+      <section id="popertyShowcase">
+        <PropertyShowcase />
+      </section>
+
       <Statement />
       <Clients />
-      <InvestmentHero/>
+      <InvestmentHero />
+      <section id="CalculatorSection">
+        <CalculatorSection />
+      </section>
+      <section id="ContactForm">
+        <ContactForm />
+      </section>
     </>
   );
 }

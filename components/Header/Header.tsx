@@ -22,22 +22,22 @@ export default function Header() {
           {/* תפריט */}
           <nav className={styles.nav}>
 
-            <a href="#" className={styles.link}>
+            <a href="#hero" className={styles.link}>
               <span className={styles.number}>01:</span>
               <span className={styles.text}>מה אנחנו עושים</span>
             </a>
 
-            <a href="#" className={styles.link}>
+            <a href="#popertyShowcase" className={styles.link}>
               <span className={styles.number}>02:</span>
               <span className={styles.text}>מי אנחנו</span>
             </a>
 
-            <a href="#" className={styles.link}>
+            <a href="#CalculatorSection" className={styles.link}>
               <span className={styles.number}>03:</span>
               <span className={styles.text}>מחשבון</span>
             </a>
 
-            <a href="#" className={styles.link}>
+            <a href="#ContactForm" className={styles.link}>
               <span className={styles.number}>04:</span>
               <span className={styles.text}>בלוג</span>
             </a>

@@ -1,0 +1,99 @@
+.section {
+  background: #1A1B3A;
+  padding: 120px 0;
+  direction: rtl;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* כותרת */
+.title {
+  font-family: "Leon", sans-serif;
+  font-size: 28px;
+  margin-bottom: 10px;
+
+  background: linear-gradient(115deg, #E6B360, #FFFCC1, #E6B360);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+  margin-bottom: 40px;
+}
+
+/* טופס */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* שורה עליונה */
+.row {
+  display: flex;
+  gap: 16px;
+}
+
+.input {
+  flex: 1;
+  height: 42px;
+  padding: 0 16px;
+
+  border-radius: 25px;
+  border: 1px solid #E6B360;
+  background: transparent;
+  color: #fff;
+
+  outline: none;
+}
+
+/* textarea */
+.textarea {
+  height: 140px;
+  padding: 16px;
+
+  border-radius: 16px;
+  border: 1px solid #E6B360;
+  background: transparent;
+  color: #fff;
+
+  resize: none;
+  outline: none;
+}
+
+/* תחתית */
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* כפתור */
+.button {
+  padding: 10px 20px;
+  border-radius: 20px;
+
+  border: 1px solid #E6B360;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* אייקונים */
+.icons {
+  display: flex;
+  gap: 10px;
+}
+
+.circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #E6B360;
+}

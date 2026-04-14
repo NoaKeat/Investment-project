@@ -1,0 +1,217 @@
+:root {
+    --gold: linear-gradient(115deg, #E6B360, #FFFCC1, #E6B360);
+    --gold-solid: #E6B360;
+}
+
+.section {
+    background: #1A1B3A;
+    padding: 120px 0;
+    direction: rtl;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* כותרת זהב */
+.title {
+    text-align: right;
+    font-family: "Leon", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+
+    background: linear-gradient(115deg, #E6B360, #FFFCC1, #E6B360);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* תיאור */
+.description {
+    max-width: 500px;
+    color: #fff;
+    font-family: "Leon", sans-serif;
+    font-size: 16px;
+    line-height: 21px;
+    margin-top: 10px;
+    font-weight: 400;
+    /* 👈 עובי */
+    letter-spacing: 0.5px;
+}
+
+/* שלבים */
+.steps {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* שלבים רגילים - בלי רקע ובלי מסגרת */
+.step {
+    padding: 5px 12px;
+    border-radius: 18px;
+    color: rgba(255, 255, 255, 0.6);
+    /* טיפה חלש יותר נראה יותר טוב */
+    font-family: "Leon", sans-serif;
+    font-size: 14px;
+}
+
+/* שלב פעיל */
+.activeStep {
+    padding: 5px 12px;
+    border-radius: 18px;
+    background: #212250;
+    color: #fff;
+    font-family: "Leon", sans-serif;
+    font-size: 14px;
+}
+
+.steps span {
+    color: #fff;
+    font-size: 14px;
+}
+
+/* אזור תוכן */
+.content {
+    margin-top: 40px;
+    display: flex;
+
+}
+
+/* צד שמאל */
+.summaryBox {
+    width: 328px;
+    border: 1px solid #E6B360;
+    padding: 20px;
+    height: 489px;
+}
+
+.summaryBox h3 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.summaryBox p {
+    color: #fff;
+    font-size: 14px;
+    color: var(--Color, #FFF);
+    text-align: right;
+    font-family: "Piani", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    max-width: 220px;
+    /* 131.25% */
+}
+
+/* צד ימין */
+.formBox {
+    flex: 1;
+    border: 1px solid #E6B360;
+    padding: 20px;
+    width: 931px;
+    height: 489px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+/* טקסטים */
+.formTitle {
+    color: #fff;
+    font-weight: 700;
+}
+
+.formText {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.label {
+    color: #fff;
+    font-size: 12px;
+}
+
+/* אינפוטים */
+.input {
+    width: 100%;
+    /* תופס את כל הרוחב */
+    height: 39px;
+    /* גובה קבוע ✔️ */
+    padding: 6px 15px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+    color: #fff;
+
+    box-sizing: border-box;
+    /* חשוב! שלא יגדל מעבר */
+}
+
+.rowThree {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* כדי שהlabel יהיה מעל השדה */
+.rowThree>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* כפתורים */
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.nextBtn {
+    background: #E6B360;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.backBtn {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.sectionHeader {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+
+    max-width: 1440px;
+    margin: 0 auto 20px;
+    padding: 0 80px;
+
+    color: #fff;
+}
+
+.sectionTitle {
+    color: rgba(255, 255, 255, 0.50);
+}
