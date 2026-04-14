@@ -133,16 +133,18 @@
 .item {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
 
     background: #212350;
-    border-radius: 18px;
-    padding: 5px 10px;
+    border-radius: 200px;
+    padding: 8px 10px;
 
     color: #fff;
     font-size: 14px;
     font-family: "Ploni", sans-serif;
 }
+
+
 
 /* אייקון */
 .item img {

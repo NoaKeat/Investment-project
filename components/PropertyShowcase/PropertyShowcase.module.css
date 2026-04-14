@@ -1,95 +1,134 @@
 .section {
-  background: #1A1B3A;
-  padding: 140px 0;
-  direction: rtl;
-  position: relative;
-  overflow: hidden;
+    background: #1A1B3A;
+    padding: 200px 100px;
+    direction: rtl;
+    position: relative;
+    overflow: hidden;
 }
 
 /* קונטיינר */
 .container {
-  width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 140px;
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 140px;
 }
 
 /* ---------- צד ימין (משולשים) ---------- */
 
 .rightShapes {
-  position: absolute;
-  left: 0;        /* 👈 במקום right */
-  bottom: 0;
-  width: 500px;
-  height: 500px;
+    position: absolute;
+    left: 0;
+    /* 👈 במקום right */
+    bottom: 0;
+    width: 500px;
+    height: 500px;
 }
 
 /* משולש כהה */
 .darkTriangle {
-  position: absolute;
-  width: 460px;
-  height: 460px;
-  background: #1D1E44;
-  bottom: 0;
-  left: 0;
+    position: absolute;
+    width: 461.475px;
+    height: 461.475px;
+    background: #1D1E44;
+    bottom: 40;
+    left: 90;
 
-  /* 👈 הפוך לצד שמאל */
-  clip-path: polygon(0 0, 0 100%, 100% 100%);
+    /* 👈 הפוך לצד שמאל */
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+
+.imageOverlay {
+  position: absolute;
+
+  width: 367px;
+  height: 367px;
+
+  top: 250px;   /* תשני לפי מיקום */
+  left: 170px;
+
+  z-index: 10;
+}
+
+.image {
+  object-fit: cover;
 }
 
 /* משולש זהב */
 .goldTriangle {
-  position: absolute;
-  width: 460px;
-  height: 460px;
-  bottom: 0;
-  left: 0;
+    position: absolute;
+    width: 338.525px;
+    height: 338.525px;
+    top: 04px;
+    left: 220px;
 
-  transform: scaleX(-1); /* 👈 הופך את ה-SVG */
-  transform: rotate(180deg); /* 👈 זה מה שחסר */
+    transform: scaleX(-1);
+    /* 👈 הופך את ה-SVG */
+    transform: rotate(180deg);
+    /* 👈 זה מה שחסר */
 }
 
 /* ---------- טקסט ---------- */
 
 .textWrapper {
-  max-width: 620px;
-  text-align: right;
-  z-index: 2;
+    max-width: 620px;
+    text-align: right;
+    z-index: 2;
+    margin-top: 100px; 
 }
 
-.small {
-  color: rgba(255,255,255,0.5);
-  margin-bottom: 12px;
-  display: block;
+.sectionHeader {
+    position: relative;
+
+    margin: bottom 4%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+
+    max-width: 1440px;
+    margin: 0 auto 8px;
+    padding: 0 0px;
+
+    color: #fff;
+}
+
+.sectionTitle {
+    color: rgba(255, 255, 255, 0.50);
 }
 
 /* כותרת */
 .title {
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  line-height: 38px;
-}
+    font-stretch: 200%;
+    font-family: "Leon", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    /* 👈 לא 700 */
+    line-height: normal;
+    margin-bottom: 16px;
 
-/* highlight זהב נכון */
-.highlight {
-  background: linear-gradient(
-    115deg,
-    #E6B360 29%,
-    #FFFCC1 51%,
-    #E6B360 70%
-  );
-  padding: 4px 12px;
-
-  /* חשוב */
-  display: inline;
+    background: linear-gradient(115deg,
+            #E6B360 29%,
+            #FFFCC1 51%,
+            #E6B360 70%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* טקסט */
 .desc {
-  color: #fff;
-  font-size: 16px;
-  line-height: 21px;
+    max-width: 625px;
+    color: #fff;
+    font-family: "Ploni", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    font-stretch: 120%;
+}
+
+/* חלק מודגש בתוך הטקסט */
+.bold {
+    font-weight: 700;
 }

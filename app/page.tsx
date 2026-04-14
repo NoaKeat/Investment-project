@@ -3,6 +3,7 @@ import Hero from "@/components/Hero/Hero";
 import Services from "@/components/Services/Services";
 import GalleryShowcase from "@/components/GalleryShowcase/GalleryShowcase"
 import PropertyShowcase from "@/components/PropertyShowcase/PropertyShowcase"
+import Statement from "@/components/Statement/Statement"
 export default function Home() {
   return (
     <>
@@ -11,6 +12,7 @@ export default function Home() {
       <Services/>
       <GalleryShowcase/>
       <PropertyShowcase/>
+      <Statement/>
 
     </>
   );

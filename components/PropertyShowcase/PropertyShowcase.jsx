@@ -1,7 +1,6 @@
-import Image from "next/image";
 import styles from "./PropertyShowcase.module.css";
-
-export default function ProjectSection() {
+import Image from "next/image";
+export default function PropertyShowcase() {
     return (
         <section className={styles.section}>
 
@@ -9,21 +8,44 @@ export default function ProjectSection() {
 
                 {/* טקסט */}
                 <div className={styles.textWrapper}>
-                    <span className={styles.small}>02 · פרויקט</span>
+
+                    <div className={styles.sectionHeader}>
+                        <span className={styles.sectionNumber}>02</span>
+                        <span className={styles.sectionTitle}>: מי אנחנו</span>
+                    </div>
 
                     <h2 className={styles.title}>
-                        <span className={styles.highlight}>
-                            אובייקטיביות זה לא סתם סיסמה
-                        </span>
+                        אובייקטיביות זה לא סתם סיסמה
                     </h2>
 
                     <p className={styles.desc}>
-                        אז החלטנו להיות לא פשוט נדל"ן...
+                        אז ומתמיד הייתה לי תשוקה לנדל"ן, לא ממקום של "חלום", אלא השקעות עמוקות.
+                        <br />
+                        איך החלטה חכמה מייצרת ערך אמיתי לאורך זמן, ואיך מספרים פוגשים מציאות.
+                        <br />
+                        <br />
+                        בתחילת הדרך עבדתי בעבודות מזדמנות, ואז הגיע רגע בצומת בחיי, פגישה שעצרה אותי פיזית –
+                        <br />
+                        אבל בעיקר הכריחה אותי לעצור ולבחור מחדש. זו הייתה הנקודה שבה החלטתי להיכנס לעולם שתמיד
+                        <br />
+                        משך אותי באמת.
+                        <br />
+                        <span className={styles.bold}>
+                            בחרתי בעולם הנדל"ן.
+                        </span>
                     </p>
+
                 </div>
 
             </div>
-
+            <div className={styles.imageOverlay}>
+                <Image
+                    src="/images/building.jpg"
+                    alt="building"
+                    fill
+                    className={styles.image}
+                />
+            </div>
             {/* משולשים */}
             <div className={styles.rightShapes}>
 

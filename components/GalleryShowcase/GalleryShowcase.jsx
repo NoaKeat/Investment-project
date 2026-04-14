@@ -127,7 +127,7 @@ export default function GalleryShowcase() {
 
                 <div className={styles.item}>
                     <MoneyIcon />
-                    <span>החסכון לאחר 2 פגישות ייעוץ 80,500</span>
+                    <span>נחסכו 80,500 לאחר 2 פגישות ייעוץ</span>
                 </div>
 
                 <div className={styles.item}>
