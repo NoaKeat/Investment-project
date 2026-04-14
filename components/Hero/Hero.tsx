@@ -7,7 +7,7 @@ export default function Hero() {
 
       <div className={styles["hero-image-wrapper"]}>
         <Image
-          src="/hero.jpg"
+          src="/images/hero.jpg"
           alt="hero"
           fill
           priority

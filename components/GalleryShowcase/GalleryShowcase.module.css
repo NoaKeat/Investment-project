@@ -1,0 +1,151 @@
+.wrapper {
+    background: #1A1B3A;
+    padding: 80px 0;
+    overflow: hidden;
+    /* חשוב כדי לחתוך צדדים */
+    position: relative;
+
+}
+
+/* גלריה FULL WIDTH */
+.gallery {
+    position: relative;
+    width: 100vw;
+    /* 🔥 במקום max-width */
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* מרכז את זה למסך */
+    margin-left: calc(-50vw + 50%);
+}
+
+/* תמונה מרכזית */
+.mainImage {
+    position: relative;
+    width: 837px;
+    height: 574px;
+    z-index: 2;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* תמונות צד */
+.sideImage {
+    position: absolute;
+    width: 614px;
+    height: 421px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* מיקום — קרוב ומדויק */
+.left {
+    left: calc(50% - 837px/2 - 614px - 12px);
+}
+
+/* בסיס */
+.arrowRight,
+.arrowLeft {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    cursor: pointer;
+
+    /* ריווח קטן כמו בפיגמה */
+    padding: 6px;
+}
+
+/* חץ ימני */
+.arrowRight {
+    right: calc(50% - 837px/2 - 40px);
+}
+
+/* חץ שמאלי */
+.arrowLeft {
+    left: calc(50% - 837px/2 - 40px);
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.right {
+    left: calc(50% + 837px/2 + 12px);
+}
+
+/* תמונה */
+.image {
+    object-fit: cover;
+}
+
+/* overlay עדין יותר */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 27, 58, 0.45);
+}
+
+/* טקסט תחתון */
+.info {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    direction: rtl;
+}
+
+
+
+
+.info {
+    position: absolute;
+    bottom: 0px;
+    /* לשחק עם זה */
+
+    right: calc(50% - 837px/2 + 10px);
+    /* 👈 זה הקסם */
+
+  
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 44px;
+}
+
+/* נקודה רגילה */
+.dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* נקודה פעילה */
+.active {
+    background: #fff;
+}
+
+/* כל בועה */
+.item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    background: #212350;
+    border-radius: 18px;
+    padding: 5px 10px;
+
+    color: #fff;
+    font-size: 14px;
+    font-family: "Ploni", sans-serif;
+}
+
+/* אייקון */
+.item img {
+    width: 14px;
+    height: 14px;
+}

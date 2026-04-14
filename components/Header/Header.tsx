@@ -9,7 +9,7 @@ export default function Header() {
         {/* ימין - לוגו */}
         <div>
           <Image
-            src="/logo.png"
+            src="/images/logo.png"
             alt="logo"
             width={120}
             height={40}
