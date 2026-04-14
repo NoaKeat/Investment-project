@@ -18,7 +18,9 @@
     font-family: "Leon", sans-serif;
     font-size: 76px;
     font-weight: 400;
-    line-height: 1.1;
+    line-height: 1.2;
+     display: inline-block;
+  transform: scaleY(0.9);
 }
 .backgroundShape {
   position: absolute;
@@ -26,8 +28,8 @@
   left: 68%;
   transform: translate(-50%, -50%) scale(0.7); /* 👈 הקטנה */
 
-  width: 750px;
-  height: 750px;
+  width: 720px;
+  height: 720px;
 
   z-index: 1;
   pointer-events: none;
@@ -47,8 +49,8 @@
   width: 40%;   /* 👈 עוד קצת קטן */
   height: 40%;
 
-  bottom: 0px;   /* 👈 עדיין למעלה */
-  right: 414px;   /* 👈 דוחף שמאלה חזק יותר */
+  bottom: -12px;   /* 👈 עדיין למעלה */
+  right: 760px;   /* 👈 דוחף שמאלה חזק יותר */
 
   opacity: 0.06;
 }
@@ -76,6 +78,8 @@ height: 93.389px;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+      display: inline-block;
+  transform: scaleY(0.98);
 }
 
 @media (max-width: 768px) {

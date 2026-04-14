@@ -1,0 +1,124 @@
+.section {
+  background: #1A1B3A;
+  padding: 120px 0;
+  direction: rtl;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* ========= טקסט ========= */
+
+.textWrapper {
+  max-width: 500px;
+}
+
+.title {
+  font-family: "Leon", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 20px;
+
+  background: linear-gradient(115deg, #E6B360 29.01%, #FFFCC1 51.11%, #E6B360 70.37%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  color: #fff;
+  font-family: "Ploni", sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  margin-bottom: 16px;
+}
+
+.subText {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  line-height: 21px;
+  margin-bottom: 10px;
+}
+
+.date {
+  font-family: "Leon", sans-serif;
+  font-size: 76.533px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* ========= כפתורים ========= */
+
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.primaryBtn {
+  height: 36px;
+  padding: 6px 15px;
+  border-radius: 18px;
+  background: #E5B260;
+  color: #1A1B3A;
+  border: none;
+  cursor: pointer;
+}
+
+.secondaryBtn {
+  height: 36px;
+  padding: 6px 15px;
+  border-radius: 18px;
+  border: 1px solid #E6B360;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ========= ויזואל ========= */
+
+.visualWrapper {
+  position: relative;
+  width: 453px;
+  height: 640px;
+}
+
+/* ריבוע כהה */
+.darkSquare {
+  position: absolute;
+  width: 536px;
+  height: 483px;
+  background: #212250;
+  transform: rotate(90deg);
+  top: 80px;
+  right: -120px;
+  z-index: 1;
+}
+
+/* ריבוע זהב */
+.goldSquare {
+  position: absolute;
+  width: 536px;
+  height: 411px;
+  border: 1px solid #E6B360;
+  transform: rotate(90deg);
+  top: 120px;
+  right: -100px;
+  z-index: 2;
+}
+
+/* תמונה */
+.imageWrapper {
+  position: relative;
+  width: 453px;
+  height: 640px;
+  z-index: 3;
+}
+
+.image {
+  object-fit: cover;
+}

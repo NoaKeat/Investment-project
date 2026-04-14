@@ -1,0 +1,82 @@
+:root {
+  --gold: linear-gradient(115deg, #5A431F, #F2D27A, #5A431F);
+}
+.section {
+  background: #1A1B3A;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+/* כותרת */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* "עבדו איתנו" */
+.title {
+   background: var(--gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Leon", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  background-clip: text;
+   background-size: 150% ;
+ 
+}
+
+/* תיאור */
+.subtitle {
+  max-width: 497px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 12px;
+
+  color: #FFF;
+  font-family: "Ploni", sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+/* קונטיינר של כל השורות */
+.circlesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  margin-top: 80px;
+  /* מרחק מהכותרת */
+}
+
+/* שורה עליונה */
+.topRow {
+  display: flex;
+  gap: 39px;
+  justify-content: center;
+
+  width: 100%;
+}
+
+
+
+
+/* שורה תחתונה - מוזזת שמאלה */
+.bottomRow {
+  display: flex;
+  gap: 39px;
+  justify-content: center;
+
+  transform: translateX(-90px);
+  /* 👈 משחקים לפי הצורך */
+}
+
+/* עיגול */
+.circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #252A62;
+  flex-shrink: 0;
+}
