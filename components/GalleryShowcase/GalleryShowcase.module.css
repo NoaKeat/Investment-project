@@ -10,15 +10,15 @@
 /* גלריה FULL WIDTH */
 .gallery {
     position: relative;
-    width: 100vw;
-    /* 🔥 במקום max-width */
+    width: 100%;
+    overflow: hidden;
     height: 520px;
     display: flex;
     align-items: center;
     justify-content: center;
 
     /* מרכז את זה למסך */
-    margin-left: calc(-50vw + 50%);
+    
 }
 
 /* תמונה מרכזית */
@@ -137,11 +137,11 @@
 
     background: #212350;
     border-radius: 200px;
-    padding: 8px 10px;
-
+    padding: 5px 10px;
+    line-height: 21px;
     color: #fff;
-    font-size: 14px;
-    font-family: "Ploni", sans-serif;
+    font-size: 16;
+   
 }
 
 

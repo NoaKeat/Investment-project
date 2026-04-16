@@ -1,88 +1,123 @@
 .section {
   background: #1A1B3A;
-  padding: 120px 0;
+  padding: 180px 0px;
   direction: rtl;
 }
 
 .container {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
 
-/* כותרת */
-.title {
-  font-family: "Leon", sans-serif;
-  font-size: 28px;
-  margin-bottom: 10px;
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
-  background: linear-gradient(115deg, #E6B360, #FFFCC1, #E6B360);
+.fieldFull {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  
+}
+
+/* label */
+.field label,
+.fieldFull label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: right;
+}
+
+/* placeholder עדין יותר */
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 16px;
+}
+
+.title {
+  font-family: var(--font-leon);
+  font-size: 30px;
+
+  background: linear-gradient(115deg,
+      #E6B360 29.01%,
+      #FFFCC1 51.11%,
+      #E6B360 70.37%);
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-  color: rgba(255,255,255,0.6);
-  font-size: 13px;
-  margin-bottom: 40px;
+  color: white;
+  margin-bottom: 55px;
+  margin-top: 25px;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
 }
 
 /* טופס */
 .form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
-/* שורה עליונה */
+/* שורת אינפוטים */
 .row {
   display: flex;
-  gap: 16px;
+  gap: 12px;
 }
 
+/* אינפוטים */
 .input {
   flex: 1;
-  height: 42px;
-  padding: 0 16px;
+  height: 60px;
+  padding: 10px 14px;
 
-  border-radius: 25px;
-  border: 1px solid #E6B360;
+  border-radius: 20px;
+   border: 1px solid rgba(255, 255, 255, 0.35);
   background: transparent;
   color: #fff;
-
-  outline: none;
 }
 
 /* textarea */
 .textarea {
-  height: 140px;
-  padding: 16px;
+  display: flex;
+  height: 111px;
+  padding: 9px 15px 6px 15px;
 
-  border-radius: 16px;
-  border: 1px solid #E6B360;
+  justify-content: flex-end;
+  /* RTL */
+  align-items: flex-start;
+
+  border-radius: 21px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
   background: transparent;
   color: #fff;
 
-  resize: none;
-  outline: none;
+resize: none;
 }
 
-/* תחתית */
+/* placeholder */
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* שורה תחתונה */
 .bottomRow {
   display: flex;
   justify-content: space-between;
+  /* אייקונים ימין, כפתור שמאל */
   align-items: center;
-}
-
-/* כפתור */
-.button {
-  padding: 10px 20px;
-  border-radius: 20px;
-
-  border: 1px solid #E6B360;
-  background: transparent;
-  color: #fff;
-  cursor: pointer;
 }
 
 /* אייקונים */
@@ -94,6 +129,21 @@
 .circle {
   width: 36px;
   height: 36px;
+
   border-radius: 50%;
   background: #E6B360;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* כפתור */
+.button {
+  padding: 8px 18px;
+  border-radius: 18px;
+  font-size: 16px;
+  border: 1px solid #E6B360;
+  background: transparent;
+  color: #fff;
+}  

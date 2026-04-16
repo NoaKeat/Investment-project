@@ -28,7 +28,8 @@
 }
 
 .title {
-  font-family: "Leon", sans-serif;
+  font-family: var(--font-leon);
+  line-height: normal;
   font-size: 30px;
   font-weight: 400;
   margin-bottom: 20px;
@@ -42,7 +43,6 @@
 
 .description {
   color: #fff;
-  font-family: "Ploni", sans-serif;
   font-size: 16px;
   line-height: 21px;
   margin-bottom: 70px;
@@ -57,7 +57,7 @@
 }
 
 .date {
-  font-family: "Leon", sans-serif;
+  font-family: var(--font-leon);
   font-size: 76.533px;
   color: #fff;
   margin-bottom: 20px;
@@ -144,3 +144,51 @@
 .image {
   object-fit: cover;
 }
+
+@media (max-width: 1200px) {
+  .section {
+    padding-inline: clamp(24px, 5vw, 80px);
+  }
+
+  .grid {
+    column-gap: 16px;
+    row-gap: 30px;
+  }
+
+  .cardTitle {
+    font-size: 22px;
+  }
+
+  .text {
+    font-size: 15px;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 14px;
+    row-gap: 26px;
+  }
+
+  .image {
+    height: 200px;
+  }
+
+  .content {
+    height: auto;
+    padding: 20px 22px 80px 22px;
+  }
+
+  .cardTitle {
+    max-width: 100%;
+    font-size: 20px;
+  }
+
+  .text {
+    max-width: 100%;
+  }
+}
+
+

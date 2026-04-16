@@ -1,0 +1,54 @@
+.status {
+  margin-top: 12px;
+  padding: 10px 14px;
+
+  border-radius: 18px;
+  font-size: 14px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  width: fit-content;        /* 👈 הכי חשוב */
+  max-width: 200px;
+
+  text-align: right;
+
+  backdrop-filter: blur(6px);
+
+  animation: fadeIn 0.3s ease;
+}
+
+/* הצלחה - זהב */
+.success {
+  color: #E6B360;
+
+  background:
+    linear-gradient(#1A1B3A, #1A1B3A) padding-box,
+    linear-gradient(115deg, #E6B360 29.01%, #FFFCC1 51.11%, #E6B360 70.37%) border-box;
+
+  border: 1px solid transparent;
+}
+
+/* שגיאה */
+.error {
+  color: #ff8a8a;
+  border: 1px solid rgba(255, 100, 100, 0.3);
+  background: rgba(255, 80, 80, 0.08);
+}
+
+/* טעינה */
+.loading {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -7,7 +7,7 @@ export default function Hero() {
 
       <div className={styles["hero-image-wrapper"]}>
         <Image
-          src="/images/hero.jpg"
+          src="/images/hero.png"
           alt="hero"
           fill
           priority
@@ -34,7 +34,7 @@ export default function Hero() {
         </p>
 
         <button className={styles["hero-button"]}>
-          לקביעת פגישה לבדיקת עסקה
+          לקביעת פגישה לבדיקת עיסקה
         </button>
 
       </div>

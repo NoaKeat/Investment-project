@@ -1,43 +1,10 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html {
+  overflow-x: hidden;
 }
 
 body {
   direction: rtl;
-  font-family: "Leon", sans-serif;
-  background: #0f0f1a;
-}
-body {
-  font-family: "Ploni", sans-serif;
+  font-family: var(--font-noto), sans-serif;
+  overflow-x: hidden;
 }
 
-/* FONTS */
-@font-face {
-  font-family: "Leon";
-  src: url("/fonts/Leon-Regular.woff2") format("woff2");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Leon";
-  src: url("/fonts/Leon-Bold.woff2") format("woff2");
-  font-weight: 700;
-}
-/* ===== FONTS ===== */
-
-@font-face {
-  font-family: "Ploni";
-  src: url("/fonts/PloniRegular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Ploni";
-  src: url("/fonts/PloniBold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}

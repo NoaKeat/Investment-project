@@ -1,5 +1,5 @@
 :root {
-  --gold: linear-gradient(115deg, #E6B360, #FFFCC1, #E6B360);
+  --gold: linear-gradient(115deg, #E6B360 29.01%, #FFFCC1 51.11%, #E6B360 70.37%);
   --gold-solid: #E6B360;
 }
 
@@ -41,11 +41,9 @@
   bottom: 0;
   width: 100%;
   height: 452px;
-  background: linear-gradient(
-    180deg,
-    rgba(26, 27, 58, 0) 0%,
-    #1A1B3A 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(26, 27, 58, 0) 0%,
+      #1A1B3A 100%);
   z-index: 2;
 }
 
@@ -64,7 +62,7 @@
   justify-content: flex-end;
   padding-bottom: 10px;
 
-  width: 680px;
+
   margin: 0 auto;
 
   text-align: center;
@@ -72,62 +70,58 @@
 
 /* GOLD TITLE */
 .hero-title {
-  font-family: "Leon", sans-serif;
+  font-family: var(--font-leon);
   font-size: 76.5px;
-  font-weight: 700;
-  line-height: 70px;
 
-  background: var(--gold);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 85px;
+  background: linear-gradient(115deg, #E6B360 29.01%, #FFFCC1 51.11%, #E6B360 70.37%);
   background-clip: text;
   -webkit-background-clip: text;
 
   color: transparent;
   -webkit-text-fill-color: transparent;
 
-  transform: scaleY(0.92);
+
   margin-bottom: -40px;
+
 }
 
 /* WHITE TITLE */
 .hero-subtitle {
   margin-top: 0;
-  font-family: "Leon", sans-serif;
   font-size: 76.5px;
-  font-weight: 500;
-  line-height: 75px;
-  color: #fff;
+  font-weight: 700;
 
-  transform: scaleY(0.88);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 85px;
+  color: #fff;
+  font-family: var(--font-leon);
+
+  margin-bottom: -20px;
 }
 
 /* TEXT */
 .hero-text {
-  font-family: "Leon", sans-serif;
+  font-family: var(--font-leon);
+  font-weight: 400;
   font-size: 24px;
   line-height: 1.4;
   color: #fff;
   max-width: 680px;
+
 }
 
 /* BUTTON */
 .hero-button {
   border: 1px solid var(--gold-solid);
-
   background: transparent;
-
-  background-image: var(--gold);
-  background-clip: text;
-  -webkit-background-clip: text;
-
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-
+  color:white;
   padding: 6px 15px;
   border-radius: 18px;
-
-  font-family: "Leon", sans-serif;
-  font-size: 14px;
-
+  font-size: 16px;
   transition: all 0.3s ease;
 }
 

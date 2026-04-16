@@ -15,15 +15,22 @@
 
 /* "עבדו איתנו" */
 .title {
-   background: var(--gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: "Leon", sans-serif;
+  font-family: var(--font-leon);
   font-size: 30px;
   font-weight: 400;
+
+  background: linear-gradient(
+    115deg,
+    #E6B360 29.01%,
+    #FFFCC1 51.11%,
+    #E6B360 70.37%
+  );
+
   background-clip: text;
-   background-size: 150% ;
- 
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 /* תיאור */

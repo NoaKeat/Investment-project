@@ -6,8 +6,9 @@ import PropertyShowcase from "@/components/PropertyShowcase/PropertyShowcase"
 import Statement from "@/components/Statement/Statement"
 import Clients from "@/components/Clients/Clients"
 import InvestmentHero from "@/components/InvestmentHero/InvestmentHero"
-import CalculatorSection from "@/components/CalculatorSection/CalculatorSection";
+import CalculatorSection from "@/components/CalculatorSection/CalculatorSection"
 import ContactForm from "@/components/ContactForm/ContactForm"
+import BlogSection from "@/components/BlogSection/BlogSection"
 export default function Home() {
   return (
     <>
@@ -27,6 +28,7 @@ export default function Home() {
       <section id="CalculatorSection">
         <CalculatorSection />
       </section>
+      <BlogSection/>
       <section id="ContactForm">
         <ContactForm />
       </section>

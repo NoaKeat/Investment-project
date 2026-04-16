@@ -1,5 +1,6 @@
 import styles from "./PropertyShowcase.module.css";
 import Image from "next/image";
+
 export default function PropertyShowcase() {
     return (
         <section className={styles.section}>
@@ -36,16 +37,20 @@ export default function PropertyShowcase() {
                     </p>
 
                 </div>
-
             </div>
+
+            {/* תמונה */}
             <div className={styles.imageOverlay}>
                 <Image
                     src="/images/building.jpg"
                     alt="building"
                     fill
+                    sizes="(max-width: 768px) 60vw, 367px"
                     className={styles.image}
+                    priority
                 />
             </div>
+
             {/* משולשים */}
             <div className={styles.rightShapes}>
 
@@ -54,11 +59,12 @@ export default function PropertyShowcase() {
                 <svg className={styles.goldTriangle} viewBox="0 0 462 462">
                     <path
                         d="M0 461H461L0 0V461Z"
-                        stroke="url(#gold)"
+                        stroke="url(#goldGradient)"
                         fill="none"
+                        
                     />
                     <defs>
-                        <linearGradient id="gold">
+                        <linearGradient id="goldGradient">
                             <stop offset="0.36" stopColor="#E6B360" />
                             <stop offset="0.54" stopColor="#FFFCC1" />
                             <stop offset="0.71" stopColor="#E6B360" />

@@ -1,217 +1,310 @@
-:root {
-    --gold: linear-gradient(115deg, #E6B360, #FFFCC1, #E6B360);
-    --gold-solid: #E6B360;
+.wrapper {
+  background: #1A1B3A;
+  padding: 80px 40px;
+  direction: rtl;
+  overflow: hidden;
 }
 
-.section {
-    background: #1A1B3A;
-    padding: 120px 0;
-    direction: rtl;
-}
+/* מסגרת זהב */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 328px;
+  /* 🔥 במקום px קשיח */
+  gap: 0;
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 100%;
 
-/* כותרת זהב */
-.title {
-    text-align: right;
-    font-family: "Leon", sans-serif;
-    font-size: 30px;
-    font-weight: 400;
+  border: 1px solid transparent;
 
-    background: linear-gradient(115deg, #E6B360, #FFFCC1, #E6B360);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+  background:
+    linear-gradient(#1A1B3A, #1A1B3A) padding-box,
+    linear-gradient(115deg, #E6B360 29.01%, #FFFCC1 51.11%, #E6B360 70.37%) border-box;
 
-/* תיאור */
-.description {
-    max-width: 500px;
-    color: #fff;
-    font-family: "Leon", sans-serif;
-    font-size: 16px;
-    line-height: 21px;
-    margin-top: 10px;
-    font-weight: 400;
-    /* 👈 עובי */
-    letter-spacing: 0.5px;
+  min-height: 489px;
+  /* 🔥 במקום height */
 }
 
 /* שלבים */
-.steps {
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
+.stepsWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+
+  margin: 20px 0;
+  padding-bottom: 20px;
+
+  overflow-x: auto;
 }
 
-/* שלבים רגילים - בלי רקע ובלי מסגרת */
+/* רגילים */
 .step {
-    padding: 5px 12px;
-    border-radius: 18px;
-    color: rgba(255, 255, 255, 0.6);
-    /* טיפה חלש יותר נראה יותר טוב */
-    font-family: "Leon", sans-serif;
-    font-size: 14px;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 18px;
+
+  color: rgba(255, 255, 255, 0.6);
+  text-align: right;
+
+  font-size: 16px;
+  line-height: 21px;
 }
 
-/* שלב פעיל */
+/* מעבר עכבר */
+.step:hover {
+  color: #fff;
+}
+
+/* נבחר */
 .activeStep {
-    padding: 5px 12px;
-    border-radius: 18px;
-    background: #212250;
-    color: #fff;
-    font-family: "Leon", sans-serif;
-    font-size: 14px;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 18px;
+  background: #212250;
+
+  color: #fff;
 }
 
-.steps span {
-    color: #fff;
-    font-size: 14px;
+/* הנקודה לפני הנבחר */
+.activeStep::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #fff;
 }
-
-/* אזור תוכן */
-.content {
-    margin-top: 40px;
-    display: flex;
-
-}
-
-/* צד שמאל */
+/* שמאל */
 .summaryBox {
-    width: 328px;
-    border: 1px solid #E6B360;
-    padding: 20px;
-    height: 489px;
+  width: 100%;
+  border: 1px solid #E6B360;
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
 }
 
-.summaryBox h3 {
-    color: #fff;
-    font-weight: 700;
-    margin-bottom: 10px;
+.summaryBox span {
+  opacity: 0.5;
 }
 
-.summaryBox p {
-    color: #fff;
-    font-size: 14px;
-    color: var(--Color, #FFF);
-    text-align: right;
-    font-family: "Piani", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px;
-    max-width: 220px;
-    /* 131.25% */
-}
-
-/* צד ימין */
 .formBox {
-    flex: 1;
-    border: 1px solid #E6B360;
-    padding: 20px;
-    width: 931px;
-    height: 489px;
-    display: flex;
-    flex-direction: column;
-    gap: 17px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  justify-items: stretch;
+  padding: 15px;
+  box-sizing: border-box;
+  row-gap: 05px;
+  column-gap: 70px;
+  grid-auto-flow: row dense;
+}
+fieldWrapper
+
+/* שורה 1 */
+.price {
+  grid-column: 1;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 87%;
+}
+
+.type {
+  grid-column: 1;
+  grid-row: 4;
+}
+
+/* עטיפה כחולה */
+.blueGroup {
+  grid-column: 1 / 3;
+  /* תופס 2 תאים משמאל */
+  grid-row: 4;
+}
+
+.blueGroup {
+  grid-column: span 2;
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  /* 🔥 שני שדות + אייקון */
+  gap: 50px;
+
+  background: #1D1E44;
+  padding: 15px;
+  border-radius: 20px;
+
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* כותרות */
+
+.title {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2px;
+  grid-row: 1;
+  grid-column: 1 / -1;
+  width: 100%;
+  color: #fff;
+}
+
+.desc {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5px;
+  grid-column: 1 / -1;
+  width: 100%;
+  color: #ccc;
+}
+
+/* שדות */
+.fieldWrapper,
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.fieldWrapper,
+.fieldInRow {
+  width: 100%;
+  min-width: 0;
 }
 
 /* טקסטים */
-.formTitle {
-    color: #fff;
-    font-weight: 700;
+.fieldLabel {
+  text-align: right;
+  color: #fff;
+  font-size: 12px;
 }
 
-.formText {
-    color: #fff;
-    margin-bottom: 10px;
+.input,
+.selectWrapper select {
+  width: 100%;
+  height: 48px;
+
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+
+  padding: 0 20px;
+
+  font-size: 16px;
 }
 
-.label {
-    color: #fff;
-    font-size: 12px;
+/* 🔥 השורה של 3 */
+.middleRow {
+  display: contents;
+  
+  /* 🔥 קסם */
 }
 
-/* אינפוטים */
-.input {
-    width: 100%;
-    /* תופס את כל הרוחב */
-    height: 39px;
-    /* גובה קבוע ✔️ */
-    padding: 6px 15px;
+/* 🔥 הכחול */
 
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+/* בפנים */
+.fieldInRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
 
-    border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    background: transparent;
-    color: #fff;
-
-    box-sizing: border-box;
-    /* חשוב! שלא יגדל מעבר */
+  width: 100%;
+  min-width: 0;
 }
 
-.rowThree {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-top: 10px;
+/* אייקון */
+.checkIcon {
+  width: 28px;
+  height: 28px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: auto;
 }
 
-/* כדי שהlabel יהיה מעל השדה */
-.rowThree>div {
-    display: flex;
-    flex-direction: column;
-}
+/* סיכום */
+.summaryText {
+  grid-column: 1 / -1;
 
-.row {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
+  color: #ccc;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
 }
 
 /* כפתורים */
-.buttons {
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
+.actions {
+  grid-column: 1 / -1;
+
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+
+  justify-content: flex-end;
 }
 
-.nextBtn {
-    background: #E6B360;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
+/* כפתור זהב */
+.filled {
+  height: 36px;
+  padding: 6px 18px;
+
+  border-radius: 18px;
+  border: none;
+
+  background: #E6B360;
+  color: #1A1B3A;
+
+  font-size: 16px;
 }
 
-.backBtn {
-    background: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 20px;
+/* כפתור מסגרת */
+.outline {
+  height: 36px;
+  padding: 6px 15px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(#1A1B3A, #1A1B3A) padding-box,
+    linear-gradient(115deg, #E6B360, #FFFCC1, #E6B360) border-box;
+
+  border: 1px solid transparent;
+
+  color: #FFF;
 }
 
-.sectionHeader {
-    position: relative;
-    z-index: 3;
+/* רספונסיבי */
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
 
-    display: flex;
-    justify-content: flex-start;
-    gap: 10px;
+  .formBox {
+    grid-template-columns: 1fr;
+  }
 
-    max-width: 1440px;
-    margin: 0 auto 20px;
-    padding: 0 80px;
-
-    color: #fff;
-}
-
-.sectionTitle {
-    color: rgba(255, 255, 255, 0.50);
+  .blueGroup {
+    grid-column: span 1;
+    flex-direction: column;
+  }
 }
