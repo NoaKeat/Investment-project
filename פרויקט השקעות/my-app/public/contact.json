@@ -1,0 +1,43 @@
+{
+  "title": "מתכננים את ההשקעה הבאה שלכם? נשמח ללוות אתכם בדרך.",
+  "subtitle": "נשמח לשמוע כל שאלה או פניה, ונחזור אליכם בהקדם :)",
+  "formFields": [
+    {
+      "name": "name",
+      "placeholder": "מה שמכם?",
+      "label": "שם",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "phone",
+      "placeholder": "והטלפון?",
+      "label": "טלפון",
+      "type": "tel",
+      "required": true
+    },
+    {
+      "name": "email",
+      "placeholder": "והמייל?",
+      "label": "מייל",
+      "type": "email",
+      "required": true
+    },
+    {
+      "name": "message",
+      "placeholder": "",
+      "label": "מה תרצו לומר?",
+      "type": "textarea",
+      "required": false
+    }
+  ],
+  "buttons": {
+    "default": "שלחו וניצור קשר בהקדם",
+    "loading": "שולח..."
+  },
+  "messages": {
+    "success": "ההודעה נשלחה בהצלחה ✨",
+    "error": "שליחה נכשלה, נסי שוב"
+  },
+  "apiEndpoint": "/api/contact"
+}

@@ -1,0 +1,310 @@
+.wrapper {
+  background: #1A1B3A;
+  padding: 80px 40px;
+  direction: rtl;
+  overflow: hidden;
+}
+
+/* מסגרת זהב */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 328px;
+  /* 🔥 במקום px קשיח */
+  gap: 0;
+
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 100%;
+
+  border: 1px solid transparent;
+
+  background:
+    linear-gradient(#1A1B3A, #1A1B3A) padding-box,
+    linear-gradient(115deg, #E6B360 29.01%, #FFFCC1 51.11%, #E6B360 70.37%) border-box;
+
+  min-height: 489px;
+  /* 🔥 במקום height */
+}
+
+/* שלבים */
+.stepsWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+
+  margin: 20px 0;
+  padding-bottom: 20px;
+
+  overflow-x: auto;
+}
+
+/* רגילים */
+.step {
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 18px;
+
+  color: rgba(255, 255, 255, 0.6);
+  text-align: right;
+
+  font-size: 16px;
+  line-height: 21px;
+}
+
+/* מעבר עכבר */
+.step:hover {
+  color: #fff;
+}
+
+/* נבחר */
+.activeStep {
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 18px;
+  background: #212250;
+
+  color: #fff;
+}
+
+/* הנקודה לפני הנבחר */
+.activeStep::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #fff;
+}
+/* שמאל */
+.summaryBox {
+  width: 100%;
+  border: 1px solid #E6B360;
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.summaryBox span {
+  opacity: 0.5;
+}
+
+.formBox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  justify-items: stretch;
+  padding: 15px;
+  box-sizing: border-box;
+  row-gap: 05px;
+  column-gap: 70px;
+  grid-auto-flow: row dense;
+}
+fieldWrapper
+
+/* שורה 1 */
+.price {
+  grid-column: 1;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 87%;
+}
+
+.type {
+  grid-column: 1;
+  grid-row: 4;
+}
+
+/* עטיפה כחולה */
+.blueGroup {
+  grid-column: 1 / 3;
+  /* תופס 2 תאים משמאל */
+  grid-row: 4;
+}
+
+.blueGroup {
+  grid-column: span 2;
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  /* 🔥 שני שדות + אייקון */
+  gap: 50px;
+
+  background: #1D1E44;
+  padding: 15px;
+  border-radius: 20px;
+
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* כותרות */
+
+.title {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2px;
+  grid-row: 1;
+  grid-column: 1 / -1;
+  width: 100%;
+  color: #fff;
+}
+
+.desc {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5px;
+  grid-column: 1 / -1;
+  width: 100%;
+  color: #ccc;
+}
+
+/* שדות */
+.fieldWrapper,
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.fieldWrapper,
+.fieldInRow {
+  width: 100%;
+  min-width: 0;
+}
+
+/* טקסטים */
+.fieldLabel {
+  text-align: right;
+  color: #fff;
+  font-size: 12px;
+}
+
+.input,
+.selectWrapper select {
+  width: 100%;
+  height: 48px;
+
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+
+  padding: 0 20px;
+
+  font-size: 16px;
+}
+
+/* 🔥 השורה של 3 */
+.middleRow {
+  display: contents;
+  
+  /* 🔥 קסם */
+}
+
+/* 🔥 הכחול */
+
+/* בפנים */
+.fieldInRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+/* אייקון */
+.checkIcon {
+  width: 28px;
+  height: 28px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: auto;
+}
+
+/* סיכום */
+.summaryText {
+  grid-column: 1 / -1;
+
+  color: #ccc;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* כפתורים */
+.actions {
+  grid-column: 1 / -1;
+
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+
+  justify-content: flex-end;
+}
+
+/* כפתור זהב */
+.filled {
+  height: 36px;
+  padding: 6px 18px;
+
+  border-radius: 18px;
+  border: none;
+
+  background: #E6B360;
+  color: #1A1B3A;
+
+  font-size: 16px;
+}
+
+/* כפתור מסגרת */
+.outline {
+  height: 36px;
+  padding: 6px 15px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(#1A1B3A, #1A1B3A) padding-box,
+    linear-gradient(115deg, #E6B360, #FFFCC1, #E6B360) border-box;
+
+  border: 1px solid transparent;
+
+  color: #FFF;
+}
+
+/* רספונסיבי */
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .formBox {
+    grid-template-columns: 1fr;
+  }
+
+  .blueGroup {
+    grid-column: span 1;
+    flex-direction: column;
+  }
+}

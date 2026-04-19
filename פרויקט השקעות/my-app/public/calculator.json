@@ -1,0 +1,73 @@
+{
+  "steps": [
+    {
+      "id": 1,
+      "number": "1",
+      "label": "רכישה",
+      "formFields": [
+        {
+          "id": "price",
+          "type": "number",
+          "label": "מחיר דירה",
+          "placeholder": "הזן מספר",
+          "required": true
+        },
+        {
+          "id": "dealType",
+          "type": "select",
+          "label": "סוג העסקה",
+          "placeholder": "בחר סוג עסקה",
+          "required": true,
+          "options": [
+            { "value": "purchase", "label": "רכישה" },
+            { "value": "sale", "label": "מכירה" },
+            { "value": "rental", "label": "שכירות" }
+          ]
+        },
+        {
+          "id": "expenses",
+          "type": "select",
+          "label": "הוצאות נלוות",
+          "placeholder": "בחר הוצאה",
+          "required": false,
+          "options": [
+            { "value": "lawyer", "label": "עו״ד" },
+            { "value": "mortgage", "label": "משכנתא" },
+            { "value": "inspection", "label": "בדיקה הנדסית" }
+          ]
+        },
+        {
+          "id": "expenseAmount",
+          "type": "number",
+          "label": "סכום ההוצאה (שנתי)",
+          "placeholder": "הזן מספר",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "number": "2",
+      "label": "מימון ומשכנתא"
+    },
+    {
+      "id": 3,
+      "number": "3",
+      "label": "אחזקה"
+    },
+    {
+      "id": 4,
+      "number": "4",
+      "label": "סיכום"
+    }
+  ],
+  "summaryBox": {
+    "title": "סיכום ביניים",
+    "example": "עו״ד דני: 12,000 | ייעוץ משכנתא: 12,000",
+    "noDataMessage": "אין נתונים"
+  },
+  "buttons": {
+    "prev": "חזרה לשלב הקודם",
+    "next": "המשך לשלב הבא"
+  }
+}
