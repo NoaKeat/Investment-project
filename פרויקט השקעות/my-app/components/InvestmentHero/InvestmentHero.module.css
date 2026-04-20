@@ -4,37 +4,33 @@
   direction: rtl;
 }
 
+/* ===== CONTAINER ===== */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 40px;
+
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 60px;
+  justify-content: center;
+  gap: 150px;
 
   flex-direction: row-reverse;
-  /* 👈 הפוך */
 }
 
-/* ========= טקסט ========= */
+/* ===== TEXT ===== */
 
 .textWrapper {
-  max-width: 400px;
+  max-width: 420px;
+  width: 100%;
   text-align: right;
-  /* 👈 חשוב ל-RTL */
-  margin-left: 250px;
-  
-  
 }
 
 .title {
   font-family: var(--font-leon);
-  line-height: normal;
   font-size: 30px;
-  font-weight: 400;
   margin-bottom: 20px;
-  letter-spacing: 1.2px;
-  padding-top: 10px;
 
   background: linear-gradient(115deg, #E6B360 29.01%, #FFFCC1 51.11%, #E6B360 70.37%);
   -webkit-background-clip: text;
@@ -46,30 +42,26 @@
   font-size: 16px;
   line-height: 21px;
   margin-bottom: 70px;
-
 }
 
 .subText {
   color: rgba(255, 255, 255, 0.5);
   font-size: 12px;
-  line-height: 21px;
   margin-bottom: 10px;
 }
 
 .date {
- font-family: var(--font-leon);
-  font-size: 76.533px;
+  font-family: var(--font-leon);
+  font-size: 76px;
   color: #fff;
   margin-bottom: 20px;
 }
 
-/* ========= כפתורים ========= */
+/* ===== BUTTONS ===== */
 
 .buttons {
   display: flex;
   gap: 12px;
-  justify-content: flex-start;
-  margin-left: 0;
 }
 
 .primaryBtn {
@@ -94,47 +86,45 @@
   font-size: 16px;
 }
 
-/* ========= ויזואל ========= */
+/* ===== VISUAL ===== */
 
 .visualWrapper {
   position: relative;
-  width: 453px;
-  height: 640px;
+  width: 100%;
+  max-width: 453px;
+  aspect-ratio: 453 / 640;
 }
 
-/* ריבוע כהה */
+/* ריבועים */
+
 .darkSquare {
   position: absolute;
-  width: 536px;
-  height: 483px;
+  width: 120%;
+  height: 75%;
   background: #212250;
   transform: rotate(90deg);
-
-  top: 80px;
-  left: -80px;
-  /* 👈 במקום right */
+  top: 10%;
+  left: -15%;
   z-index: 1;
 }
 
-/* ריבוע זהב */
 .goldSquare {
   position: absolute;
-  width: 536px;
-  height: 411px;
+  width: 120%;
+  height: 65%;
   border: 1px solid #E6B360;
   transform: rotate(90deg);
-
-  top: 120px;
-  left: 25px;
-  /* 👈 במקום right */
+  top: 15%;
+  left: 5%;
   z-index: 2;
 }
 
 /* תמונה */
+
 .imageWrapper {
   position: relative;
-  width: 453px;
-  height: 640px;
+  width: 100%;
+  height: 100%;
   z-index: 3;
 }
 
@@ -142,50 +132,40 @@
   object-fit: cover;
 }
 
+/* ========================= */
+/* 📱 RESPONSIVE - מסך בינוני */
+/* ========================= */
+
 @media (max-width: 1200px) {
-  .section {
-    padding-inline: clamp(24px, 5vw, 80px);
+  .container {
+    justify-content:space-between;
+
   }
 
-  .grid {
-    column-gap: 16px;
-    row-gap: 30px;
+  .textWrapper {
+    max-width: 360px;
   }
 
-  .cardTitle {
-    font-size: 22px;
-  }
-
-  .text {
-    font-size: 15px;
+  .date {
+    font-size: 60px;
   }
 }
 
+/* ========================= */
+/* 📱 קטן יותר */
+/* ========================= */
 
-@media (max-width: 1000px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-    column-gap: 14px;
-    row-gap: 26px;
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .image {
-    height: 200px;
+  .textWrapper {
+    text-align: center;
   }
 
-  .content {
-    height: auto;
-    padding: 20px 22px 80px 22px;
-  }
-
-  .cardTitle {
-    max-width: 100%;
-    font-size: 20px;
-  }
-
-  .text {
-    max-width: 100%;
+  .buttons {
+    justify-content: center;
   }
 }
-
-

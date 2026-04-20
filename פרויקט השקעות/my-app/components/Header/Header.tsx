@@ -1,35 +1,13 @@
-"use client";
 import Image from "next/image";
 import styles from "./Header.module.css";
-import { useEffect, useState } from "react";
-
-interface NavItem {
-  number: string;
-  label: string;
-  href: string;
-}
-
-interface HeaderData {
-  navItems: NavItem[];
-  ctaButton: string;
-}
+import data from "@/data/header.json";
 
 export default function Header() {
-  const [data, setData] = useState<HeaderData | null>(null);
-
-  useEffect(() => {
-    fetch("/header.json")
-      .then((res) => res.json())
-      .then((json) => setData(json));
-  }, []);
-
-  if (!data) return null;
-
   return (
     <header className={styles.header}>
       <div className={styles.container}>
 
-        {/* ימין - לוגו */}
+        {/* לוגו */}
         <div>
           <Image
             src="/images/logo.png"
@@ -39,10 +17,9 @@ export default function Header() {
           />
         </div>
 
-        {/* שמאל - כל התוכן */}
+        {/* תפריט */}
         <div className={styles.left}>
 
-          {/* תפריט */}
           <nav className={styles.nav}>
             {data.navItems.map((item) => (
               <a key={item.number} href={item.href} className={styles.link}>
@@ -52,7 +29,6 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* כפתור */}
           <button className={styles.button}>
             {data.ctaButton}
           </button>

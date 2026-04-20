@@ -1,24 +1,7 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import styles from "./Clients.module.css";
-
-interface ClientsData {
-  title: string;
-  subtitle: string;
-}
+import data from "@/data/clients.json";
 
 export default function Clients() {
-  const [data, setData] = useState<ClientsData | null>(null);
-
-  useEffect(() => {
-    fetch("/clients.json")
-      .then((res) => res.json())
-      .then((json) => setData(json));
-  }, []);
-
-  if (!data) return null;
-
   return (
     <section className={styles.section}>
 

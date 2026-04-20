@@ -12,7 +12,7 @@
     margin: 0 auto;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: clamp(60px, 10vw, 140px);
 }
@@ -20,57 +20,62 @@
 /* ---------- צד שמאל (משולשים) ---------- */
 
 .rightShapes {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+    position: relative;
 
-    width: clamp(260px, 35vw, 500px);
-    height: clamp(260px, 35vw, 500px);
+    width: clamp(450px, 55vw, 500px);
+    aspect-ratio: 1 / 1; /* 👈 חשוב! שומר על פרופורציה */
+
+    margin: 0 auto;
 }
-
 /* משולש כהה */
 .darkTriangle {
     position: absolute;
 
-    width: clamp(260px, 35vw, 461.475px);
-    height: clamp(260px, 35vw, 461.475px);
+    width: 92%;   /* ~461 / 500 */
+    height: 92%;
+
+    bottom: 8%;   /* ~40 / 500 */
+    left: 05%;    /* ~90 / 500 */
 
     background: #1D1E44;
-
-    bottom: clamp(20px, 4vw, 40px);
-    left: clamp(40px, 6vw, 90px);
-
     clip-path: polygon(0 0, 0 100%, 100% 100%);
-}
 
+    z-index: 1;
+}
 /* תמונה */
 .imageOverlay {
     position: absolute;
 
-    width:  367px;
-    height:  367px;
+    width: 74%;      /* 367 / 500 */
+    aspect-ratio: 1;
 
-    top: 320px;
-    left:  170px;
+    top: 45%;        /* 320 / 500 */
+    left: 52%;       /* 170 / 500 */
 
+    transform: translate(-50%, -50%);
     z-index: 10;
 }
 
 .image {
     object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 /* משולש זהב */
 .goldTriangle {
     position: absolute;
 
-    width: clamp(200px, 28vw, 338.525px);
-    height: clamp(200px, 28vw, 338.525px);
+    width: 68%;   /* ~338 / 500 */
+    height: 68%;
 
-    top: clamp(0px, 1vw, 4px);
-    left: clamp(120px, 18vw, 220px);
+    top: 1%;      /* ~4 / 500 */
+    left: 27%;    /* ~220 / 500 */
 
     transform: rotate(180deg);
+
+    z-index: 2;
 }
 
 /* ---------- טקסט ---------- */
@@ -131,45 +136,24 @@
 
   .container {
     flex-direction: column;
-    align-items: flex-end;
+    align-items: stretch; /* 👈 חשוב! */
+    gap: clamp(30px, 6vw, 80px);
   }
 
   .textWrapper {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
-  /* 🔥 קונטיינר משותף */
   .section {
     padding-bottom: 0;
   }
 
   .rightShapes {
-    position: relative;
     width: 100%;
-    height: 420px; /* 👈 כל הקומפוזיציה */
-    margin-top: 40px;
+    max-width: none; /* 👈 מבטל הגבלה */
+    aspect-ratio: 1 / 1;
+
+    margin-top: 20px;
   }
 
-  /* 📸 התמונה – ממורכזת בתוך הבלוק */
-  .imageOverlay {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  /* 🔷 המשולשים – מתחילים בדיוק מתחת */
-  .darkTriangle {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-60%);
-  }
-
-  .goldTriangle {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-10%);
-  }
 }

@@ -1,27 +1,8 @@
-"use client";
 import Image from "next/image";
 import styles from "./Hero.module.css";
-import { useEffect, useState } from "react";
-
-interface HeroData {
-  title: string;
-  subtitle: string;
-  description: string;
-  ctaButton: string;
-  image: string;
-}
+import data from "@/data/hero.json";
 
 export default function Hero() {
-  const [data, setData] = useState<HeroData | null>(null);
-
-  useEffect(() => {
-    fetch("/hero.json")
-      .then((res) => res.json())
-      .then((json) => setData(json));
-  }, []);
-
-  if (!data) return null;
-
   return (
     <section className={styles.hero}>
 

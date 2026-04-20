@@ -51,7 +51,11 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+.input,
+.textarea {
+  direction: rtl;
+  text-align: right;
+}
 .subtitle {
   color: white;
   margin-bottom: 55px;
@@ -109,7 +113,10 @@ resize: none;
 /* placeholder */
 .input::placeholder,
 .textarea::placeholder {
+  font-family: var(--font-noto), sans-serif;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.4);
+
 }
 
 /* שורה תחתונה */

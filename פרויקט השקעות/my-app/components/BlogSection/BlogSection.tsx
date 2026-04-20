@@ -1,7 +1,9 @@
+export const runtime = "nodejs";
 
 import styles from "./BlogSection.module.css";
 import { client } from "@/lib/sanity";
 import Link from "next/link";
+import ui from "@/data/blog.json";
 
 type Article = {
   _id: string;
@@ -55,11 +57,17 @@ export default async function BlogSection({
         <div className={styles.header}>
           <div className={styles.headerRight}>
             <div className={styles.sectionHeader}>
-              <span className={styles.sectionNumber}>04</span>
-              <span className={styles.sectionTitle}>: בלוג</span>
+              <span className={styles.sectionNumber}>
+                {ui.sectionNumber}
+              </span>
+              <span className={styles.sectionTitle}>
+                : {ui.sectionTitle}
+              </span>
             </div>
 
-            <h2 className={styles.title}>מאחורי ההשקעות</h2>
+            <h2 className={styles.title}>
+              {ui.mainTitle}
+            </h2>
           </div>
         </div>
       )}
@@ -90,7 +98,7 @@ export default async function BlogSection({
                     </svg>
                   </span>
 
-                  חדש מהשבוע
+                  {ui.badge}
                 </div>
               )}
             </div>
@@ -101,17 +109,20 @@ export default async function BlogSection({
                 {new Date(post._updatedAt).toLocaleDateString()}
               </span>
 
-              <h3 className={styles.cardTitle}>{post.title}</h3>
+              <h3 className={styles.cardTitle}>
+                {post.title}
+              </h3>
 
-              <p className={styles.text}>{post.subtitle}</p>
+              <p className={styles.text}>
+                {post.subtitle}
+              </p>
 
-              {/* 🔥 כפתור קטן בתוך כרטיס */}
               {post.slug?.current && (
                 <Link
                   href={`/article/${post.slug.current}`}
                   className={styles.readMore}
                 >
-                  להמשך קריאה
+                  {ui.readMore}
                 </Link>
               )}
             </div>
@@ -120,11 +131,11 @@ export default async function BlogSection({
         ))}
       </div>
 
-      {/* 🔥 כפתור חיצוני */}
+      {/* כפתור תחתון */}
       {hasMore && (
         <div className={styles.allArticlesWrapper}>
           <Link href="/articles" className={styles.allArticlesButton}>
-            לכל המאמרים
+            {ui.allArticles}
           </Link>
         </div>
       )}
