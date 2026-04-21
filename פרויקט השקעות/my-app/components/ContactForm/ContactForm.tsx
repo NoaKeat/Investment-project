@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import styles from "./ContactForm.module.css";
-import FormStatus from "../FormStatus/FormStatus";
+
 
 interface FormField {
   name: string;
@@ -140,18 +140,23 @@ export default function ContactForm() {
             </div>
 
             <button
-              className={styles.button}
+              className={`${styles.button} 
+  ${status === "success" ? styles.success : ""} 
+  ${status === "error" ? styles.error : ""}`}
               disabled={status === "loading"}
             >
               {status === "loading"
                 ? data.buttons.loading
-                : data.buttons.default}
+                : status === "success"
+                  ? data.messages.success
+                  : status === "error"
+                    ? data.messages.error
+                    : data.buttons.default}
             </button>
 
           </div>
 
           {/* הודעת סטטוס */}
-          <FormStatus status={status} message={message} />
 
         </form>
 

@@ -36,7 +36,7 @@
     "loading": "שולח..."
   },
   "messages": {
-    "success": "ההודעה נשלחה בהצלחה ✨",
+    "success":"ההודעה נשלחה בהצלחה ",
     "error": "שליחה נכשלה, נסי שוב"
   },
   "apiEndpoint": "/api/contact"
