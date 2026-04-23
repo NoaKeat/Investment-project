@@ -39,9 +39,13 @@ interface CalculatorData {
   };
 }
 
-export default function CalculatorSection() {
-  const [data, setData] = useState<CalculatorData | null>(null);
-  const [activeStep, setActiveStep] = useState(0);
+export default function CalculatorSection({
+  onNext,
+  onPrev,
+  data: formData,
+  updateField,
+}: any) {
+  const [jsonData, setJsonData] = useState<CalculatorData | null>(null);
   const [expensesState, setExpensesState] = useState({
     lawyer: false,
     mortgage: false,
@@ -50,24 +54,24 @@ export default function CalculatorSection() {
   useEffect(() => {
     fetch("/calculator.json")
       .then((res) => res.json())
-      .then((json) => setData(json));
+      .then((json) => setJsonData(json));
   }, []);
 
-  if (!data) return null;
+  if (!jsonData) return null;
 
-  const toggleExpense = (key: "lawyer" | "mortgage") => {
-    setExpensesState((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
-  };
-
-  const currentStep = data.steps[activeStep];
+  const currentStep = jsonData.steps[0];
 
   const price = currentStep.formFields?.find(f => f.id === "price");
   const dealType = currentStep.formFields?.find(f => f.id === "dealType");
   const expenses = currentStep.formFields?.find(f => f.id === "expenses");
   const expenseAmount = currentStep.formFields?.find(f => f.id === "expenseAmount");
+
+  const toggleExpense = (key: "lawyer" | "mortgage") => {
+    setExpensesState(prev => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
 
   return (
     <section className={styles.section}>
@@ -75,11 +79,10 @@ export default function CalculatorSection() {
 
         {/* שלבים */}
         <div className={styles.stepsWrapper}>
-          {data.steps.map((step, index) => (
+          {jsonData.steps.map((step, index) => (
             <span
               key={step.id}
-              className={index === activeStep ? styles.activeStep : styles.step}
-              onClick={() => setActiveStep(index)}
+              className={index === 0 ? styles.activeStep : styles.step}
             >
               שלב {step.number} - {step.label}
             </span>
@@ -89,26 +92,23 @@ export default function CalculatorSection() {
         <div className={styles.content}>
           <div className={styles.formBox}>
 
-            {/* כותרת */}
             <h2 className={styles.title}>
               שלב {currentStep.number} - {currentStep.label}
             </h2>
 
-            {/* תיאור */}
             <p className={styles.desc}>
-              בשלב זה ממלאים את פרטי הרכש כדי שנוכל להתחיל בחישוב.
+              בשלב זה ממלאים את פרטי הרכש כדי להתחיל חישוב
             </p>
 
             {/* מחיר */}
             {price && (
               <div className={`${styles.fieldWrapper} ${styles.price}`}>
-                <span className={styles.fieldLabel}>
-                  {price.required && "*"} {price.label}
-                </span>
+                <span className={styles.fieldLabel}>{price.label}</span>
                 <input
-                  type={price.type}
                   className={styles.input}
                   placeholder={price.placeholder}
+                  value={formData.price || ""}
+                  onChange={(e) => updateField("price", e.target.value)}
                 />
               </div>
             )}
@@ -116,109 +116,91 @@ export default function CalculatorSection() {
             {/* סוג עסקה */}
             {dealType && (
               <div className={`${styles.fieldWrapper} ${styles.dealType}`}>
-                <span className={styles.fieldLabel}>
-                  {dealType.required && "*"} {dealType.label}
-                </span>
-
-                <div className={styles.selectWrapper}>
-                  <select className={styles.input}>
-                    <option>{dealType.placeholder}</option>
-                    {dealType.options?.map((opt) => (
-                      <option key={opt.value}>{opt.label}</option>
-                    ))}
-                  </select>
-                </div>
+                <span className={styles.fieldLabel}>{dealType.label}</span>
+                <select
+                  className={styles.input}
+                  value={formData.dealType || ""}
+                  onChange={(e) => updateField("dealType", e.target.value)}
+                >
+                  <option>{dealType.placeholder}</option>
+                  {dealType.options?.map((opt) => (
+                    <option key={opt.value}>{opt.label}</option>
+                  ))}
+                </select>
               </div>
             )}
 
-            {/* 🔥 הקופסה הכחולה */}
+            {/* 🔥 קופסה כחולה */}
             <div className={styles.blueGroup}>
+
               {expenses && (
                 <div className={styles.fieldWrapper}>
-                  <span className={styles.fieldLabel}>
-                    {expenses.required && "*"} {expenses.label}
-                  </span>
-
-                  <div className={styles.selectWrapper}>
-                    <select className={styles.input}>
-                      <option>{expenses.placeholder}</option>
-                      {expenses.options?.map((opt) => (
-                        <option key={opt.value}>{opt.label}</option>
-                      ))}
-                    </select>
-                  </div>
+                  <span className={styles.fieldLabel}>{expenses.label}</span>
+                  <select
+                    className={styles.input}
+                    value={formData.expenses || ""}
+                    onChange={(e) => updateField("expenses", e.target.value)}
+                  >
+                    <option>{expenses.placeholder}</option>
+                    {expenses.options?.map((opt) => (
+                      <option key={opt.value}>{opt.label}</option>
+                    ))}
+                  </select>
                 </div>
               )}
 
               {expenseAmount && (
                 <div className={styles.fieldWrapper}>
-                  <span className={styles.fieldLabel}>
-                    {expenseAmount.required && "*"} {expenseAmount.label}
-                  </span>
-
+                  <span className={styles.fieldLabel}>{expenseAmount.label}</span>
                   <input
-                    type="number"
                     className={styles.input}
-                    placeholder={expenseAmount.placeholder}
+                    value={formData.expenseAmount || ""}
+                    onChange={(e) => updateField("expenseAmount", e.target.value)}
                   />
                 </div>
               )}
 
+              {/* אייקון */}
               <div className={styles.checkIcon}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                >
+                <svg width="28" height="28">
                   <circle cx="14" cy="14" r="14" fill="white" />
                   <path
-                    d="M12.2086 18C11.9937 18.0004 11.7808 17.9625 11.5823 17.8885C11.3837 17.8146 11.2033 17.7061 11.0514 17.5691L8 14.8219L8.77145 14.1267L11.8229 16.8745C11.9252 16.9666 12.0639 17.0183 12.2086 17.0183C12.3532 17.0183 12.492 16.9666 12.5943 16.8745L20.2286 10L21 10.6947L13.3657 17.5691C13.2139 17.7061 13.0335 17.8146 12.8349 17.8885C12.6363 17.9625 12.4235 18.0004 12.2086 18Z"
+                    d="M12 18L8 14L9 13L12 16L20 10L21 11L12 18Z"
                     fill="#1D1E44"
                   />
                 </svg>
               </div>
+
             </div>
 
-            {/* סיכום הוצאות */}
+            {/* הוצאות */}
             <div className={styles.summaryExpenses}>
               <span className={styles.summaryTitle}>
-                {data.expensesSection.title}
+                {jsonData.expensesSection.title}
               </span>
 
               <div className={styles.expensesRow}>
-                {data.expensesSection.items.map((item) => (
+                {jsonData.expensesSection.items.map((item) => (
                   <div
                     key={item.key}
-                    className={`${styles.expenseItem} ${expensesState[item.key] ? styles.active : ""
-                      }`}
+                    className={`${styles.expenseItem} ${
+                      expensesState[item.key] ? styles.active : ""
+                    }`}
                     onClick={() => toggleExpense(item.key)}
                   >
-                    <span>
-                      {item.label}: {item.amount.toLocaleString()}
-                    </span>
+                    {item.label}: {item.amount}
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* כפתורים */}
+            {/* כפתור */}
             <div className={styles.actions}>
-              <button
-                className={styles.outline}
-                disabled={activeStep === 0}
-                onClick={() => setActiveStep(activeStep - 1)}
-              >
-                {data.buttons.prev}
+                <button className={styles.outline} >
+                {jsonData.buttons.prev}
               </button>
-
-              <button
-                className={styles.filled}
-                disabled={activeStep === data.steps.length - 1}
-                onClick={() => setActiveStep(activeStep + 1)}
-              >
-                {data.buttons.next}
+              <button className={styles.filled} onClick={onNext}>
+                {jsonData.buttons.next}
               </button>
             </div>
 
@@ -226,9 +208,9 @@ export default function CalculatorSection() {
 
           {/* צד שמאל */}
           <div className={styles.summaryBox}>
-            <h3>{data.summaryBox.title}</h3>
-            <p>{data.summaryBox.example}</p>
-            <p>{data.summaryBox.noDataMessage}</p>
+            <h3>{jsonData.summaryBox.title}</h3>
+            <p>{jsonData.summaryBox.example}</p>
+            <p>{jsonData.summaryBox.noDataMessage}</p>
           </div>
 
         </div>

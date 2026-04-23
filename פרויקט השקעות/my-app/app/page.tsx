@@ -6,7 +6,7 @@ import PropertyShowcase from "@/components/PropertyShowcase/PropertyShowcase"
 import Statement from "@/components/Statement/Statement"
 import Clients from "@/components/Clients/Clients"
 import InvestmentHero from "@/components/InvestmentHero/InvestmentHero"
-import CalculatorSection from "@/components/CalculatorSection/CalculatorSection"
+import CalculatorWizard from "@/components/CalculatorSection/CalculatorWizard"
 import ContactForm from "@/components/ContactForm/ContactForm"
 import BlogSection from "@/components/BlogSection/BlogSection"
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
       <Clients />
       <InvestmentHero />
       <section id="CalculatorSection">
-        <CalculatorSection />
+        <CalculatorWizard />
       </section>
       <BlogSection/>
       <section id="ContactForm">

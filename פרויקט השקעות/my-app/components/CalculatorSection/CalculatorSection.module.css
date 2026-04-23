@@ -179,6 +179,10 @@
   padding-left: 50px;
   transform: translateY(-15px);
 }
+.blueGroupStep2 {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column: 1 / -1; 
+}
 .checkIcon {
   position: absolute;
   left: 15px;
@@ -199,6 +203,7 @@
 /* כותרות */
 
 .title {
+  
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -213,7 +218,12 @@
 .desc {
   margin: -5px !important;
 }
-
+.contentCenter {
+  display: flex;
+   grid-column: 1 / -1;
+  width: 100%;
+  color: #fff;
+}
 .desc {
   font-size: 16px;
   font-style: normal;
@@ -311,7 +321,7 @@
   display: flex;
   gap: 15px;
   margin-top: 20px;
-
+ grid-row: 8; 
   justify-content: flex-end;
 }
 
