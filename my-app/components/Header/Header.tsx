@@ -3,6 +3,7 @@ import styles from "./Header.module.css";
 import data from "@/data/header.json";
 
 export default function Header() {
+  
   return (
     <header className={styles.header}>
       <div className={styles.container}>

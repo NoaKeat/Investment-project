@@ -28,7 +28,9 @@ export default function Home() {
       <section id="CalculatorSection">
         <CalculatorWizard />
       </section>
-      <BlogSection/>
+      <section id="blogSection">
+        <BlogSection />
+      </section>
       <section id="ContactForm">
         <ContactForm />
       </section>

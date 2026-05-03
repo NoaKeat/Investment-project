@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./Hero.module.css";
 import data from "@/data/hero.json";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -33,9 +34,12 @@ export default function Hero() {
           {data.description}
         </p>
 
-        <button className={styles["hero-button"]}>
+        <Link
+          href="/meetings/consultation"
+          className={styles["hero-button"]}
+        >
           {data.ctaButton}
-        </button>
+        </Link>
 
       </div>
     </section>

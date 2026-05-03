@@ -17,16 +17,18 @@ export default defineType({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      hidden: true, // 👈 הלקוח לא רואה
+      // hidden: true, // אפשר להשאיר את זה מוסתר אם אתה רוצה
 
-      initialValue: () => ({
-        _type: 'slug',
-        current: `article-${Date.now()}`, // 👈 ייחודי אוטומטי
-      }),
+      // 1. כאן אנחנו מוחקים את ה-initialValue עם ה-Date.now
+
+      // 2. כאן אנחנו מוסיפים את האופציה שמושכת את הערך מהכותרת
+      options: {
+        source: 'title', // 🔥 זה הקסם: הוא לוקח את הכותרת והופך אותה ל-Slug
+        maxLength: 96,
+      },
 
       validation: (Rule) => Rule.required()
     }),
-
     defineField({
       name: 'subtitle',
       title: 'כותרת משנה',

@@ -10,9 +10,15 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@sanity/client": "^7.21.0",
+    "@sanity/client": "^7.22.0",
     "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "next-sanity": "^12.3.0",
+    "slugify": "^1.6.9",
     "stripe": "^22.0.2"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0"
   }
 }

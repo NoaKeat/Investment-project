@@ -39,5 +39,9 @@
     "success":"ההודעה נשלחה בהצלחה ",
     "error": "שליחה נכשלה, נסי שוב"
   },
-  "apiEndpoint": "/api/contact"
+  "apiEndpoint": "/api/contact",
+  "contactLinks": {
+    "phone": "0559933699",
+    "whatsapp": "972559933699"
+  }
 }

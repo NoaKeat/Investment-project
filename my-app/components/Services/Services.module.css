@@ -1,6 +1,5 @@
 :root {
   --gold: linear-gradient(115deg, #E6B360 29.01%, #FFFCC1 51.11%, #E6B360 70.37%);
-  ;
   --gold-solid: #E6B360;
 }
 
@@ -72,15 +71,16 @@
 
 /* גריד */
 .cardsWrapper {
+  justify-items: center;
   position: relative;
   z-index: 2;
-
+  align-items: stretch;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 clamp(20px, 5vw, 100px);
-
+  width: fit-content;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 👈 דסקטופ */
+    grid-template-columns: repeat(4, 315px); /* 👈 דסקטופ */
   gap: 0px;
 }
 
@@ -97,7 +97,7 @@
   border: 1px solid var(--gold-solid);
 
   padding:
-    clamp(10px, 3vw, 35px) clamp(15px, 4vw, 55px) clamp(15px, 5vw, 55px);
+    clamp(10px, 3vw, 35px) clamp(15px, 4vw, 55px) clamp(15px, 5vw, 35px);
 
   min-height: clamp(280px, 40vw, 320px);
   gap: 16px;
@@ -119,7 +119,7 @@
   margin: 0;
   /* opacity: 0.85; */
   width: 100%;
-  
+  flex-grow: 1;
 
 }
 
@@ -162,14 +162,16 @@
 }
 
 /* כפתור */
-.card button {
+.card .button {
   margin-top: auto;
+
   align-self: flex-start;
   width: fit-content;
 
   border: 1px solid var(--gold-solid);
   background: transparent;
 
+  text-decoration: none;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -184,14 +186,10 @@
   font-size: 14px;
 }
 
-.card button:hover {
+.card .button:hover {
   background: var(--gold-solid);
-
   color: #1A1B3A;
   -webkit-text-fill-color: #1A1B3A;
-
-  box-shadow: 0 4px 20px rgba(180, 130, 40, 0.35);
-  transform: translateY(-2px);
 }
 
 .inner {

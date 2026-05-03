@@ -171,7 +171,7 @@ background: #1A1B3A;
 
 /* ===== TITLE ===== */
 .cardTitle {
-  max-width: 260px;
+  max-width: 300px;
   margin-left: auto;
  font-family: var(--font-leon);
   font-size: 24px;

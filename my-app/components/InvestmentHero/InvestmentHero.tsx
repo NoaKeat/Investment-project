@@ -1,3 +1,4 @@
+"use client";
 import styles from "./InvestmentHero.module.css";
 import Image from "next/image";
 import data from "@/data/investment.json";
@@ -6,7 +7,7 @@ export default function InvestmentHero() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        
+
         <div className={styles.textWrapper}>
           <h2 className={styles.title}>{data.title}</h2>
           <p className={styles.description}>{data.description}</p>
@@ -14,13 +15,24 @@ export default function InvestmentHero() {
           <div className={styles.date}>{data.date}</div>
 
           <div className={styles.buttons}>
-            <button className={styles.primaryBtn}>
+            <button
+              className={styles.primaryBtn}
+              onClick={() => {
+                const el = document.getElementById(data.scrollTo);
+                if (!el) return;
+
+                const y =
+                  el.getBoundingClientRect().top + window.scrollY - 0;
+
+                window.scrollTo({
+                  top: y,
+                  behavior: "smooth",
+                });
+              }}
+            >
               {data.registerButton}
             </button>
 
-            <button className={styles.secondaryBtn}>
-              {data.allCoursesButton}
-            </button>
           </div>
         </div>
 

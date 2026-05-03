@@ -1,0 +1,178 @@
+:root {
+  --gold: linear-gradient(115deg, #E6B360 29.01%, #FFFCC1 51.11%, #E6B360 70.37%);
+  --gold-solid: #E6B360;
+}
+
+.section {
+  height: 250px;
+  position: relative;
+  background: #1A1B3A;
+  padding: 120px 0;
+  overflow: hidden;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  height: 400px;
+}
+
+/* רקע SVG */
+.backgroundShape {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%); /* ❗ הורדנו scale */
+
+  width: 362.813px;
+  height: 400.332px;
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shapeBig {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.04;
+}
+
+.shapeSmall {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  bottom: -10;
+  right: 0;
+  transform: translateX(-34%);
+  opacity: 0.06;
+}
+
+/* תוכן */
+.inner {
+  position: relative;
+  z-index: 2;
+max-width: 900px;   /* 🔥 חשוב */
+  margin: 0 auto; 
+}
+.leftArrow,
+.rightArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* כותרת */
+.titleWrapper {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.title {
+  display: inline-block;
+
+  font-family: var(--font-leon);
+  font-size: 30px;
+  font-weight: 400;
+
+  background: linear-gradient(
+    115deg,
+    #E6B360 29.01%,
+    #FFFCC1 51.11%,
+    #E6B360 70.37%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  color: transparent;
+}
+
+/* אזור התוכן (נמשיך אחרי) */
+.content {
+  max-width: 500px;
+  margin: -25px auto 0;
+  text-align: center;
+  color: white;
+}
+/* קרוסלה */
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;     /* ❗ במקום fit-content */
+}
+/* טקסט */
+.name {
+  color: #E5B260;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.text {
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 21px;
+}
+
+/* חצים */
+.leftArrow,
+.rightArrow {
+  position: absolute;
+  top: 50px;
+  transform: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.leftArrow {
+  left: 20px;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rightArrow {
+  right: 20px;
+}
+
+/* עיגול שמאל */
+.circle {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+}
+
+/* SVG */
+.leftArrow svg,
+.rightArrow svg {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+/* נקודות */
+.dots {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+}
+
+.active {
+  background: white;
+}

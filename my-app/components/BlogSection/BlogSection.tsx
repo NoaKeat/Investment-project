@@ -19,11 +19,13 @@ type Article = {
 type Props = {
   limit?: number;
   showHeader?: boolean;
+  showAllButton?: boolean;
 };
 
 export default async function BlogSection({
   limit = 4,
   showHeader = true,
+  showAllButton = true,
 }: Props) {
 
   const posts: Article[] = await client.fetch(`
@@ -132,7 +134,7 @@ export default async function BlogSection({
       </div>
 
       {/* כפתור תחתון */}
-      {hasMore && (
+     {showAllButton && hasMore && (
         <div className={styles.allArticlesWrapper}>
           <Link href="/articles" className={styles.allArticlesButton}>
             {ui.allArticles}

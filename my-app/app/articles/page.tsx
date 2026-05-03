@@ -1,24 +1,28 @@
+import Header from "@/components/Header/Header";
 import BlogSection from "@/components/BlogSection/BlogSection";
-import Link from "next/link";
-import styles from "@/components/BlogSection/BlogSection.module.css";
+import ContactForm from "@/components/ContactForm/ContactForm";
+import ArticlesHeader from "@/components/ArticlesHeader/ArticlesHeader";
 
 export default function AllArticlesPage() {
   return (
-    <>
+    <main>
 
-      <main style={{ marginTop: "100px" }}>
+      {/* Header של האתר */}
+      <Header />
 
-        {/* 🔥 כפתור חזרה יפה */}
-        <div className={styles.backWrapper}>
-          <Link href="/" className={styles.backButton}>
-            <span className={styles.arrow}>←</span>
-            חזרה לדף הבית
-          </Link>
-        </div>
+      {/* כותרת עליונה */}
+     <ArticlesHeader />
 
-        <BlogSection limit={100} showHeader={false} />
+      {/* כל המאמרים */}
+      <BlogSection 
+        limit={1000}          // 👈 מביא "הכול"
+        showHeader={false}    // 👈 בלי header פנימי
+        showAllButton={false} // 👈 בלי כפתור למטה
+      />
 
-      </main>
-    </>
+      {/* טופס יצירת קשר */}
+      <ContactForm />
+
+    </main>
   );
 }

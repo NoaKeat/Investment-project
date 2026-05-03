@@ -1,0 +1,150 @@
+
+
+.title {
+ font-family: var(--font-leon);
+  font-size: 56px;
+  font-weight: 700;
+
+  background: linear-gradient(115deg, #E6B360, #FFFCC1, #E6B360);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #FFF;
+  max-width: 600px;
+  margin: 20px auto 0;
+  font-size: 20px;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: right;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.content li {
+  margin-bottom: 15px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 30px;
+  background: linear-gradient(115deg, #E6B360, #FFFCC1);
+  color: #1A1B3A;
+  text-decoration: none;
+  font-weight: 600;
+}
+.threeFix {
+  grid-template-columns: repeat(3, 315px) !important;
+  justify-content: center;
+}
+/* HERO בסיס */
+.hero {
+  position: relative;
+  min-height: 503px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+/* תמונה + blur */
+.heroBg {
+  position: absolute;
+  inset: 0;
+
+  background-repeat: no-repeat;
+
+  /* 🔥 החלק החשוב */
+  background-size: 100% 190.808%;
+  background-position: 0px -411.569px;
+
+  z-index: 1;
+}
+
+/* גרדיאנט מעל התמונה */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    0deg,
+    #1A1B3A 1.57%,
+    rgba(26, 27, 58, 0) 100%
+  );
+
+  z-index: 2;
+}
+
+/* תוכן מעל הכול */
+.heroContent {
+  position: relative;
+  z-index: 3;
+
+  max-width: 900px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* כותרת */
+.title {
+  font-family: var(--font-leon);
+  font-size: 76px;
+  font-weight: 700;
+  line-height: 85px;
+
+  margin-bottom: 20px;
+
+  background: linear-gradient(
+    115deg,
+    #E6B360 29.01%,
+    #FFFCC1 51.11%,
+    #E6B360 70.37%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* תיאור */
+.subtitle {
+  color: #FFF;
+   font-family: var(--font-leon);
+  font-size: 24px;
+
+  max-width: 896px;
+  margin: 0 auto 30px;
+}
+.moreServicesTitle {
+  font-family: var(--font-leon);
+  font-size: 30px;
+  font-weight: 400;
+  display: inline-block;
+  display: block;
+  width: fit-content;
+  margin: 25px auto;
+  text-align: center; /* כי זו כותרת מרכזית */
+
+  background: linear-gradient(
+    115deg,
+    #E6B360 29.01%,
+    #FFFCC1 51.11%,
+    #E6B360 70.37%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
