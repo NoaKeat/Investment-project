@@ -17,8 +17,8 @@
 .title {
   font-family: var(--font-leon);
   font-size: 30px;
-  font-weight: 400;
-
+  font-weight: 700;
+  letter-spacing: 1.2px;
   background: linear-gradient(
     115deg,
     #E6B360 29.01%,
@@ -38,11 +38,13 @@
   max-width: 497px;
   width: 100%;
   margin: 0 auto;
-  margin-top: 12px;
-
+  margin-top: -10px;
+  font-family: var(--font-leon);
+  font-weight: 400;
   color: #FFF;
-  font-family: "Ploni", sans-serif;
-  font-size: 16px;
+  letter-spacing: 1.5px;
+  
+  font-size: 22px;
   line-height: 21px;
 }
 

@@ -85,7 +85,11 @@
   cursor: pointer;
   font-size: 16px;
 }
-
+.secondaryBtn:hover,
+.primaryBtn:hover {
+  transform: scale(1.03);
+  /* הגדלה */
+}
 /* ===== VISUAL ===== */
 
 .visualWrapper {
