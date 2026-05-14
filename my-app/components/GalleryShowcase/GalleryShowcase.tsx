@@ -83,14 +83,7 @@ export default function GalleryShowcase() {
         </div>
       </div>
 
-      <div className={styles.info}>
-        {data.info.map((item, index) => (
-          <div key={index} className={styles.item}>
-            {renderIcon(item.icon)}
-            <span>{item.text}</span>
-          </div>
-        ))}
-      </div>
+      
     </section>
   );
 }

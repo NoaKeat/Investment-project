@@ -14,7 +14,7 @@ type Props = {
 export default function ServiceCard({ service }: Props) {
   return (
     <div className={styles.card}>
-      <span className={styles.tag}>{service.tag}</span>
+      {/* <span className={styles.tag}>{service.tag}</span> */}
       <h3>{service.title}</h3>
       <p>{service.description}</p>
 

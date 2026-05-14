@@ -45,24 +45,37 @@
 /* תמונה */
 .imageOverlay {
     position: absolute;
-
-    width: 74%;      /* 367 / 500 */
+    width: 74%; 
     aspect-ratio: 1;
-
-    top: 45%;        /* 320 / 500 */
-    left: 52%;       /* 170 / 500 */
-
+    top: 45%; 
+    left: 52%; 
     transform: translate(-50%, -50%);
     z-index: 10;
+
+    /* יוצר את העיגול ומונע מהתמונה לצאת החוצה */
+  
+    overflow: hidden; 
 }
 
-.image {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    display: block;
+/* ה-CSS הזה מוחל על תגית ה-img עצמה בתוך ה-div */
+.imageOverlay img {
+    /* 1. התמונה צריכה למלא את התיבה */
+    object-fit: cover; 
+    
+    /* 2. כדי להזיז אותה באופן מוחלט, נגדיר לה position: relative */
+    position: relative; 
+    
+    /* 3. כאן אנו מגדילים אותה */
+    transform: scale(1); 
+    
+    /* 4. כאן אנו מזיזים אותה למעלה */
+    /* ערך שלילי מזיז למעלה. אם היא עדיין לא מספיק למעלה, הגדל את המספר (למשל -10px, -20px) */
+    top: -5px; 
+    
+    /* מוודא שהגובה ממולא */
+    height: 100% !important;
+    width: 100% !important;
 }
-
 /* משולש זהב */
 .goldTriangle {
     position: absolute;

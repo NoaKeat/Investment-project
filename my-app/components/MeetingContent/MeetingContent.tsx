@@ -39,6 +39,7 @@ export default function MeetingContent({ title, bullets, hasCalendar }: Props) {
                 strokeLinejoin="round"
                 strokeLinecap="round"
             />
+            
         </svg>,
 
         // 3
@@ -78,14 +79,12 @@ export default function MeetingContent({ title, bullets, hasCalendar }: Props) {
                             {icons[i]}
                         </div>
 
-                        <h3 className={styles.itemTitle}>{title}</h3>
+                        {/* <h3 className={styles.itemTitle}>{title}</h3> */}
                         <p className={styles.text}>{item}</p>
                     </li>
                 ))}
             </ul>
-            <div className={styles.buttonWrapper}>
-               {hasCalendar && <CalendlyButton />}
-            </div>
+          
         </section>
     );
 }

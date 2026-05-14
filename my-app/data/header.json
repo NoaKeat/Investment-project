@@ -2,12 +2,12 @@
   "navItems": [
     {
       "number": "01",
-      "label": "מה אנחנו עושים",
+      "label": "מה אני עושה",
       "href": "/#hero"
     },
     {
       "number": "02",
-      "label": "מי אנחנו",
+      "label": "מי אני",
       "href": "/#popertyShowcase"
     },
     {

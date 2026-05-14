@@ -19,6 +19,7 @@ interface Step {
 }
 
 interface CalculatorData {
+  comingSoon: string;
   steps: Step[];
   expensesSection: {
     title: string;
@@ -75,6 +76,11 @@ export default function CalculatorSection({
 
   return (
     <section className={styles.section}>
+      <div
+        className={styles.comingSoon}
+      >
+        {jsonData.comingSoon}
+      </div>
       <div className={styles.wrapper}>
 
         {/* שלבים */}
@@ -183,9 +189,8 @@ export default function CalculatorSection({
                 {jsonData.expensesSection.items.map((item) => (
                   <div
                     key={item.key}
-                    className={`${styles.expenseItem} ${
-                      expensesState[item.key] ? styles.active : ""
-                    }`}
+                    className={`${styles.expenseItem} ${expensesState[item.key] ? styles.active : ""
+                      }`}
                     onClick={() => toggleExpense(item.key)}
                   >
                     {item.label}: {item.amount}
@@ -196,10 +201,12 @@ export default function CalculatorSection({
 
             {/* כפתור */}
             <div className={styles.actions}>
-                <button className={styles.outline} >
+              <button className={styles.outline} >
                 {jsonData.buttons.prev}
               </button>
-              <button className={styles.filled} onClick={onNext}>
+              <button className={styles.filled}
+              // onClick={onNext}
+              >
                 {jsonData.buttons.next}
               </button>
             </div>

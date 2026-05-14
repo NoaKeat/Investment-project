@@ -1,5 +1,17 @@
 
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    /* זה יבטיח רווח קבוע של 100 פיקסלים בין כל קומפוננטה */
+    gap: 100px; 
+    /* מוודא שהעמוד נפרס לכל הרוחב */
+    width: 100%;
+}
 
+/* אופציונלי: אם את רוצה שה-Hero לא יושפע מהרווח העליון של ה-Wrapper */
+.hero {
+    margin-top: 0;
+}
 .title {
  font-family: var(--font-leon);
   font-size: 56px;

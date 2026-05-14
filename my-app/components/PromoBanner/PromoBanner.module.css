@@ -18,7 +18,7 @@
 .banner {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start; /* שינוי כדי שהטקסט יהיה צמוד למעלה */
   height: 100%;
   width: 100%;
   text-align: right;
@@ -31,13 +31,12 @@
 .textGroup {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
-.title, 
-.oldPrice {
+.title {
   background: linear-gradient(115deg, #E6B360 29.01%, #FFFCC1 51.11%, #E6B360 70.37%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -45,46 +44,26 @@
   color: transparent;
   display: inline-block;
   width: fit-content;
-}
-
-.title {
   font-size: 28px;
   font-weight: 400;
-  margin-bottom: 10px;
-  margin-top: -15px;
+  margin-bottom: 5px;
+  margin-top: -10px;
   font-family: var(--font-leon);
 }
 
-.pricesGroup {
-  display: flex;
-  flex-direction: column; /* 👈 אחד מתחת לשני */
-  align-items: flex-start;
-  gap: 5px;
-
-}
-
-.oldPrice {
-  font-size: 24px;
-  font-weight: 400;
-  text-decoration: line-through;
-  font-family: var(--font-leon);
-}
-
-.price {
+/* העיצוב החדש לתיאור - מחליף את ה-price הלבן הגדול */
+.description {
   color: #ffffff;
   font-family: var(--font-leon);
   font-weight: 400;
-  font-size: 70px;
-  line-height: 1;
-  letter-spacing: 2px;
+  font-size: 20px; /* מותאם לטקסט ארוך במקום למספר אחד גדול */
+  line-height: 1.3;
+  max-width: 85%; /* שלא יתנגש בכפתור בצד */
+  margin: 0;
 }
-
-
 
 .buttonGroup {
   position: absolute;
-  bottom: 10%;   /* כמה למטה */
-  right: 82%;    /* כמה מהצד */
+  bottom: 15%;   /* מיקום הכפתור */
+  left: 5%;      /* בגלל שזה RTL, אנחנו רוצים אותו בצד השני של הטקסט */
 }
-
-

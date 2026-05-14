@@ -35,7 +35,7 @@ export default function Hero() {
         </p>
 
         <Link
-          href="/meetings/consultation"
+         href={`/meetings/${data.slug}`}
           className={styles["hero-button"]}
         >
           {data.ctaButton}

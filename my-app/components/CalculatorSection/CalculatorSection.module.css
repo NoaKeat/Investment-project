@@ -259,6 +259,26 @@
   font-size: 12px;
 }
 
+.comingSoon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-leon);
+  font-size: 280px;
+  font-weight: 800;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.50);
+
+  pointer-events: none; /* לא חוסם לחיצות */
+  z-index: 10;
+}
+.section {
+  position: relative;
+}
+
 .input,
 .selectWrapper select {
   width: 100%;

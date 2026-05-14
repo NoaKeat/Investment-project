@@ -15,36 +15,33 @@
 
 /* "עבדו איתנו" */
 .title {
-  font-family: var(--font-leon);
+  display: inline-block; /* חשוב מאוד כדי שהרקע ייצמד לטקסט */
   font-size: 30px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  background: linear-gradient(
-    115deg,
-    #E6B360 29.01%,
-    #FFFCC1 51.11%,
-    #E6B360 70.37%
-  );
-
+  font-weight: 400;
+  line-height: normal;
+  font-family: var(--font-leon);
+  
+  background: linear-gradient(115deg,
+      #E6B360 29.01%,
+      #FFFCC1 51.11%,
+      #E6B360 70.37%);
+      
   background-clip: text;
   -webkit-background-clip: text;
-
+  
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
 
 /* תיאור */
 .subtitle {
-  max-width: 497px;
+  max-width: 400px;
   width: 100%;
   margin: 0 auto;
-  margin-top: -10px;
-  font-family: var(--font-leon);
+  margin-top: -20px;
   font-weight: 400;
-  color: #FFF;
-  letter-spacing: 1.5px;
-  
-  font-size: 22px;
+  color: #FFF; 
+  font-size: 20px;
   line-height: 21px;
 }
 

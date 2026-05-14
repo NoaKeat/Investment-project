@@ -34,7 +34,7 @@
 }
 
 /* כותרת בתוך כל בלוק */
-.itemTitle {
+.text {
   font-family: var(--font-leon);
   font-size: 24px;
   margin-bottom: 8px;
@@ -42,6 +42,7 @@
   background: linear-gradient(115deg, #E6B360, #FFFCC1, #E6B360);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  max-width:180px;
 }
 .buttonWrapper {
   margin-top: 40px; /* 👈 הרווח מעל */
@@ -52,11 +53,7 @@
   direction: rtl;
 }
 /* טקסט */
-.text {
-  color: #fff;
-  font-size: 16px;
-  line-height: 21px;
-}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);

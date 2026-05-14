@@ -28,7 +28,7 @@ export default function PropertyShowcase() {
             {data.description}
             <br />
             <span className={styles.bold}>
-              {data.boldText}
+              
             </span>
           </p>
 
@@ -61,7 +61,7 @@ export default function PropertyShowcase() {
               alt="building"
               fill
               sizes="(max-width: 768px) 60vw, 367px"
-              className={styles.image}
+              // className={styles.image}
               priority
             />
           </div>

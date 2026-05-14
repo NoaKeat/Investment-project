@@ -3,19 +3,7 @@
     "left": "/images/left.jpg",
     "center": "/images/center.jpg",
     "right": "/images/right.jpg"
-  },
-  "info": [
-    {
-      "icon": "location",
-      "text": "באר שבע"
-    },
-    {
-      "icon": "money",
-      "text": "נחסכו 80,500 לאחר 2 פגישות ייעוץ"
-    },
-    {
-      "icon": "building",
-      "text": "5 פרויקטים בבניה"
-    }
-  ]
+  }
+  
+ 
 }
