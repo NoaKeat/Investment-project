@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import servicesData from "@/data/services.json";
 import serviceDetails from "@/data/meetings.json";
 import MeetingPage from "@/components/MeetingPage/MeetingPage";
-
+// או false תלוי בהגדרות
 type ServiceDetails = {
   subtitle: string;
   bullets: string[];

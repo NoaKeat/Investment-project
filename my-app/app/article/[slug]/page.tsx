@@ -1,7 +1,7 @@
 import { client } from "@/lib/sanity";
 import ArticlePage from "@/components/ArticlePage/ArticlePage";
 import { notFound } from "next/navigation";
-
+// או false תלוי בהגדרות
 // שימוש ב-Props כפי שמוגדר ב-Next.js 15+
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

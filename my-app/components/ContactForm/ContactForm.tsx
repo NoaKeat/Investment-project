@@ -159,8 +159,8 @@ export default function ContactForm() {
 
             <button
               className={`${styles.button} 
-  ${status === "success" ? styles.success : ""} 
-  ${status === "error" ? styles.error : ""}`}
+              ${status === "success" ? styles.success : ""} 
+              ${status === "error" ? styles.error : ""}`}
               disabled={status === "loading"}
             >
               {status === "loading"
@@ -174,7 +174,6 @@ export default function ContactForm() {
 
           </div>
 
-          {/* הודעת סטטוס */}
 
         </form>
 
