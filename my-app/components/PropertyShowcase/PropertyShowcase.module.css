@@ -170,3 +170,30 @@
   }
 
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 48px;
+    padding-bottom: 24px;
+    padding-inline: 20px;
+    overflow-x: hidden;
+  }
+
+  .container {
+    gap: 24px;
+  }
+
+  .textWrapper {
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 100%;
+  }
+
+  .rightShapes {
+    margin-top: 0;
+  }
+
+  .desc {
+    max-width: 100%;
+  }
+}
