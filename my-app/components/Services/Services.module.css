@@ -206,4 +206,41 @@
     padding-right: 60px;
   }
 }
-/* מובייל קטן בלבד */
+
+@media (max-width: 768px) {
+  .servicesSection {
+    padding: 56px 0 72px;
+    overflow-x: hidden;
+  }
+
+  .backgroundShape {
+    width: min(340px, 85vw);
+    height: min(340px, 85vw);
+    transform: translate(-50%, -50%) scale(0.55);
+  }
+
+  .sectionHeader {
+    padding: 0 20px;
+    margin-bottom: 28px;
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .cardsWrapper {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    gap: 16px;
+    box-sizing: border-box;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 24px 20px;
+    min-height: unset;
+    gap: 12px;
+  }
+}
