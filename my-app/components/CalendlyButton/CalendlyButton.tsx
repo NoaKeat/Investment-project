@@ -2,11 +2,16 @@
 
 import { PopupModal } from "react-calendly";
 import { useState, useEffect } from "react";
-import styles from "./CalendlyButton.module.css";
 
 import data from "@/data/calendly.json";
 
-export default function CalendlyButton() {
+interface CalendlyButtonProps {
+  className?: string;
+}
+
+export default function CalendlyButton({
+  className,
+}: CalendlyButtonProps) {
   const [open, setOpen] = useState(false);
   const [root, setRoot] = useState<HTMLElement | null>(null);
 
@@ -16,7 +21,10 @@ export default function CalendlyButton() {
 
   return (
     <>
-      <button className={styles.button} onClick={() => setOpen(true)}>
+      <button
+        className={className}
+        onClick={() => setOpen(true)}
+      >
         {data.buttonText}
       </button>
 

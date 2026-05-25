@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import styles from "./Header.module.css";
 import data from "@/data/header.json";
-
+import CalendlyButton from "@/components/CalendlyButton/CalendlyButton";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -54,6 +54,8 @@ export default function Header() {
           <button type="button" className={styles.button}>
             {data.ctaButton}
           </button>
+        <CalendlyButton className={styles.button} />
+
         </div>
       </div>
 

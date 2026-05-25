@@ -46,7 +46,7 @@
   color: #fff;
   font-size: 16px;
   font-weight: 400;
-  font-family: "Ploni", sans-serif;
+  
 }
 
 .link {
@@ -58,8 +58,6 @@
   color: #fff;
   font-size: 16px;
   font-weight: 400;
-  font-family: "Ploni", sans-serif;
-
   transition: color 0.3s ease;
 }
 .link:hover {
@@ -73,7 +71,6 @@
 .number {
   color: rgba(255, 255, 255, 0.5);
   font-size: 12px;
-  font-family: "Ploni", sans-serif;
 }
 
 /* כפתור */
