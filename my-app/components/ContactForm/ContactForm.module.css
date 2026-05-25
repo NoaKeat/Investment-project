@@ -209,3 +209,95 @@
 .error::before {
   transform: scale(1.1);
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 0;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 100%;
+    padding-inline: 20px;
+    box-sizing: border-box;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 1.35;
+    margin: 0;
+    padding: 0 4px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  .subtitle {
+    margin-top: 16px;
+    margin-bottom: 32px;
+    font-size: 15px;
+    line-height: 1.4;
+    padding: 0 4px;
+  }
+
+  .form {
+    gap: 18px;
+    width: 100%;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .field {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    gap: 4px;
+  }
+
+  .fieldFull {
+    width: 100%;
+    gap: 4px;
+  }
+
+  .input {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: 44px;
+    padding: 8px 14px;
+    line-height: 1.2;
+  }
+
+  .textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: 88px;
+    padding: 10px 14px;
+  }
+
+  .bottomRow {
+    flex-wrap: nowrap;
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .icons {
+    flex-shrink: 0;
+  }
+
+  .button {
+    flex: 0 0 auto;
+    width: fit-content;
+    max-width: none;
+    font-size: 14px;
+    padding: 7px 16px;
+    height: 36px;
+  }
+}
