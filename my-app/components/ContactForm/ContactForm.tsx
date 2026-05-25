@@ -131,18 +131,7 @@ export default function ContactForm() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="שלח הודעה בוואטסאפ"
-                style={{
-                  // הגדרות העיגול הצהוב
-                  display: 'flex',
-                  alignItems: 'center',       // מרכז אנכית
-                  justifyContent: 'center',   // מרכז אופקית
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '50%',
-                  backgroundColor: '#E5B260',
-                  textDecoration: 'none',
-                  cursor: 'pointer'
-                }}
+                className={styles.circle}
               >
                 {/* האיקון - ממורכז אוטומטית ע"י ה-Flex של ה-a */}
                 <svg
