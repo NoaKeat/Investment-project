@@ -1,0 +1,40 @@
+:root {
+  --gold: linear-gradient(115deg, #E6B360 29.01%, #FFFCC1 51.11%, #E6B360 70.37%);
+  --gold-solid: #E6B360;
+}
+
+.button {
+  margin-top: 20px;
+
+  display: inline-block;
+  width: fit-content;
+
+  border: 1px solid var(--gold-solid);
+  background: transparent;
+
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+
+  color: #fff;
+
+  padding: 6px 18px;
+  border-radius: 20px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* hover כמו בכרטיסים */
+.button:hover {
+  background: var(--gold-solid);
+  color: #1A1B3A;
+  -webkit-text-fill-color: #1A1B3A;
+}
+
+/* אופציונלי – מרכז אותו אם הוא בתוך HERO */
+.center {
+  display: flex;
+  justify-content: center;
+}

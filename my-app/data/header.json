@@ -1,0 +1,25 @@
+{
+  "navItems": [
+    {
+      "number": "01",
+      "label": "מה אני עושה",
+      "href": "/#hero"
+    },
+    {
+      "number": "02",
+      "label": "מי אני",
+      "href": "/#popertyShowcase"
+    },
+    {
+      "number": "03",
+      "label": "מחשבון",
+      "href": "/#CalculatorSection"
+    },
+    {
+      "number": "04",
+      "label": "בלוג",
+      "href": "/#blogSection"
+    }
+  ],
+  "ctaButton": "לפגישת ייעוץ"
+}

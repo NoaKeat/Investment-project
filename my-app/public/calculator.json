@@ -1,0 +1,92 @@
+{
+  "comingSoon": "בקרוב",
+  "steps": [
+    {
+      "id": 1,
+      "number": "1",
+      "label": "רכישה",
+      "formFields": [
+        {
+          "id": "price",
+          "type": "number",
+          "label": "מחיר דירה",
+          "placeholder": "הזן מספר",
+          "required": true
+        },
+        {
+          "id": "dealType",
+          "type": "select",
+          "label": "סוג העסקה",
+          "placeholder": "בחר סוג עסקה",
+          "required": true,
+          "options": [
+            { "value": "purchase", "label": "רכישה" },
+            { "value": "sale", "label": "מכירה" },
+            { "value": "rental", "label": "שכירות" }
+          ]
+        },
+        {
+          "id": "expenses",
+          "type": "select",
+          "label": "הוצאות נלוות",
+          "placeholder": "בחר הוצאה",
+          "required": false,
+          "options": [
+            { "value": "lawyer", "label": "עו״ד" },
+            { "value": "mortgage", "label": "משכנתא" },
+            { "value": "inspection", "label": "בדיקה הנדסית" }
+          ]
+        },
+        {
+          "id": "expenseAmount",
+          "type": "number",
+          "label": "סכום ההוצאה (שנתי)",
+          "placeholder": "הזן מספר",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "number": "2",
+      "label": "מימון ומשכנתא"
+    },
+    {
+      "id": 3,
+      "number": "3",
+      "label": "אחזקה"
+    },
+    {
+      "id": 4,
+      "number": "4",
+      "label": "סיכום"
+    }
+  ],
+
+  "expensesSection": {
+    "title": "סיכום הוצאות נלוות",
+    "items": [
+      {
+        "key": "lawyer",
+        "label": "עורך דין",
+        "amount": 12000
+      },
+      {
+        "key": "mortgage",
+        "label": "ייעוץ משכנתאות",
+        "amount": 12000
+      }
+    ]
+  },
+
+  "summaryBox": {
+    "title": "סיכום ביניים",
+    "example": "פה מופיעים הנתונים שהזנת ואלא שכבר חושבו",
+    "noDataMessage": "אין נתונים"
+  },
+
+  "buttons": {
+    "prev": "חזרה לשלב הקודם",
+    "next": "המשך לשלב הבא"
+  }
+}

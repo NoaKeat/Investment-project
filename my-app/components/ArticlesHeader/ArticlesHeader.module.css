@@ -1,0 +1,36 @@
+.wrapper {
+  background: #1A1B3A;
+  padding: 120px 20px 80px;
+  text-align: center;
+}
+
+/* כותרת */
+.title {
+  font-family: var(--font-leon);
+  font-size: 76px;
+  font-weight: 700;
+  line-height: 85px;
+  margin: 0 auto 20px;
+
+  background: linear-gradient(
+    115deg,
+    #E6B360 29.01%,
+    #FFFCC1 51.11%,
+    #E6B360 70.37%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* טקסט */
+.subtitle {
+  max-width: 600px;
+  margin: 0 auto;
+
+  color: #FFF;
+  font-family: var(--font-leon);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.4;
+}

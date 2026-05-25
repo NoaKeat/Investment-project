@@ -1,0 +1,67 @@
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  direction: rtl;
+}
+
+/* כותרת ראשית */
+
+/* גריד של 4 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  list-style: none;
+  padding: 0;
+}
+
+/* כל בלוק */
+.item {
+  text-align: right;
+}
+
+/* אייקון */
+/* אייקון */
+.icon {
+  margin-bottom: 12px;
+}
+
+/* 🔥 האייקון עצמו */
+.iconSvg {
+  width: 19px;
+  height: 19px;
+}
+
+/* כותרת בתוך כל בלוק */
+.text {
+  font-family: var(--font-leon);
+  font-size: 24px;
+  margin-bottom: 8px;
+  font-weight: 400;
+  background: linear-gradient(115deg, #E6B360, #FFFCC1, #E6B360);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  max-width:180px;
+}
+.buttonWrapper {
+  margin-top: 40px; /* 👈 הרווח מעל */
+  display: flex;
+  justify-content: center; /* 👈 מרכז */
+}
+.grid {
+  direction: rtl;
+}
+/* טקסט */
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

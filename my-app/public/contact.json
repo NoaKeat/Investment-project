@@ -1,0 +1,47 @@
+{
+  "title": "רוצים לבחון עסקה או להבין מה נכון עבורכם?",
+  "subtitle": "השאירו פרטים ואחזור אליכם לשיחה ראשונית כדי להבין את הצורך, המטרות והאפשרויות הקיימות.",
+  "formFields": [
+    {
+      "name": "name",
+      "placeholder": "מה שמכם?",
+      "label": "שם",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "phone",
+      "placeholder": "והטלפון?",
+      "label": "טלפון",
+      "type": "tel",
+      "required": true
+    },
+    {
+      "name": "email",
+      "placeholder": "והמייל?",
+      "label": "מייל",
+      "type": "email",
+      "required": true
+    },
+    {
+      "name": "message",
+      "placeholder": "כתבו את אשר על ליבכם...",
+      "label": "מה תרצו לומר?",
+      "type": "textarea",
+      "required": false
+    }
+  ],
+  "buttons": {
+    "default": "שליחת פרטים",
+    "loading": "שולח..."
+  },
+  "messages": {
+    "success": "ההודעה נשלחה בהצלחה ",
+    "error": "שליחה נכשלה, נסי שוב"
+  },
+  "apiEndpoint": "/api/contact",
+  "contactLinks": {
+    "phone": "0559933699",
+    "whatsapp": "972559933699"
+  }
+}

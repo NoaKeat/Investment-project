@@ -1,0 +1,82 @@
+.header {
+  position: relative;
+  z-index: 50;
+  background: #1A1B3A;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 24px;
+}
+
+/* שמאל */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* תפריט */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 14px;
+  color: white;
+}
+
+.text {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Ploni", sans-serif;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+
+  color: #fff; /* לבן רגיל */
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Ploni", sans-serif;
+
+  transition: color 0.3s ease;
+}
+.link:hover {
+  color: #E6B360;
+}
+
+.link:hover span {
+  color: #E6B360;
+}
+
+
+.number {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  font-family: "Ploni", sans-serif;
+}
+
+/* כפתור */
+.button {
+  border: 1px solid #E6B360;
+  color: #E6B360;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: transparent;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: #E6B360;
+  color: black;
+}

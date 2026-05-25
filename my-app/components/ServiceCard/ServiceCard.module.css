@@ -1,0 +1,34 @@
+@media (max-width: 768px) {
+  .card {
+    gap: 12px;
+    min-height: unset;
+  }
+
+  .tag {
+    font-size: 12px;
+    line-height: 1;
+    opacity: 0.6;
+    padding-bottom: 10px;
+  }
+
+  .tag::after {
+    width: 20px;
+  }
+
+  .title {
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 21px;
+  }
+
+  .button {
+    margin-top: 8px;
+    padding: 8px 20px;
+    font-size: 14px;
+    border-radius: 999px;
+  }
+}

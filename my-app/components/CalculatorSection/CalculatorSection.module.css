@@ -1,0 +1,467 @@
+.wrapper {
+  background: #1A1B3A;
+  padding: 80px 40px;
+  direction: rtl;
+  overflow: hidden;
+}
+
+/* מסגרת זהב */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  /* 🔥 במקום px קשיח */
+  gap: 0;
+
+  margin: 0 auto;
+  max-width: 1240px;
+  width: 100%;
+
+  border: 1px solid transparent;
+
+  background:
+    linear-gradient(#1A1B3A, #1A1B3A) padding-box,
+    linear-gradient(115deg, #E6B360 29.01%, #FFFCC1 51.11%, #E6B360 70.37%) border-box;
+
+  min-height: 489px;
+  /* 🔥 במקום height */
+}
+
+/* שלבים */
+.stepsWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+
+  margin: 20px 0;
+  padding-bottom: 20px;
+
+  overflow-x: auto;
+}
+
+/* רגילים */
+.step {
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 18px;
+
+  color: rgba(255, 255, 255, 0.6);
+  text-align: right;
+
+  font-size: 16px;
+  line-height: 21px;
+}
+
+/* מעבר עכבר */
+.step:hover {
+  color: #fff;
+}
+
+/* נבחר */
+.activeStep {
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 18px;
+  background: #212250;
+
+  color: #fff;
+}
+
+/* הנקודה לפני הנבחר */
+.activeStep::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* שמאל */
+.summaryBox {
+  display: flex;
+  /* 🔥 זה מה שחסר */
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 20px;
+  text-align: right;
+  align-items: flex-start;
+  color: #fff;
+  max-width: 260px;
+  /* 👉 קובעת רוחב מקסימלי */
+  margin-right: auto;
+  position: relative;
+  /* מרכז אנכי */
+  font-size: 16px;
+  gap: 10px;
+}
+
+.summaryBox h3,
+.summaryBox p {
+  margin: 0;
+}
+
+.summaryBox p:last-of-type {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.50);
+  font-size: 16px;
+}
+
+.summaryBox h3 {
+  font-size: 16px;
+
+}
+
+.summaryBox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  /* RTL */
+
+  width: 1px;
+
+  background: linear-gradient(115deg,
+      #E6B360 29.01%,
+      #FFFCC1 51.11%,
+      #E6B360 70.37%);
+}
+
+.summaryBox span {
+  opacity: 0.5;
+}
+.price {
+  grid-column: 1 ;/* 🔥 תופס את כל השורה */
+}
+.formBox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: stretch;
+  align-items: start;
+  grid-auto-rows: min-content;
+  padding: 20px;
+  box-sizing: border-box;
+  row-gap: 20px;
+  column-gap: 20px;
+
+
+}
+
+
+.dealType {
+  grid-column: 1;
+}
+
+
+/* עטיפה כחולה */
+.blueGroup {
+  grid-column: 2 / 4;/* תופס 2 עמודות */
+  height: 96px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  background: #1D1E44;
+  padding: 15px;
+  border-radius: 20px;
+
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 50px;
+  transform: translateY(-15px);
+}
+.blueGroupStep2 {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column: 1 / -1; 
+}
+.checkIcon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+  background: #fff; /* העיגול הלבן */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* כותרות */
+
+.title {
+  
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+  grid-row: 1;
+  grid-column: 1 / -1;
+  width: 100%;
+  color: #fff;
+}
+
+.title,
+.desc {
+  margin: -5px !important;
+}
+.contentCenter {
+  display: flex;
+   grid-column: 1 / -1;
+  width: 100%;
+  color: #fff;
+}
+.desc {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  grid-column: 1 / -1;
+  width: 100%;
+  color: #ccc;
+  margin-bottom: 10px !important;
+}
+
+/* שדות */
+.fieldWrapper,
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.fieldWrapper,
+.fieldInRow {
+  width: 100%;
+  min-width: 0;
+}
+
+/* טקסטים */
+.fieldLabel {
+  text-align: right;
+  color: #fff;
+  font-size: 12px;
+}
+
+.comingSoon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-leon);
+  font-size: 280px;
+  font-weight: 800;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.50);
+
+  pointer-events: none; /* לא חוסם לחיצות */
+  z-index: 10;
+}
+.section {
+  position: relative;
+}
+
+.input,
+.selectWrapper select {
+  width: 100%;
+  height: 39px;
+
+  box-sizing: border-box;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+
+  padding: 0 20px;
+
+  font-size: 16px;
+}
+
+
+/* 🔥 הכחול */
+
+/* בפנים */
+.fieldInRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+/* אייקון */
+.checkIcon {
+  width: 28px;
+  height: 28px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: auto;
+}
+
+/* סיכום */
+.summaryText {
+  grid-column: 1 / -1;
+
+  color: #ccc;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* כפתורים */
+.actions {
+  grid-column: 1 / -1;
+  padding: 15px;
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+ grid-row: 8; 
+  justify-content: flex-end;
+}
+
+/* כפתור זהב */
+.outline {
+  height: 36px;
+  padding: 6px 18px;
+
+  border-radius: 18px;
+  border: none;
+
+  background: #E6B360;
+  color: #1A1B3A;
+
+  font-size: 16px;
+}
+
+.filled:hover,
+.outline:hover {
+  transform: scale(1.03);
+  /* הגדלה */
+}
+
+/* כפתור מסגרת */
+.filled {
+  height: 36px;
+  padding: 6px 15px;
+
+  border-radius: 18px;
+  font-size: 16px;
+  background:
+    linear-gradient(#1A1B3A, #1A1B3A) padding-box,
+    linear-gradient(115deg, #E6B360, #FFFCC1, #E6B360) border-box;
+
+  border: 1px solid transparent;
+
+  color: #FFF;
+}
+
+.summaryExpenses {
+  grid-column: 2;
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* שמאל */
+  gap: 10px;
+}
+
+.summaryTitle {
+  color: #fff;
+  font-size: 12px;
+}
+
+.expenseItem {
+  position: relative;
+  cursor: pointer;
+
+
+  display: flex;
+  align-items: center;
+
+  color: #FFFFFF80;
+  transition: 0.2s;
+}
+
+.expenseItem:hover {
+  color: #fff;
+}
+
+.expenseItem span {
+  white-space: nowrap;
+}
+
+.expenseItem::after {
+  content: "✖";
+  /* ברירת מחדל */
+
+  position: absolute;
+  left: -20px;
+  /* 🔥 בצד שמאל */
+
+  font-size: 12.75px;
+  color: #FFFFFF;
+
+  opacity: 0;
+  transition: 0.2s;
+
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.expenseItem:hover::after {
+  opacity: 1;
+}
+
+.active::after {
+  content: "✔";
+  opacity: 1;
+  /* תמיד מוצג */
+}
+
+.expensesRow {
+  display: flex;
+  gap: 25px;
+  /* רווח ביניהם */
+}
+
+
+/* רספונסיבי */
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .formBox {
+    grid-template-columns: 1fr;
+  }
+
+  .blueGroup {
+    grid-column: span 1;
+    flex-direction: column;
+  }
+}
