@@ -52,9 +52,9 @@ export default function GalleryShowcase() {
     <section className={styles.wrapper}>
       <div className={styles.dots}>
         <Dot />
+        <Dot />
+        <Dot />
         <Dot active />
-        <Dot />
-        <Dot />
         <Dot />
         <Dot />
       </div>
@@ -83,7 +83,14 @@ export default function GalleryShowcase() {
         </div>
       </div>
 
-      
+      <div className={styles.info}>
+        {data.badges.map((badge) => (
+          <div key={badge.text} className={styles.item}>
+            {renderIcon(badge.icon)}
+            <span>{badge.text}</span>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
