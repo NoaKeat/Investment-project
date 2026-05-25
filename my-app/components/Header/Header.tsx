@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./Header.module.css";
 import data from "@/data/header.json";
-
+import CalendlyButton from "@/components/CalendlyButton/CalendlyButton";
 export default function Header() {
   
   return (
@@ -30,9 +30,7 @@ export default function Header() {
             ))}
           </nav>
 
-          <button className={styles.button}>
-            {data.ctaButton}
-          </button>
+        <CalendlyButton className={styles.button} />
 
         </div>
 
