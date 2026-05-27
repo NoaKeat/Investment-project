@@ -28,12 +28,11 @@ export default function ArticlePage({ post, relatedPosts }: { post: any, related
       </article>
       {/* הסקשן של המאמרים הקשורים */}
       <section className={styles.relatedSectionWrapper}>
-        <div className={styles.relatedInner}>
+        <div className="container">
           <h2 className={styles.moreArticlesTitle}>
             {data.relatedTitle}
           </h2>
           <BlogSection
-            embedded
             limit={2}
             showHeader={false}
             showAllButton={false}

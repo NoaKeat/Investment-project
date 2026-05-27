@@ -4,7 +4,6 @@ import data from "@/data/statement.json";
 export default function Statement() {
   return (
     <section className={styles.statementSection}>
-      <div className={styles.statementInner}>
       <div className={styles.backgroundShape}>
         {/* SVG גדול */}
         <svg
@@ -59,7 +58,6 @@ export default function Statement() {
         <span className={styles.goldText}>
           {data.quoteBold}
         </span>
-      </div>
       </div>
 
     </section>
