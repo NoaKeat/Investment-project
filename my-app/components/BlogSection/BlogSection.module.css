@@ -412,6 +412,10 @@ background: #1A1B3A;
     padding-inline: 16px;
     padding-bottom: 40px;
     overflow-x: hidden;
+@media (max-width: 768px) {
+  .section {
+    padding-inline: 20px;
+    padding-bottom: 40px;
   }
 
   .header {
@@ -432,6 +436,7 @@ background: #1A1B3A;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     justify-items: center;
+    grid-template-columns: 1fr;
     grid-auto-flow: row;
     width: 100%;
     max-width: 100%;
@@ -463,6 +468,17 @@ background: #1A1B3A;
     background-size: cover;
     background-position: center;
     display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow: visible;
+  }
+
+  .image {
+    height: auto;
+    aspect-ratio: 16 / 10;
+    max-height: 200px;
   }
 
   .content {
@@ -477,6 +493,11 @@ background: #1A1B3A;
     padding-bottom: 18px;
     box-sizing: border-box;
     overflow: visible;
+    height: auto;
+    min-height: unset;
+    overflow: visible;
+    padding: 38px 20px 18px;
+    box-sizing: border-box;
   }
 
   .date {
