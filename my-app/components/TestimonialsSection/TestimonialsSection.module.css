@@ -178,7 +178,7 @@ max-width: 900px;   /* 🔥 חשוב */
 }
 
 /* ===== MOBILE ≤ 768px ===== */
-@media (max-width: 768px) {
+@media (max-width: 768px) 
   .section {
     height: auto;
     min-height: unset;
@@ -286,5 +286,11 @@ max-width: 900px;   /* 🔥 חשוב */
   .dots {
     margin-top: 16px;
     text-align: center;
+@media (max-width: 768px) {
+  .section {
+    margin-top: 16px;
+    padding: 40px 0 48px;
+    height: auto;
+    min-height: 280px;
   }
 }
