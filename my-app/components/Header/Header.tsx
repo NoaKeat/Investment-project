@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Header.module.css";
 import data from "@/data/header.json";
 import CalendlyButton from "@/components/CalendlyButton/CalendlyButton";
@@ -16,13 +17,15 @@ export default function Header() {
       <div className={styles.container}>
         {/* לוגו */}
         <div className={styles.logo}>
-          <Image
-            src="/images/logo.png"
-            alt="logo"
-            width={120}
-            height={40}
-            className={styles.logoImage}
-          />
+          <Link href="/" aria-label="לעמוד הבית">
+            <Image
+              src="/images/logo.png"
+              alt="logo"
+              width={120}
+              height={40}
+              className={styles.logoImage}
+            />
+          </Link>
         </div>
 
         {/* המבורגר — מובייל בלבד */}

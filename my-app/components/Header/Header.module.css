@@ -40,13 +40,14 @@
   gap: 32px;
   font-size: 14px;
   color: white;
+  font-family: var(--font-leon);
 }
 
 .text {
   color: #fff;
   font-size: 16px;
   font-weight: 400;
-  
+  font-family: var(--font-leon);
 }
 
 .link {
@@ -58,6 +59,7 @@
   color: #fff;
   font-size: 16px;
   font-weight: 400;
+  font-family: var(--font-leon);
   transition: color 0.3s ease;
 }
 .link:hover {
@@ -71,6 +73,7 @@
 .number {
   color: rgba(255, 255, 255, 0.5);
   font-size: 12px;
+  font-family: var(--font-leon);
 }
 
 /* כפתור */
@@ -81,7 +84,7 @@
   border-radius: 999px;
   background: transparent;
   transition: 0.3s;
-  font-family: inherit;
+  font-family: var(--font-leon);
   cursor: pointer;
 }
 
