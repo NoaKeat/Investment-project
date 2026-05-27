@@ -319,10 +319,99 @@ background: #1A1B3A;
   }
 }
 
+@media (min-width: 769px) and (max-width: 1200px) {
+  .grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 48px;
+    column-gap: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 430px;
+    margin-inline: auto;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+  }
+
+  .image {
+    width: 100%;
+    height: 100% !important;
+    aspect-ratio: unset;
+    max-height: none;
+    background-size: cover;
+    background-position: center;
+    display: block;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+    min-height: unset;
+    padding: 28px 24px 32px;
+    box-sizing: border-box;
+    overflow: visible;
+  }
+
+  .cardTitle {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .text {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .readMore {
+    margin-top: 16px;
+    flex-shrink: 0;
+    align-self: center;
+  }
+}
+
+@media (min-width: 1201px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .image {
+    height: 216.846px;
+    aspect-ratio: unset;
+    max-height: none;
+  }
+
+  .content {
+    height: 266px;
+  }
+
+  .card {
+    max-width: none;
+    width: auto;
+  }
+}
+
 @media (max-width: 768px) {
   .section {
-    padding-inline: 20px;
+    padding-inline: 16px;
     padding-bottom: 40px;
+    overflow-x: hidden;
   }
 
   .header {
@@ -341,7 +430,8 @@ background: #1A1B3A;
 
   .grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
     grid-auto-flow: row;
     width: 100%;
     max-width: 100%;
@@ -350,27 +440,43 @@ background: #1A1B3A;
   }
 
   .card {
-    width: 100%;
+    width: calc(100vw - 32px);
     max-width: 100%;
     min-width: 0;
+    margin-inline: auto;
     box-sizing: border-box;
-    overflow: visible;
+    overflow: hidden;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .image {
-    height: auto;
-    aspect-ratio: 16 / 10;
-    max-height: 200px;
+    width: 100%;
+    max-width: 100%;
+    height: 180px;
+    aspect-ratio: unset;
+    max-height: none;
+    background-size: cover;
+    background-position: center;
+    display: block;
   }
 
   .content {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 100%;
     height: auto;
     min-height: unset;
-    overflow: visible;
-    padding: 38px 20px 18px;
+    padding-top: 38px;
+    padding-inline: 20px;
+    padding-bottom: 18px;
     box-sizing: border-box;
+    overflow: visible;
   }
 
   .date {
@@ -390,12 +496,14 @@ background: #1A1B3A;
     width: 100%;
     font-size: 22px;
     margin: 0 0 8px;
+    overflow-wrap: break-word;
   }
 
   .text {
     max-width: 100%;
     width: 100%;
     margin-top: 0;
+    overflow-wrap: break-word;
   }
 
   .readMore {
