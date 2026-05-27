@@ -173,3 +173,67 @@
     justify-content: center;
   }
 }
+
+/* ========================= */
+/* 📱 MOBILE ≤ 768px */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 56px 20px 64px;
+  }
+
+  .container {
+    padding: 0;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .textWrapper {
+    max-width: 376px;
+    width: 100%;
+    text-align: right;
+  }
+
+  .title {
+    margin-bottom: 16px;
+  }
+
+  .description {
+    margin-bottom: 32px;
+  }
+
+  .subText {
+    text-align: right;
+    margin-bottom: 6px;
+  }
+
+  .date {
+    text-align: right;
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .buttons {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 18px;
+    border-radius: 18px;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .visualWrapper {
+    max-width: 300px;
+    width: 100%;
+  }
+}
