@@ -417,136 +417,131 @@
   }
 }
 
+/* Article page embed — no extra section chrome */
+.embedded {
+  padding-inline: 0;
+  padding-bottom: 0;
+  background: transparent;
+}
+
 @media (max-width: 768px) {
   .section {
-    padding-inline: 16px;
+    padding-inline: 20px;
     padding-bottom: 40px;
     overflow-x: hidden;
+  }
 
-    @media (max-width: 768px) {
-      .section {
-        padding-inline: 20px;
-        padding-bottom: 40px;
-      }
+  .section.embedded {
+    padding-inline: 0;
+    padding-bottom: 0;
+  }
 
-      .header {
-        margin-bottom: 20px;
-      }
+  .header {
+    margin-bottom: 20px;
+  }
 
-      .sectionHeader {
-        margin-bottom: 4px;
-      }
+  .sectionHeader {
+    margin-bottom: 4px;
+  }
 
-      .title {
-        font-size: 26px;
-        line-height: 1.3;
-        margin: 0;
-      }
+  .title {
+    font-size: 26px;
+    line-height: 1.3;
+    margin: 0;
+  }
 
-      .grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        justify-items: center;
-        grid-template-columns: 1fr;
-        grid-auto-flow: row;
-        width: 100%;
-        max-width: 100%;
-        row-gap: 24px;
-        column-gap: 0;
-      }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    width: 100%;
+    max-width: 100%;
+    row-gap: 24px;
+    column-gap: 0;
+  }
 
-      .card {
-        width: calc(100vw - 32px);
-        max-width: 100%;
-        min-width: 0;
-        margin-inline: auto;
-        box-sizing: border-box;
-        overflow: hidden;
-      }
+  .embedded .grid {
+    row-gap: 28px;
+  }
 
-      .imageWrapper {
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
-      }
+  .card {
+    width: calc(100vw - 32px);
+    max-width: 100%;
+    min-width: 0;
+    margin-inline: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
 
-      .image {
-        width: 100%;
-        max-width: 100%;
-        height: 180px;
-        aspect-ratio: unset;
-        max-height: none;
-        background-size: cover;
-        background-position: center;
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        box-sizing: border-box;
-        overflow: visible;
-      }
+  .embedded .card {
+    width: min(382px, calc(100vw - 48px));
+    max-width: 100%;
+  }
 
-      .image {
-        height: auto;
-        aspect-ratio: 16 / 10;
-        max-height: 200px;
-      }
+  .imageWrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
 
-      .content {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        min-height: unset;
-        padding-top: 38px;
-        padding-inline: 20px;
-        padding-bottom: 18px;
-        box-sizing: border-box;
-        overflow: visible;
-        height: auto;
-        min-height: unset;
-        overflow: visible;
-        padding: 38px 20px 18px;
-        box-sizing: border-box;
-      }
+  .image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    max-height: 200px;
+    background-size: cover;
+    background-position: center;
+    display: block;
+    box-sizing: border-box;
+  }
 
-      .date {
-        left: 20px;
-        top: 16px;
-      }
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: unset;
+    padding: 38px 20px 18px;
+    box-sizing: border-box;
+    overflow: visible;
+  }
 
-      .badge {
-        top: 16px;
-        right: 16px;
-        font-size: 14px;
-        padding: 5px 12px;
-      }
+  .date {
+    left: 20px;
+    top: 16px;
+  }
 
-      .cardTitle {
-        max-width: 100%;
-        width: 100%;
-        font-size: 22px;
-        margin: 0 0 8px;
-        overflow-wrap: break-word;
-      }
+  .badge {
+    top: 16px;
+    right: 16px;
+    font-size: 14px;
+    padding: 5px 12px;
+  }
 
-      .text {
-        max-width: 100%;
-        width: 100%;
-        margin-top: 0;
-        overflow-wrap: break-word;
-      }
+  .cardTitle {
+    max-width: 100%;
+    width: 100%;
+    font-size: 22px;
+    margin: 0 0 8px;
+    overflow-wrap: break-word;
+  }
 
-      .readMore {
-        margin-top: 16px;
-        flex-shrink: 0;
-        align-self: flex-start;
-      }
+  .text {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 0;
+    overflow-wrap: break-word;
+  }
 
-      .allArticlesWrapper {
-        margin-top: 28px;
-      }
-    }
+  .readMore {
+    margin-top: 16px;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+
+  .allArticlesWrapper {
+    margin-top: 28px;
   }
 }
