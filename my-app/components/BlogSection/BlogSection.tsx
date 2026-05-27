@@ -20,12 +20,14 @@ type Props = {
   limit?: number;
   showHeader?: boolean;
   showAllButton?: boolean;
+  embedded?: boolean;
 };
 
 export default async function BlogSection({
   limit = 4,
   showHeader = true,
   showAllButton = true,
+  embedded = false,
 }: Props) {
 
   const posts: Article[] = await client.fetch(`
@@ -52,7 +54,9 @@ export default async function BlogSection({
   };
 
   return (
-    <section className={styles.section}>
+    <section
+      className={`${styles.section} ${embedded ? styles.embedded : ""}`}
+    >
 
       {/* HEADER */}
       {showHeader && (
