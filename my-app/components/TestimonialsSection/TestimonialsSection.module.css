@@ -4,7 +4,6 @@
 }
 
 .section {
-  height: 250px;
   position: relative;
   background: #1A1B3A;
   padding: 120px 0;
@@ -14,17 +13,13 @@
   height: 400px;
 }
 
-/* רקע SVG */
 .backgroundShape {
   position: absolute;
   top: 50%;
   left: 50%;
-
-  transform: translate(-50%, -50%); /* ❗ הורדנו scale */
-
+  transform: translate(-50%, -50%);
   width: 362.813px;
   height: 400.332px;
-
   z-index: 1;
   pointer-events: none;
 }
@@ -40,19 +35,19 @@
   position: absolute;
   width: 70%;
   height: 70%;
-  bottom: -10;
+  bottom: -10px;
   right: 0;
   transform: translateX(-34%);
   opacity: 0.06;
 }
 
-/* תוכן */
 .inner {
   position: relative;
   z-index: 2;
-max-width: 900px;   /* 🔥 חשוב */
-  margin: 0 auto; 
+  max-width: 900px;
+  margin: 0 auto;
 }
+
 .leftArrow,
 .rightArrow {
   position: absolute;
@@ -60,7 +55,6 @@ max-width: 900px;   /* 🔥 חשוב */
   transform: translateY(-50%);
 }
 
-/* כותרת */
 .titleWrapper {
   text-align: center;
   margin-bottom: 16px;
@@ -68,42 +62,36 @@ max-width: 900px;   /* 🔥 חשוב */
 
 .title {
   display: inline-block;
-
   font-family: var(--font-leon);
   font-size: 30px;
   font-weight: 400;
-
   background: linear-gradient(
     115deg,
     #E6B360 29.01%,
     #FFFCC1 51.11%,
     #E6B360 70.37%
   );
-
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-
   color: transparent;
 }
 
-/* אזור התוכן (נמשיך אחרי) */
 .content {
   max-width: 500px;
   margin: -25px auto 0;
   text-align: center;
   color: white;
 }
-/* קרוסלה */
+
 .slider {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  width: 100%;     /* ❗ במקום fit-content */
+  width: 100%;
 }
-/* טקסט */
+
 .name {
   color: #E5B260;
   font-size: 16px;
@@ -116,7 +104,6 @@ max-width: 900px;   /* 🔥 חשוב */
   line-height: 21px;
 }
 
-/* חצים */
 .leftArrow,
 .rightArrow {
   position: absolute;
@@ -129,28 +116,25 @@ max-width: 900px;   /* 🔥 חשוב */
 
 .leftArrow {
   left: 20px;
-
   width: 36px;
   height: 36px;
-
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .rightArrow {
   right: 20px;
 }
 
-/* עיגול שמאל */
 .circle {
   position: absolute;
   width: 36px;
   height: 36px;
-  background: rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
 }
 
-/* SVG */
 .leftArrow svg,
 .rightArrow svg {
   width: 24px;
@@ -158,7 +142,6 @@ max-width: 900px;   /* 🔥 חשוב */
   position: relative;
 }
 
-/* נקודות */
 .dots {
   margin-top: 20px;
   text-align: center;
@@ -170,15 +153,14 @@ max-width: 900px;   /* 🔥 חשוב */
   height: 4px;
   margin: 0 4px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .active {
   background: white;
 }
 
-/* ===== MOBILE ≤ 768px ===== */
-@media (max-width: 768px) 
+@media (max-width: 768px) {
   .section {
     height: auto;
     min-height: unset;
@@ -229,18 +211,28 @@ max-width: 900px;   /* 🔥 חשוב */
   }
 
   .slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     max-width: 100%;
+    min-height: 250px;
     padding-inline: 40px;
     box-sizing: border-box;
   }
 
   .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     max-width: min(280px, calc(100vw - 112px));
+    min-height: 230px;
     margin: 0 auto;
     padding-inline: 4px;
     box-sizing: border-box;
+    text-align: center;
   }
 
   .name {
@@ -286,11 +278,5 @@ max-width: 900px;   /* 🔥 חשוב */
   .dots {
     margin-top: 16px;
     text-align: center;
-@media (max-width: 768px) {
-  .section {
-    margin-top: 16px;
-    padding: 40px 0 48px;
-    height: auto;
-    min-height: 280px;
   }
 }
