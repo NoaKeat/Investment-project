@@ -8,27 +8,6 @@
     width: 100%;
 }
 
-/* אופציונלי: אם את רוצה שה-Hero לא יושפע מהרווח העליון של ה-Wrapper */
-.hero {
-    margin-top: 0;
-}
-.title {
- font-family: var(--font-leon);
-  font-size: 56px;
-  font-weight: 700;
-
-  background: linear-gradient(115deg, #E6B360, #FFFCC1, #E6B360);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.subtitle {
-  color: #FFF;
-  max-width: 600px;
-  margin: 20px auto 0;
-  font-size: 20px;
-}
-
 .content {
   max-width: 800px;
   margin: 0 auto;
@@ -58,15 +37,16 @@
   grid-template-columns: repeat(3, 315px) !important;
   justify-content: center;
 }
-/* HERO בסיס */
+/* HERO */
 .hero {
   position: relative;
-  min-height: 503px; 
+  min-height: 503px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   padding-top: 80px;
+  margin-top: 0;
 }
 
 /* תמונה + blur */
@@ -74,6 +54,7 @@
   position: absolute;
   inset: 0;
 
+  background-image: var(--hero-bg-desktop);
   background-repeat: no-repeat;
 
   /* 🔥 החלק החשוב */
@@ -125,18 +106,97 @@
   );
 
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* תיאור */
 .subtitle {
   color: #FFF;
-   font-family: var(--font-leon);
+  font-family: var(--font-leon);
   font-size: 24px;
-
+  line-height: 1.4;
   max-width: 896px;
   margin: 0 auto 30px;
 }
+
+.heroCta {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.heroCta button {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    box-sizing: border-box;
+    height: 360px;
+    min-height: 360px;
+    max-height: 360px;
+    padding: 64px 0 16px;
+    align-items: center;
+  }
+
+  .heroBg {
+    background-image: var(--hero-bg-mobile, var(--hero-bg-desktop));
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center -40px;
+  }
+
+  .hero::after {
+    background: linear-gradient(
+      0deg,
+      #1A1B3A 0%,
+      rgba(26, 27, 58, 0.72) 42%,
+      rgba(26, 27, 58, 0) 62%
+    );
+  }
+
+  .heroContent {
+    position: relative;
+    z-index: 3;
+  }
+
+  .title {
+    font-size: 40px;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 1.55;
+    max-width: 320px;
+    margin: 0 auto 20px;
+  }
+
+  .heroCta {
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent {
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    max-width: 300px;
+    margin: 0 auto 18px;
+  }
+}
+
 .moreServicesTitle {
   font-family: var(--font-leon);
   font-size: 30px;
