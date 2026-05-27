@@ -3,27 +3,12 @@ import ContactForm from "@/components/ContactForm/ContactForm";
 import styles from "./MeetingPage.module.css";
 import { PopupWidget } from "react-calendly";
 import CalendlyButton from "@/components/CalendlyButton/CalendlyButton";
-import calendlyStyles from "@/components/CalendlyButton/CalendlyButton.module.css";
 import ServiceCard from "../ServiceCard/ServiceCard";
 import servicesStyles from "@/components/Services/Services.module.css";
 import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSection2";
 import PromoBanner from "@/components/PromoBanner/PromoBanner"
 import MeetingContent from "@/components/MeetingContent/MeetingContent"
 import data from "@/data/meetingPage.json"
-import meetings from "@/data/meetings.json"
-
-type MeetingDetail = {
-    image: string;
-    imageMobile?: string;
-};
-
-function getMobileHeroImage(image: string): string {
-    const entry = Object.values(meetings as Record<string, MeetingDetail>).find(
-        (item) => item.image === image
-    );
-
-    return entry?.imageMobile ?? image;
-}
 
 type Service = {
     id: number;
@@ -57,8 +42,7 @@ export default function MeetingPage({
     image: string;
 }) {
 
-    const mobileHeroImage = getMobileHeroImage(image);
-
+    console.log("image:", image);
     return (
         <>
             <Header />
@@ -67,21 +51,14 @@ export default function MeetingPage({
             <section className={styles.hero}>
                 <div
                     className={styles.heroBg}
-                    style={{
-                        ["--hero-bg-desktop" as string]: `url(${image})`,
-                        ["--hero-bg-mobile" as string]: `url(${mobileHeroImage})`,
-                    }}
+                    style={{ backgroundImage: `url(${image})` }}
                 />
 
                 <div className={styles.heroContent}>
                     <h1 className={styles.title}>{title}</h1>
                     <p className={styles.subtitle}>{subtitle}</p>
 
-                    {hasCalendar && (
-                        <div className={styles.heroCta}>
-                            <CalendlyButton className={calendlyStyles.button} />
-                        </div>
-                    )}
+                    {hasCalendar && <CalendlyButton />}
                 </div>
             </section>
 
