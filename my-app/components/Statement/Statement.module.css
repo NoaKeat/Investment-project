@@ -93,74 +93,14 @@
   
 }
 
-.statementInner {
-  display: contents;
-}
-
 @media (max-width: 768px) {
   .statementSection {
     min-height: auto;
-    padding-block: 32px 36px;
-    padding-inline: 8px;
-    box-sizing: border-box;
-    display: flex;
+    padding: 32px 16px 20px;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    gap: 16px;
     overflow-x: hidden;
-  }
-
-  .statementInner {
-    position: relative;
-    width: min(376px, calc(100vw - 16px));
-    max-width: 100%;
-    margin-inline: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-block: 24px 28px;
-    padding-inline: 8px;
-    box-sizing: border-box;
-  }
-
-  .backgroundShape {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    right: auto;
-    bottom: auto;
-    width: calc(100% - 12px);
-    max-width: none;
-    height: calc(100% - 12px);
-    transform: translate(-50%, -50%);
-    background-color: rgba(29, 30, 68, 0.22);
-    overflow: hidden;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  .shapeBig {
-    left: 50%;
-    top: 50%;
-    right: auto;
-    bottom: auto;
-    transform: translate(-50%, -50%);
-    width: 88%;
-    height: 88%;
-    opacity: 0.035;
-  }
-
-  .shapeSmall {
-    left: 50%;
-    right: auto;
-    bottom: 8%;
-    transform: translateX(-50%);
-    width: 52%;
-    height: 52%;
-    opacity: 0.045;
   }
 
   .quoteIcon {
@@ -168,55 +108,41 @@
     top: auto;
     left: auto;
     transform: none;
-    width: auto;
-    align-self: center;
-    margin: 0 auto 12px;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 0;
     z-index: 2;
   }
 
   .quoteIcon svg {
-    display: block;
-    width: 88px;
-    height: auto;
-    aspect-ratio: 115.67 / 93.39;
-    margin-inline: auto;
+    width: 72px;
+    height: 58px;
   }
 
   .statementText {
     width: 100%;
     max-width: 100%;
-    margin-inline: auto;
-    padding: 0;
+    font-size: 24px;
+    line-height: 1.4;
+    margin: 0 auto;
+    padding: 0 8px;
     box-sizing: border-box;
-    font-family: var(--font-leon);
-    font-size: clamp(36px, 11vw, 50px);
-    font-weight: 400;
-    line-height: 1.09;
-    letter-spacing: 0;
     text-align: center;
     direction: rtl;
-    color: #ffffff;
     overflow-wrap: break-word;
     word-wrap: break-word;
-    text-wrap: pretty;
     position: relative;
     z-index: 2;
-    align-self: center;
   }
 
   .goldText {
     display: block;
-    width: 100%;
-    margin: 6px auto 0;
-    padding: 0;
+    margin-top: 4px;
     text-align: center;
-    font-weight: 700;
-    font-family: var(--font-leon);
-    font-size: inherit;
-    line-height: inherit;
+  }
+
+  .backgroundShape {
+    width: min(340px, 85vw);
+    height: min(340px, 85vw);
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.55);
   }
 }
