@@ -176,3 +176,12 @@ max-width: 900px;   /* 🔥 חשוב */
 .active {
   background: white;
 }
+
+@media (max-width: 768px) {
+  .section {
+    margin-top: 16px;
+    padding: 40px 0 48px;
+    height: auto;
+    min-height: 280px;
+  }
+}

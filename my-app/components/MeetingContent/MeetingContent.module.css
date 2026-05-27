@@ -24,13 +24,16 @@
 /* אייקון */
 /* אייקון */
 .icon {
-  margin-bottom: 12px;
+  margin-bottom: 4px;
+  line-height: 0;
+  display: flex;
 }
 
 /* 🔥 האייקון עצמו */
 .iconSvg {
   width: 19px;
   height: 19px;
+  display: block;
 }
 
 /* כותרת בתוך כל בלוק */
@@ -55,13 +58,54 @@
 /* טקסט */
 
 @media (max-width: 900px) {
+  .content {
+    padding: 48px 16px;
+  }
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    row-gap: 28px;
+  }
+
+  .icon {
+    margin-bottom: 2px;
   }
 }
 
 @media (max-width: 500px) {
+  .content {
+    padding: 36px 10px;
+  }
+
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 12px;
+    row-gap: 22px;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2px;
+  }
+
+  .icon {
+    margin-bottom: 0;
+  }
+
+  .iconSvg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .text {
+    font-size: 15px;
+    line-height: 1.25;
+    margin: 0;
+    text-align: center;
+    max-width: 100%;
   }
 }
