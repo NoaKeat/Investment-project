@@ -209,38 +209,110 @@
 
 @media (max-width: 768px) {
   .servicesSection {
-    padding: 56px 0 72px;
+    padding: 40px 0 56px;
     overflow-x: hidden;
   }
 
   .backgroundShape {
-    width: min(340px, 85vw);
-    height: min(340px, 85vw);
-    transform: translate(-50%, -50%) scale(0.55);
+    left: 50%;
+    top: 50%;
+    width: 100vw;
+    max-width: none;
+    height: min(520px, 95vw);
+    transform: translate(-50%, -50%);
+  }
+
+  .inner {
+    margin-inline: 0;
+    border: none;
+    box-sizing: border-box;
   }
 
   .sectionHeader {
     padding: 0 20px;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     font-size: 14px;
     gap: 8px;
+    direction: rtl;
   }
 
   .cardsWrapper {
-    width: 100%;
+    width: calc(100% - clamp(52px, 18vw, 80px));
     max-width: 100%;
-    grid-template-columns: 1fr;
-    padding: 0 20px;
-    gap: 16px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+    border: 1px solid var(--gold-solid);
     box-sizing: border-box;
   }
 
   .card {
     width: 100%;
     max-width: 100%;
+    aspect-ratio: 1 / 1;
     box-sizing: border-box;
-    padding: 24px 20px;
+    padding: clamp(34px, 10vw, 50px) clamp(30px, 9.5vw, 44px);
     min-height: unset;
-    gap: 12px;
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    direction: rtl;
+    text-align: right;
+    overflow: hidden;
+  }
+
+  .card:not(:first-child) {
+    margin-top: -1px;
+  }
+
+  .tag {
+    align-self: flex-start;
+    font-size: clamp(10px, 3vw, 13px);
+    line-height: 1.2;
+    text-align: right;
+    padding-bottom: clamp(6px, 2vw, 10px);
+    margin-bottom: clamp(6px, 2.2vw, 12px);
+  }
+
+  .tag::after {
+    right: 0;
+    left: auto;
+    transform: none;
+    width: clamp(10px, 3.5vw, 18px);
+  }
+
+  .card h3 {
+    align-self: flex-start;
+    width: 100%;
+    margin: 0 0 clamp(6px, 2.5vw, 14px);
+    font-size: clamp(17px, 6vw, 36px);
+    line-height: 1.12;
+    text-align: right;
+  }
+
+  .card p {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: clamp(11px, 3.6vw, 16px);
+    line-height: 1.4;
+    text-align: right;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  .card .button {
+    align-self: flex-start;
+    width: fit-content;
+    margin-top: auto;
+    font-size: clamp(11px, 3.4vw, 15px);
+    padding: clamp(5px, 1.5vw, 9px) clamp(10px, 4.2vw, 22px);
+    text-align: right;
   }
 }
