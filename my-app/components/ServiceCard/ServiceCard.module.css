@@ -1,34 +1,26 @@
 @media (max-width: 768px) {
-  .card {
-    gap: 12px;
-    min-height: unset;
-  }
-
-  .tag {
-    font-size: 12px;
-    line-height: 1;
-    opacity: 0.6;
-    padding-bottom: 10px;
-  }
-
-  .tag::after {
-    width: 20px;
-  }
-
   .title {
-    font-size: 22px;
-    line-height: 1.25;
+    font-size: clamp(17px, 6vw, 36px);
+    line-height: 1.12;
+    text-align: right;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 
   .description {
-    font-size: 15px;
-    line-height: 21px;
+    font-size: clamp(11px, 3.6vw, 16px);
+    line-height: 1.4;
+    text-align: right;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 
   .button {
-    margin-top: 8px;
-    padding: 8px 20px;
-    font-size: 14px;
+    align-self: flex-start;
+    font-size: clamp(11px, 3.4vw, 15px);
     border-radius: 999px;
+    text-align: right;
   }
 }

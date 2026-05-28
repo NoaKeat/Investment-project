@@ -2,6 +2,8 @@
   --gold: linear-gradient(115deg, #5A431F, #F2D27A, #5A431F);
 }
 .section {
+  /* TEMP: hide decorative circles section site-wide — remove display:none to restore */
+  display: none;
   background: #1A1B3A;
   padding: 120px 0;
   overflow: hidden;
