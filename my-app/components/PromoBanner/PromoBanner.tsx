@@ -1,6 +1,6 @@
 import CalendlyButton from "@/components/CalendlyButton/CalendlyButton";
 import styles from "./PromoBanner.module.css";
-
+import promoStyles from "@/components/CalendlyButton/CalendlyButton.module.css";
 interface PromoData {
   title: string;
   description?: string; // המשתנה שמכיל את פירוט הבדיקה
@@ -29,8 +29,8 @@ export default function PromoBanner({ data }: PromoBannerProps) {
 
 const rectPoints: Point[] = [
     [TAG_W + CUT, 0], 
-    [W, 0], 
-    [W, H - 5], // הוספנו מרווח קטן מהקצה התחתון של ה-SVG
+    [W - 2, 0], 
+    [W - 2, H - 5], // הוספנו מרווח קטן מהקצה התחתון של ה-SVG
     [TAG_W + CUT, H - 5], // כאן זה מסתיים
     [TAG_W, H - NOTCH_H], 
     [TAG_W, NOTCH_H],
@@ -72,7 +72,7 @@ const rectPoints: Point[] = [
             </div>
 
             <div className={styles.buttonGroup}>
-              <CalendlyButton />
+              <CalendlyButton className={promoStyles.button} />
             </div>
           </div>
         </foreignObject>

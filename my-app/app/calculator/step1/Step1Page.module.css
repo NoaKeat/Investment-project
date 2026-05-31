@@ -1,0 +1,538 @@
+/* ─── Design Tokens ──────────────────────────────────────────────────────── */
+/* :root is not scoped in CSS Modules — these become global custom properties */
+
+:root {
+  --color-primary:      #E5B260;
+  --color-primary-text: #E6B360;
+  --color-dark:         #1A1B3A;
+  --color-dark-border:  rgba(37, 42, 98, 0.07);
+  --color-white:        #FFFFFF;
+  --color-shadow:       rgba(158, 158, 158, 0.07);
+}
+
+/* ─── Layout ─────────────────────────────────────────────────────────────── */
+
+.page {
+  min-height: 100vh;
+  background: #f5f0e5;
+  direction: rtl;
+  padding: 32px 48px 64px;
+  box-sizing: border-box;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+}
+
+/* header: progress bar + action buttons */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.headerActions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* page title */
+.pageTitle {
+  margin-bottom: 32px;
+}
+
+.pageTitleIcon {
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid #E6B360;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+
+.mainTitle {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--font-leon), 'Leon', sans-serif;
+  color: var(--color-primary-text);
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.mainSubtitle {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+/* two-column layout — form takes remaining space, summary is 423 px fixed */
+.layout {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: start;
+}
+
+.formColumn {
+  flex: 1;
+  min-width: 0; /* prevents flex child from overflowing */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.summaryColumn {
+  width: 423px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 24px;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────────────────── */
+
+.btnPrimary {
+  height: 36px;
+  padding: 6px 15px;
+  border-radius: 18px;
+  border: none;
+  background: var(--color-primary);
+  color: var(--color-dark);
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.btnPrimary:hover:not(:disabled) {
+  transform: scale(1.03);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btnOutline {
+  height: 36px;
+  padding: 6px 15px;
+  border-radius: 18px;
+  border: 1px solid var(--color-dark);
+  background: transparent;
+  color: var(--color-dark);
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s;
+}
+
+.btnOutline:hover {
+  transform: scale(1.03);
+}
+
+/* ─── Cards ──────────────────────────────────────────────────────────────── */
+
+.card {
+  background: var(--color-white);
+  border-radius: 24px;
+  padding: 28px;
+  border: 1px solid var(--color-dark-border);
+  box-shadow: 0px 4px 15.3px var(--color-shadow);
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0 0 18px;
+}
+
+.sectionSubtitle {
+  font-size: 13px;
+  color: #888;
+  margin: -10px 0 18px;
+}
+
+/* ─── Property section ───────────────────────────────────────────────────── */
+
+.propertyRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+/* input with ₪ symbol — RTL: ₪ appears on the right side (flex start) */
+.inputWithSymbol {
+  display: flex;
+  align-items: stretch;
+  border: 1.5px solid #ddd5c4;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #fff;
+  transition: border-color 0.15s;
+}
+
+.inputWithSymbol:focus-within {
+  border-color: var(--color-primary);
+}
+
+/* border-inline-end = left border in RTL — divider between ₪ and input */
+.currencySymbol {
+  padding: 0 14px;
+  color: #888;
+  background: #faf8f3;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  border-inline-end: 1.5px solid #ddd5c4;
+  flex-shrink: 0;
+}
+
+.input {
+  border: none;
+  outline: none;
+  padding: 11px 16px;
+  font-size: 15px;
+  width: 100%;
+  font-family: inherit;
+  background: transparent;
+  text-align: right;
+  color: var(--color-dark);
+  direction: ltr; /* numbers always LTR */
+}
+
+.input::placeholder {
+  color: #bbb;
+  direction: rtl;   /* Hebrew placeholder */
+  text-align: right;
+}
+
+/* property type toggle buttons */
+.toggleGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+  width: 672px;
+  height: 73px;
+}
+
+.toggleBtn {
+  flex: 1;
+  padding: 11px 8px;
+  border: 1.5px solid #ddd5c4;
+  border-radius: 30px;
+  background: #fff;
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  transition: all 0.2s;
+}
+
+.toggleBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-dark);
+}
+
+.toggleBtnActive {
+  background: var(--color-dark);
+  color: var(--color-primary);
+  border-color: var(--color-dark);
+  font-weight: 600;
+}
+
+/* ─── Expenses section ───────────────────────────────────────────────────── */
+
+.expensesHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 40px;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ede8df;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.expenseRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 40px;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.select {
+  border: 1.5px solid #ddd5c4;
+  border-radius: 30px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  background: #fff;
+  color: var(--color-dark);
+  outline: none;
+  direction: rtl;
+  cursor: pointer;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+
+.select:focus {
+  border-color: var(--color-primary);
+}
+
+.expenseInput {
+  border: 1.5px solid #ddd5c4;
+  border-radius: 30px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  background: #fff;
+  color: var(--color-dark);
+  outline: none;
+  width: 100%;
+  text-align: right;
+  box-sizing: border-box;
+  direction: ltr;
+  transition: border-color 0.15s;
+}
+
+.expenseInput:focus {
+  border-color: var(--color-primary);
+}
+
+.expenseInput::placeholder {
+  color: #bbb;
+}
+
+.deleteBtn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: var(--color-primary);
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.deleteBtn:hover {
+  background: #fdf4e0;
+}
+
+.addExpenseBtn {
+  background: transparent;
+  border: 1.5px dashed var(--color-primary);
+  color: var(--color-primary);
+  padding: 11px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  margin-top: 6px;
+  width: 100%;
+  transition: background 0.15s;
+}
+
+.addExpenseBtn:hover {
+  background: #fdf8ee;
+}
+
+/* ─── Summary card ───────────────────────────────────────────────────────── */
+
+/* empty state */
+.emptyCard {
+  background: var(--color-white);
+  border-radius: 24px;
+  padding: 48px 24px;
+  border: 1px solid var(--color-dark-border);
+  box-shadow: 0px 4px 15.3px var(--color-shadow);
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 52px;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.emptyTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0 0 8px;
+}
+
+.emptyText {
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* filled state */
+.summaryCard {
+  background: var(--color-white);
+  border-radius: 24px;
+  padding: 28px;
+  border: 1px solid var(--color-dark-border);
+  box-shadow: 0px 4px 15.3px var(--color-shadow);
+}
+
+.summaryHeaderRow {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.summaryTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0 0 4px;
+}
+
+.summarySubtitle {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  font-size: 14px;
+  color: var(--color-dark);
+}
+
+.summaryRowLabel {
+  color: #555;
+}
+
+.summaryRowValue {
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+/* shimmer — compound selector works in CSS Modules (both classes are scoped) */
+.summaryRowValue.shimmer {
+  opacity: 0.4;
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 0.7; }
+}
+
+.taxNote {
+  font-size: 12px;
+  color: var(--color-primary);
+  padding: 2px 0 10px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ede8df;
+  margin: 8px 0;
+}
+
+.summarySectionLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 0 4px;
+}
+
+/* total row */
+.summaryTotalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.summaryTotalLabel {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.summaryTotalValue {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.summaryTotalValue.shimmer {
+  opacity: 0.4;
+  animation: shimmer 1.2s infinite;
+}
+
+/* footer note */
+.summaryFooter {
+  background: #faf8f3;
+  border: 1px solid #ede8df;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: #666;
+  margin-top: 14px;
+  line-height: 1.6;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .page {
+    padding: 20px 20px 48px;
+  }
+
+  .layout {
+    flex-direction: column;
+  }
+
+  .summaryColumn {
+    width: 100%;
+    position: static;
+  }
+
+  .propertyRow {
+    grid-template-columns: 1fr;
+  }
+}

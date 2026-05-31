@@ -43,7 +43,7 @@ export default function ContactForm() {
     const body = Object.fromEntries(formData);
 
     try {
-      const res = await fetch(data?.apiEndpoint || "/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -51,14 +51,14 @@ export default function ContactForm() {
         body: JSON.stringify(body),
       });
 
-      if (!res.ok) throw new Error("Server error");
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data?.error || "Server error");
+      }
 
       setStatus("success");
-
       form.reset();
-
       setTimeout(() => setStatus("idle"), 4000);
-
     } catch (err) {
       console.error("MAIL ERROR:", err);
       setStatus("error");

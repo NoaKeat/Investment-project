@@ -88,3 +88,44 @@
   background: #252A62;
   flex-shrink: 0;
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 30px 20px 42px;
+    box-sizing: border-box;
+  }
+
+  .header {
+    margin-bottom: 28px;
+    padding-inline: 12px;
+    box-sizing: border-box;
+  }
+
+  .subtitle {
+    max-width: min(400px, 100%);
+    padding-inline: 8px;
+    box-sizing: border-box;
+  }
+
+  .circlesContainer {
+    --circle-size: clamp(30px, 9vw, 64px);
+    --circle-gap: clamp(8px, 2.5vw, 20px);
+    margin-top: 32px;
+    gap: 18px;
+    width: 100%;
+  }
+
+  .topRow,
+  .bottomRow {
+    gap: var(--circle-gap);
+  }
+
+  .bottomRow {
+    transform: translateX(calc(-0.5 * (var(--circle-size) + var(--circle-gap))));
+  }
+
+  .circle {
+    width: var(--circle-size);
+    height: var(--circle-size);
+  }
+}

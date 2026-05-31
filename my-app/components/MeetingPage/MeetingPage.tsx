@@ -9,6 +9,7 @@ import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSe
 import PromoBanner from "@/components/PromoBanner/PromoBanner"
 import MeetingContent from "@/components/MeetingContent/MeetingContent"
 import data from "@/data/meetingPage.json"
+import promoStyles from "@/components/CalendlyButton/CalendlyButton.module.css";
 
 type Service = {
     id: number;
@@ -58,12 +59,12 @@ export default function MeetingPage({
                     <h1 className={styles.title}>{title}</h1>
                     <p className={styles.subtitle}>{subtitle}</p>
 
-                    {hasCalendar && <CalendlyButton />}
+                    
+                    {hasCalendar && <CalendlyButton className={promoStyles.button} />}
                 </div>
             </section>
 
             {/* CONTENT */}
-
             <MeetingContent
                 title={title}
                 bullets={bullets}

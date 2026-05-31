@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import contactRoute from "./src/routes/contact.js";
+import calculatorRouter from "./src/routes/calculator.js";
 
 // טעינת משתני סביבה
 dotenv.config();
@@ -15,6 +16,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api", contactRoute);
+app.use("/api", calculatorRouter);
 
 // בדיקה שהשרת רץ
 app.get("/", (req, res) => {

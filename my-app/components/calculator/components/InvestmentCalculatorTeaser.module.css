@@ -1,0 +1,310 @@
+/* ─── Design tokens ─────────────────────────────────────────────────────── */
+
+.wrapper {
+  --color-bg:            #1A1B3A;
+  /* עדכון הטוקן לזהב העמוק, הבהיר והרווי שמתאים לכותרת */
+  --color-gold-gradient: linear-gradient(114.66deg, #D9A14E 0%, #FFE5A3 50%, #D9A14E 100%);
+  --color-white:         #FFFFFF;
+
+  background: #1A1B3A;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+/* ─── Gold gradient border frame ─────────────────────────────────────────── */
+
+.rectangle {
+  width: 1259px;
+  height: 710px;
+  border: 1px solid transparent;
+  background-image:
+    linear-gradient(#1A1B3A, #1A1B3A),
+    var(--color-gold-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 28px;
+  overflow: hidden;
+}
+
+/* ─── "בקרוב" — watermark absolute בתוך הכרטיס ──────────────────────────── */
+
+.comingSoonBadge {
+  font-family: var(--font-leon);
+  font-size: 280px;
+  font-weight: 800;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.80);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+}
+
+/* ─── Content frame (above watermark) ───────────────────────────────────── */
+
+.frame80 {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  width: 696px;
+}
+
+/* ─── Heading ────────────────────────────────────────────────────────────── */
+
+.heading {
+  text-align: center;
+  margin: 0;
+}
+
+.headingLight {
+  font-family: var(--font-leon);
+  font-weight: 700;
+  font-size: 76.53px;
+  line-height: 85px;
+  color: #FFFFFF;
+  -webkit-text-fill-color: #FFFFFF;
+  display: block;
+  text-align: center;
+}
+
+.headingBold {
+  font-family: var(--font-leon);
+  font-weight: 700;
+  font-size: 76.5px;
+  line-height: 85px;
+  display: block;
+  background: var(--color-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ─── Subtitle — שורה ראשונה מודגשת ────────────────────────────────────── */
+
+.subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #FFFFFF;
+  width: 696px;
+  margin: 0;
+}
+
+.subtitle strong {
+  font-weight: 700;
+}
+
+/* ─── CTA button (disabled) — gradient border ────────────────────────────── */
+
+.ctaButton {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 8px 8px 8px 24px; 
+  gap: 10px;
+  width: 274px;
+  height: 62px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background-image:
+    linear-gradient(#1A1B3A, #1A1B3A),
+    var(--color-gold-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.75; 
+}
+
+/* כפתור — טקסט זהב gradient */
+.ctaText {
+  background: var(--color-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+/* ─── Icon circle — עיגול זהב עם אייקון ─────────────────────────────────── */
+.iconCircle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background-image:
+    linear-gradient(#1A1B3A, #1A1B3A),
+    var(--color-gold-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconCircle i {
+  font-size: 24px;
+  background: var(--color-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+/* ─── Mobile — max-width: 768px ──────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 40px 0;
+  }
+
+  .rectangle {
+    width: 90%;
+    max-width: 360px; 
+    height: 240px; 
+    border-radius: 4px; 
+    padding: 24px 20px; 
+    margin: 0 auto; 
+    gap: 12px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .comingSoonBadge {
+    font-size: 20vw; 
+    letter-spacing: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0.85;
+  }
+
+  .frame80 {
+    width: 100%;
+    gap: 12px; 
+  }
+
+  .headingLight {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .headingBold {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .subtitle {
+    width: 100%;
+    font-size: 13px;
+    line-height: 18px;
+    padding: 0; 
+  }
+
+  /* ─── הקטנת הכפתור בשמירה על פרופורציות מושלמות ─── */
+  .ctaButton {
+    /* מידות הבסיס הטובות והמקוריות */
+    width: 274px; 
+    height: 62px;
+    justify-content: space-between; 
+    padding: 8px 8px 8px 24px; 
+
+    /* פקודת ההקטנה: מכווצת את כל הכפתור והתוכן שלו ב-35% */
+    transform: scale(0.65); 
+    transform-origin: center; /* שומר על הכפתור ממורכז במלבן */
+    
+    /* מונע מהכיווץ לייצר שוליים ריקים מסביב לכפתור */
+    margin: -10px 0; 
+  }
+
+  /* מחזירים את האלמנטים הפנימיים לגודל המקורי, ה-scale יקטין אותם ביחס מושלם */
+  .iconCircle {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .iconCircle i {
+    font-size: 24px;
+    display: inline-block;
+  }
+  
+  .ctaText {
+    font-size: 16px;
+  }
+}
+
+/* ─── Mobile — max-width: 400px ──────────────────────────────────────────── */
+
+@media (max-width: 400px) {
+  .rectangle {
+    max-width: 310px; 
+    height: 220px; 
+    padding: 20px 16px;
+    border-radius: 4px; 
+  }
+
+  .comingSoonBadge {
+    font-size: 18vw;
+  }
+
+  .headingLight {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .headingBold {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .subtitle {
+    font-size: 11px;
+    line-height: 15px;
+  }
+  
+  /* במסכים ממש קטנים - נקטין את הכפתור אפילו קצת יותר (ב-40%) */
+  .ctaButton {
+    transform: scale(0.6); 
+    margin: -12px 0;
+  }
+}

@@ -6,6 +6,7 @@ import Link from "next/link";
 import styles from "./Header.module.css";
 import data from "@/data/header.json";
 import CalendlyButton from "@/components/CalendlyButton/CalendlyButton";
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -54,15 +55,12 @@ export default function Header() {
             ))}
           </nav>
 
-          <button type="button" className={styles.button}>
-            {data.ctaButton}
-          </button>
-        <CalendlyButton className={styles.button} />
-
+          {/* כאן נשאר רק כפתור הצירוף לפגישות בדסקטופ */}
+          <CalendlyButton className={styles.button} />
         </div>
       </div>
 
-      {/* תפריט מובייל — dropdown מתחת ל-navbar */}
+      {/* תפריט מובייל נפתח */}
       <div
         className={`${styles.mobileMenu} ${isOpen ? styles.mobileMenuOpen : ""}`}
         aria-hidden={!isOpen}
@@ -81,9 +79,8 @@ export default function Header() {
           ))}
         </nav>
 
-        <button type="button" className={styles.button}>
-          {data.ctaButton}
-        </button>
+        {/* החלפנו גם כאן לכפתור ה-Calendly שייסגר/יופיע במובייל */}
+        <CalendlyButton className={styles.button} />
       </div>
     </header>
   );

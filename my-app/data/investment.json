@@ -5,5 +5,14 @@
   "date": "14.5",
   "registerButton": "ההרשמה הסתיימה לפרטים נוספים",
   "scrollTo": "ContactForm",
-  "image": "/images/Investment-course.jpg"
+  "image": "/images/Investment-course.jpg",
+  "investmentCalculatorTeaser": {
+    "comingSoonBadge": "בקרוב",
+    "headlineLight": "האם העסקה הזאת",
+    "headlineBold": "באמת משתלמת?",
+    "subtitleLine1": "בדיקה קצרה שתעזור להבין את התמונה האמיתית של העסקה",
+    "subtitleLine2": "כמה כסף נכנס, כמה כסף יוצא, מה הרווח הצפוי",
+    "subtitleLine3": "איך המימון משפיע לאורך זמן",
+    "ctaButtonText": "למחשבון לבדיקת העסקה"
+  }
 }

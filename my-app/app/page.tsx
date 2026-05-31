@@ -6,9 +6,10 @@ import PropertyShowcase from "@/components/PropertyShowcase/PropertyShowcase"
 import Statement from "@/components/Statement/Statement"
 import Clients from "@/components/Clients/Clients"
 import InvestmentHero from "@/components/InvestmentHero/InvestmentHero"
-import CalculatorWizard from "@/components/CalculatorSection/CalculatorWizard"
 import ContactForm from "@/components/ContactForm/ContactForm"
 import BlogSection from "@/components/BlogSection/BlogSection"
+import InvestmentCalculatorTeaser from "@/components/calculator/components/InvestmentCalculatorTeaser"
+
 export default function Home() {
   return (
     <>
@@ -26,7 +27,7 @@ export default function Home() {
       <Clients />
       <InvestmentHero />
       <section id="CalculatorSection">
-        <CalculatorWizard />
+        <InvestmentCalculatorTeaser />
       </section>
       <section id="blogSection">
         <BlogSection />
