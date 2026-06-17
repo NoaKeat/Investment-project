@@ -59,11 +59,12 @@ const CONTENT_W = PAGE_W - MARGIN_L - MARGIN_R;
 // ─── Font loader ──────────────────────────────────────────────────────────────
 
 async function loadFonts(pdfDoc: import('pdf-lib').PDFDocument): Promise<Fonts> {
+  // TTF (לא WOFF) — pdf-lib/fontkit לא מרנדר WOFF subset נכון, רק TTF/OTF
   const [hrReg, hrBold, laReg, laBold] = await Promise.all([
-    fetch('/fonts/heebo-hebrew-400-normal.woff').then(r => r.arrayBuffer()),
-    fetch('/fonts/heebo-hebrew-700-normal.woff').then(r => r.arrayBuffer()),
-    fetch('/fonts/heebo-latin-400-normal.woff').then(r => r.arrayBuffer()),
-    fetch('/fonts/heebo-latin-700-normal.woff').then(r => r.arrayBuffer()),
+    fetch('/fonts/heebo-hebrew-400-normal.ttf').then(r => r.arrayBuffer()),
+    fetch('/fonts/heebo-hebrew-700-normal.ttf').then(r => r.arrayBuffer()),
+    fetch('/fonts/heebo-latin-400-normal.ttf').then(r => r.arrayBuffer()),
+    fetch('/fonts/heebo-latin-700-normal.ttf').then(r => r.arrayBuffer()),
   ]);
   return {
     regular:   await pdfDoc.embedFont(hrReg),

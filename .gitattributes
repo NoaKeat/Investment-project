@@ -1,0 +1,11 @@
+# קבצים בינאריים — למנוע המרת סוף-שורה (CRLF) שמשחיתה אותם
+*.ttf  binary
+*.otf  binary
+*.woff  binary
+*.woff2 binary
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
