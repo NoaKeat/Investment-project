@@ -1,5 +1,5 @@
 import type { DealData } from '@/components/calculator/components/DealSummary';
-import type { PDFFont, PDFPage } from 'pdf-lib';
+import type { PDFFont, PDFPage, PDFImage } from 'pdf-lib';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -268,7 +268,7 @@ function drawTable(
 
 // ─── Page factory ─────────────────────────────────────────────────────────────
 
-function addPage(pdfDoc: import('pdf-lib').PDFDocument, fonts: Fonts, pageNum: number): { page: PDFPage; nextY: number } {
+function addPage(pdfDoc: import('pdf-lib').PDFDocument, fonts: Fonts, pageNum: number, logo: PDFImage | null): { page: PDFPage; nextY: number } {
   const page = pdfDoc.addPage([PAGE_W, PAGE_H]);
 
   const DIM = { r: 0.78, g: 0.78, b: 0.85 };
@@ -276,7 +276,14 @@ function addPage(pdfDoc: import('pdf-lib').PDFDocument, fonts: Fonts, pageNum: n
   // Header bar
   drawRect(page, 0, PAGE_H - 30, PAGE_W, 30, NAVY);
   drawMixed(page, ph('סיכום כדאיות עסקה'), PAGE_W - 14, PAGE_H - 20, fonts.bold,     fonts.latinBold, 13, GOLD, true);
-  drawMixed(page, ph('מולי פשורסקי | נדל"ן והשקעות'), 14, PAGE_H - 20, fonts.regular, fonts.latinReg,  9,  DIM);
+  // לוגו בצד שמאל של הבאנר (במקום הטקסט). נשמר על גובה קבוע עם יחס רוחב-גובה
+  if (logo) {
+    const LH = 18;
+    const LW = (logo.width / logo.height) * LH;
+    page.drawImage(logo, { x: 14, y: PAGE_H - 30 + (30 - LH) / 2, width: LW, height: LH });
+  } else {
+    drawMixed(page, ph('מולי פשורסקי | נדל"ן והשקעות'), 14, PAGE_H - 20, fonts.regular, fonts.latinReg, 9, DIM);
+  }
 
   // Footer bar
   drawRect(page, 0, 0, PAGE_W, 22, NAVY);
@@ -312,13 +319,22 @@ export async function generateSummaryPDF(dealData: DealData): Promise<void> {
 
   const fonts = await loadFonts(pdfDoc);
 
+  // טעינת לוגו לבאנר העליון (PNG עם שקיפות). אם נכשל — fallback לטקסט ב-addPage
+  let logo: PDFImage | null = null;
+  try {
+    const logoBytes = await fetch('/images/logo.png').then(r => r.arrayBuffer());
+    logo = await pdfDoc.embedPng(logoBytes);
+  } catch {
+    logo = null;
+  }
+
   let pageNum = 1;
-  let { page, nextY: y } = addPage(pdfDoc, fonts, pageNum);
+  let { page, nextY: y } = addPage(pdfDoc, fonts, pageNum, logo);
 
   const ensureY = (needed: number): void => {
     if (y - needed < 30) {
       pageNum++;
-      const np = addPage(pdfDoc, fonts, pageNum);
+      const np = addPage(pdfDoc, fonts, pageNum, logo);
       page = np.page;
       y = np.nextY;
     }
