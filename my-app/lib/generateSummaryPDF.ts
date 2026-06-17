@@ -276,13 +276,11 @@ function addPage(pdfDoc: import('pdf-lib').PDFDocument, fonts: Fonts, pageNum: n
   // Header bar
   drawRect(page, 0, PAGE_H - 30, PAGE_W, 30, NAVY);
   drawMixed(page, ph('סיכום כדאיות עסקה'), PAGE_W - 14, PAGE_H - 20, fonts.bold,     fonts.latinBold, 13, GOLD, true);
-  // לוגו בצד שמאל של הבאנר (במקום הטקסט). נשמר על גובה קבוע עם יחס רוחב-גובה
+  // לוגו בצד שמאל של הבאנר (ללא טקסט). נשמר על גובה קבוע עם יחס רוחב-גובה
   if (logo) {
     const LH = 18;
     const LW = (logo.width / logo.height) * LH;
     page.drawImage(logo, { x: 14, y: PAGE_H - 30 + (30 - LH) / 2, width: LW, height: LH });
-  } else {
-    drawMixed(page, ph('מולי פשורסקי | נדל"ן והשקעות'), 14, PAGE_H - 20, fonts.regular, fonts.latinReg, 9, DIM);
   }
 
   // Footer bar
@@ -355,7 +353,7 @@ export async function generateSummaryPDF(dealData: DealData): Promise<void> {
     { label: 'רווח נטו צפוי',                                                                   value: fc(netProfit),              hero: true },
     { label: 'הון עצמי זמין',                                                                   value: fc(availableEquity) },
     { label: 'סה״כ תזרים',                                                                      value: fc(totalCashflowOverPeriod) },
-    { label: grossAppreciation >= 0 ? 'רווח ברוטו (מעליית ערך)' : 'הפסד ברוטו (מעליית ערך)', value: fc(grossAppreciation) },
+    { label: grossAppreciation >= 0 ? 'רווח ברוטו מעליית ערך' : 'הפסד ברוטו מעליית ערך', value: fc(grossAppreciation) },
   ], y);
 
   y -= 10;
