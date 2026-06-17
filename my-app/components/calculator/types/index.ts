@@ -16,6 +16,8 @@ export type MortgageType =
   | 'variable_5y'
   | 'other';
 
+export type RepaymentMethod = 'spitzer' | 'full_balloon' | 'partial_balloon';
+
 export interface PurchaseExpense {
   id: string;
   type: string;   // 'renovation' מקבל +10% בצ"מ
@@ -44,11 +46,12 @@ export interface Step1Input {
 
 export interface Step2Input {
   propertyValue: number;
-  equity: number;
+  totalCost: number;
   mortgageAmount: number;
-  mortgageType: MortgageType;
+  repaymentMethod: RepaymentMethod;
   interestRate: number;
   loanTermYears: number;
+  earlyRepaymentYears?: number;
 }
 
 export interface Step3Input {
@@ -89,14 +92,19 @@ export interface Step1Result {
 
 export interface Step2Result {
   financingRate: number;
+  requiredEquity: number;
   monthlyPayment: number;
   totalPayments: number;
   totalInterest: number;
+  balloonPayment?: number;
+  remainingBalance?: number;
+  totalCostUntilExit?: number;
 }
 
 export interface Step3Result {
   adjustedMonthlyIncome: number;
   totalMonthlyExpenses: number;
+  totalAnnualExpenses: number;
   grossMonthlyCashFlow: number;
   netMonthlyCashFlow: number;
   grossAnnualYield: number;
@@ -120,6 +128,7 @@ export interface Step4Result {
 export const PURCHASE_EXPENSE_OPTIONS = [
   { id: 'broker',           label: 'תיווך רכישה' },
   { id: 'lawyer',           label: 'עורך דין קונה' },
+  { id: 'other',            label: 'אחר' },
   { id: 'appraiser',        label: 'שמאי' },
   { id: 'mortgage_advisor', label: 'יועץ משכנתאות' },
   { id: 'registration',     label: 'אגרת רישום' },

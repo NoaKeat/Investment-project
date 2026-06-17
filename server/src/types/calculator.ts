@@ -13,6 +13,8 @@ export type MortgageType =
   | 'variable_5y'
   | 'other';
 
+export type RepaymentMethod = 'spitzer' | 'full_balloon' | 'partial_balloon';
+
 export interface PurchaseExpense {
   id: string;
   // סוג ההוצאה — 'renovation' מקבל +10% בצ"מ בחישוב
@@ -32,6 +34,7 @@ export interface SaleExpense {
   id: string;
   label: string;
   amount: number | null;
+  unit?: 'auto' | 'percent' | 'ils'; // percent = תיווך באחוזים (יחושב × מחיר מכירה × מע״מ)
 }
 
 // פירוט הוצאה אחת בתוצאת שלב 1
@@ -53,11 +56,13 @@ export interface Step1Input {
 
 export interface Step2Input {
   propertyValue: number;
-  equity: number;
+  totalCost: number;
   mortgageAmount: number;
-  mortgageType: MortgageType;
+  repaymentMethod: RepaymentMethod;
   interestRate: number;
   loanTermYears: number;
+  earlyRepaymentYears?: number;
+  totalPaidUntilExit?: number;
 }
 
 export interface Step3Input {
@@ -90,14 +95,19 @@ export interface Step1Result {
 
 export interface Step2Result {
   financingRate: number;
+  requiredEquity: number;
   monthlyPayment: number;
   totalPayments: number;
   totalInterest: number;
+  balloonPayment?: number;
+  remainingBalance?: number;
+  totalCostUntilExit?: number;
 }
 
 export interface Step3Result {
   adjustedMonthlyIncome: number;
   totalMonthlyExpenses: number;
+  totalAnnualExpenses: number;
   grossMonthlyCashFlow: number;
   netMonthlyCashFlow: number;
   grossAnnualYield: number;

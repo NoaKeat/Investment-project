@@ -1,0 +1,910 @@
+/* ─── Page wrapper ───────────────────────────────────────────────────────── */
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px 24px;
+  gap: 24px;
+  width: 100%;
+  direction: rtl;
+  min-height: 100vh;
+  background: #f5f0e5;
+  box-sizing: border-box;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+}
+
+/* ─── Nav row ────────────────────────────────────────────────────────────── */
+
+.navRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 122px;
+  gap: 12px;
+  width: 100%;
+  height: 52px;
+  direction: rtl;
+  box-sizing: border-box;
+}
+
+.navButtonsGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.navTitleGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.nextBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 15px;
+  gap: 10px;
+  width: 168px;
+  height: 36px;
+  background: #E5B260;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  color: #1A1B3A;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+
+.nextBtn:disabled { opacity: 0.45; cursor: not-allowed; }
+.nextBtn:hover:not(:disabled) { opacity: 0.88; }
+
+.saveBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 15px;
+  gap: 10px;
+  width: 198px;
+  height: 36px;
+  border-radius: 18px;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  color: #1A1B3A;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.stepTitleBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+  flex: 1;
+}
+
+.stepTitle {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: right;
+  color: #E6B360;
+  margin: 0;
+  width: 100%;
+}
+
+.stepSubtitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  margin: 0;
+}
+
+.stepIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid #E6B360;
+  border-radius: 999px;
+  color: #E5B260;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* ─── Content layout ─────────────────────────────────────────────────────── */
+
+.contentRow {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px 122px;
+  gap: 16px;
+  width: 100%;
+}
+
+.summaryColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 423px;
+  filter: drop-shadow(0px 4px 15.3px rgba(158, 158, 158, 0.07));
+  position: sticky;
+  top: 24px;
+}
+
+.formsColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  width: 728px;
+}
+
+/* ─── Cards ──────────────────────────────────────────────────────────────── */
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 28px;
+  gap: 24px;
+  width: 728px;
+  background: #FFFFFF;
+  border: 1px solid rgba(37, 42, 98, 0.07);
+  box-shadow: 0px 4px 15.3px rgba(158, 158, 158, 0.07);
+  border-radius: 24px;
+}
+
+.cardTitle {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  width: 672px;
+  margin: 0;
+}
+
+.cardSubtitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #6b7280;
+  width: 672px;
+  margin: 0;
+}
+
+/* ─── Income fields ──────────────────────────────────────────────────────── */
+
+.incomeFieldsRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  width: 672px;
+}
+
+.incomeField {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex: 1;
+}
+
+.fieldLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  width: 100%;
+}
+
+.fieldHint {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 10px;
+  color: #9CA6B6;
+  text-align: right;
+  width: 100%;
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+/* ─── Input styles ────────────────────────────────────────────────────────── */
+
+.inputWithSymbol {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  width: 100%;
+  height: 45px;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.inputWithSymbol:focus-within { border-color: #9CA6B6; }
+
+.currencySymbol {
+  padding: 0 12px;
+  color: #9CA6B6;
+  background: #faf8f3;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  border-inline-end: 1px solid rgba(37, 42, 98, 0.15);
+  flex-shrink: 0;
+}
+
+.percentSymbol {
+  padding: 0 12px;
+  color: #9CA6B6;
+  background: #faf8f3;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  border-inline-start: 1px solid rgba(37, 42, 98, 0.15);
+  flex-shrink: 0;
+}
+
+.input {
+  box-sizing: border-box;
+  padding: 12px;
+  width: 100%;
+  height: 45px;
+  background: #FFFFFF;
+  border: none;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  color: #1A1B3A;
+  text-align: right;
+  direction: ltr;
+  outline: none;
+}
+
+.input::placeholder { color: #9CA6B6; direction: rtl; text-align: right; }
+
+/* ─── Annual note ────────────────────────────────────────────────────────── */
+
+.annualNote {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 12px;
+  color: #9CA6B6;
+  text-align: right;
+  width: 672px;
+  margin: -12px 0 0 0;
+}
+
+/* ─── Extra income rows ──────────────────────────────────────────────────── */
+
+.extraIncomeTable {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 672px;
+}
+
+.extraIncomeRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  animation: fadeIn 0.2s ease;
+}
+
+/* ─── Expenses table ─────────────────────────────────────────────────────── */
+
+.expensesTable {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 672px;
+  border: 1px solid rgba(37, 42, 98, 0.10);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.expensesTableHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 16px;
+  gap: 8px;
+  background: #faf8f3;
+  border-bottom: 1px solid rgba(37, 42, 98, 0.10);
+}
+
+.colType { flex: 1; text-align: right; }
+.colAmount { flex: 1; text-align: right; }
+.colDelete { width: 32px; flex-shrink: 0; }
+
+.tableHeaderCell {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.expenseRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 16px;
+  gap: 8px;
+  border-bottom: 1px solid rgba(37, 42, 98, 0.07);
+  background: #fff;
+  transition: background 0.15s;
+  animation: fadeIn 0.2s ease;
+}
+
+.expenseRow:last-child { border-bottom: none; }
+.expenseRow:hover { background: #fffdf8; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.selectBase {
+  width: 100%;
+  height: 36px;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  background: #fff;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  color: #1A1B3A;
+  padding: 0 8px;
+  text-align: right;
+  direction: rtl;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239CA6B6' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 8px center;
+}
+
+.selectBase:focus { border-color: #9CA6B6; }
+
+.inputSmall {
+  width: 100%;
+  height: 36px;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  background: #fff;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  color: #1A1B3A;
+  padding: 0 8px;
+  text-align: right;
+  direction: ltr;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.inputSmall::placeholder { color: #9CA6B6; direction: rtl; text-align: right; }
+.inputSmall:focus { border-color: #9CA6B6; }
+
+.deleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #fca5a5;
+  font-size: 16px;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+
+.deleteBtn:hover { background: #fee2e2; color: #dc2626; }
+
+.addExpenseBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 20px;
+  height: 36px;
+  border: 1px solid #E6B360;
+  border-radius: 18px;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  color: #E6B360;
+  transition: background 0.15s;
+  align-self: flex-start;
+}
+
+.addExpenseBtn:hover { background: #fff8ea; }
+
+/* ─── New expense rows (step-1 style) ─────────────────────────────────────── */
+
+.expensesBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  direction: rtl;
+}
+
+.expenseRowNew {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  direction: rtl;
+}
+
+.expenseSectionNew {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.expHalfLabel {
+  flex: 1;
+  height: 45px;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  padding: 0 12px;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1B3A;
+  background: #faf8f3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+.expHalfInput {
+  flex: 1 !important;
+  width: auto !important;
+  height: 45px !important;
+}
+
+.expReadOnly {
+  flex: 1;
+  height: 45px;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  padding: 0 12px;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  color: #9CA6B6;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+}
+
+.expHint {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 12px;
+  color: #9CA6B6;
+  margin: 0;
+  text-align: left;
+  padding-left: 36px;
+}
+
+/* ─── Summary card ────────────────────────────────────────────────────────── */
+
+.summaryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 28px;
+  gap: 20px;
+  width: 423px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  box-sizing: border-box;
+}
+
+.summaryHeader {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px 12px;
+  gap: 16px;
+  width: 100%;
+  height: 64px;
+  border-bottom: 1px solid rgba(37, 42, 98, 0.15);
+}
+
+.summaryTitleBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1;
+}
+
+.summaryTitle {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #1A1B3A;
+  text-align: right;
+  margin: 0;
+  width: 100%;
+}
+
+.summarySubtitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #9CA6B6;
+  text-align: right;
+  margin: 0;
+}
+
+.summaryIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid #1A1B3A;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+/* ── Collapsible accordion ── */
+
+.collapseRow {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #F6F8FF;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.collapseRowInner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 16px;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none; 
+}
+
+/* ליתר ביטחון, בטלי את ה-outline גם במצב פוקוס */
+.collapseRowInner:focus {
+  outline: none;
+}
+.collapseLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #1A1B3A;
+}
+
+.collapseLabelOpen { font-weight: 600; }
+
+.collapseChevron {
+  font-size: 10px;
+  color: #888;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.collapseChevron.open { transform: rotate(180deg); }
+
+.collapseContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 16px 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── Recap rows ── */
+
+.recapRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 24px;
+}
+
+.recapLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #404F69;
+}
+
+.recapValue {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #404F69;
+}
+
+.recapTotal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 24px;
+  padding-top: 4px;
+  border-top: 1px solid rgba(37, 42, 98, 0.10);
+  margin-top: 4px;
+}
+
+.recapTotalLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1A1B3A;
+}
+
+.recapTotalValue {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1A1B3A;
+}
+
+/* ── Live calculations section ── */
+
+.liveSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.liveSectionTitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1A1B3A;
+  width: 100%;
+  text-align: right;
+}
+
+.dataRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 24px;
+}
+
+.dataLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #404F69;
+}
+
+.dataValue {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #404F69;
+}
+
+.dividerThin {
+  width: 100%;
+  border: none;
+  border-top: 1px dashed rgba(37, 42, 98, 0.12);
+  margin: 4px 0;
+}
+
+.dataValueBold {
+  font-weight: 700;
+  color: #1A1B3A;
+}
+
+/* ── Cash flow highlight ── */
+
+.cashFlowRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 10px;
+  border-top: 1px solid rgba(37, 42, 98, 0.15);
+}
+
+.cashFlowLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #404F69;
+}
+
+.cashFlowValue {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.cashFlowPositive { color: #16a34a; }
+.cashFlowNegative { color: #dc2626; }
+
+/* ── Yield section ── */
+
+.yieldSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  padding: 12px;
+  background: #f6f8ff;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.yieldSectionTitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1A1B3A;
+  margin-bottom: 4px;
+}
+
+.yieldHint {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 10px;
+  color: #6B7280;
+  text-align: right;
+  width: 100%;
+  line-height: 1.45;
+  margin: 0 0 8px;
+  direction: rtl;
+}
+
+/* ── Tip box ── */
+
+.tipBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 14px 16px;
+  gap: 4px;
+  width: 100%;
+  background: #FFF8EA;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+.tipInner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.tipTextBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.tipTitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1B3A;
+  text-align: right;
+}
+
+.tipText {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #404F69;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.tipIcon { color: #E6B360; flex-shrink: 0; font-size: 18px; }
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 1460px) {
+  .pageWrapper { width: 100%; }
+  .navRow, .contentRow { width: 100%; padding: 0 48px; }
+  .card { width: 100%; }
+  .formsColumn { width: auto; flex: 1; }
+  .incomeFieldsRow, .expensesTable, .extraIncomeTable, .annualNote, .cardTitle, .cardSubtitle { width: 100%; }
+}
+
+@media (max-width: 1200px) {
+  .summaryColumn { width: 360px; }
+  .summaryCard { width: 100%; }
+}
+
+@media (max-width: 1050px) {
+  .summaryColumn { width: 300px; }
+  .navRow, .contentRow { padding: 0 32px; }
+}
+
+@media (max-width: 900px) {
+  .pageWrapper { padding: 0 16px 24px; }
+  .navRow { flex-wrap: wrap; height: auto; padding: 16px 20px; gap: 8px; }
+  .contentRow { flex-direction: column; padding: 0 20px; }
+  .summaryColumn { width: 100%; position: static; }
+  .formsColumn { width: 100%; }
+  .card { width: 100%; }
+  .incomeFieldsRow { flex-direction: column; width: 100%; }
+  .expensesTable { width: 100%; }
+  .summaryCard { width: 100%; }
+  .summaryHeader { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .navRow { padding: 12px 16px; }
+  .contentRow { padding: 0 16px; }
+  .card { padding: 20px 16px; }
+  .stepTitle { font-size: 18px; }
+  .stepSubtitle { font-size: 14px; }
+  .nextBtn, .saveBtn { width: 100%; }
+  .navButtonsGroup { width: 100%; flex-direction: column; gap: 6px; }
+  .annualNote, .extraIncomeTable { width: 100%; }
+}
