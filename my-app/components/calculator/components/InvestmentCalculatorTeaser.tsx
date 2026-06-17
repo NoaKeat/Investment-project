@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import styles from './InvestmentCalculatorTeaser.module.css';
 import data from '@/data/investment.json';
+import CalcIcon from '@/components/ui/CalcIcon';
 
 
 const t = data.investmentCalculatorTeaser;
@@ -35,7 +36,7 @@ export default function InvestmentCalculatorTeaser() {
             onClick={() => router.push('/calculator/step1')}
           >
             <div className={styles.iconCircle}>
-           
+              <CalcIcon size={24} color="#E5B260" />
             </div>
             <span className={styles.ctaText}>{t.ctaButtonText}</span>
           </button>

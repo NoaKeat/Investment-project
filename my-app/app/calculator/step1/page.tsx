@@ -8,7 +8,6 @@ import { useCalculatorStore } from '@/components/calculator/store/calculatorStor
 import { useCalculatorApi } from '@/components/calculator/hooks/useCalculatorApi';
 import ProgressBar from '@/components/calculator/components/ProgressBar';
 import CalcIcon from '@/components/ui/CalcIcon';
-import { CalcIconSmall } from '@/components/ui/CalcIconSmall';
 import {
   type ExpenseOptionId,
   type PurchaseExpense,
