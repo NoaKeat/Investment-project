@@ -423,6 +423,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 28px;
   height: 28px;
   border: none;
@@ -486,6 +487,8 @@
 
 .expHalfLabel {
   flex: 1;
+  min-width: 0;
+  white-space: nowrap;
   height: 45px;
   border: 1px solid rgba(37, 42, 98, 0.15);
   border-radius: 8px;
@@ -504,12 +507,14 @@
 
 .expHalfInput {
   flex: 1 !important;
+  min-width: 0 !important;
   width: auto !important;
   height: 45px !important;
 }
 
 .expReadOnly {
   flex: 1;
+  min-width: 0;
   height: 45px;
   border: 1px solid rgba(37, 42, 98, 0.15);
   border-radius: 8px;

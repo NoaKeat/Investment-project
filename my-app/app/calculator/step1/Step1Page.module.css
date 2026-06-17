@@ -414,6 +414,7 @@
   height: 30px;
   border-radius: 8px;
   cursor: pointer;
+  white-space: nowrap; /* האייקון יישאר ליד הטקסט ולא יירד מתחת בשורות צרות */
   font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
   font-size: 14px;
   color: #404F69;
@@ -513,6 +514,8 @@
 
 .halfLabel {
   flex: 1;
+  min-width: 0;
+  white-space: nowrap;
   height: 45px;
   border: 1px solid rgba(37, 42, 98, 0.15);
   border-radius: 8px;
@@ -532,6 +535,7 @@
 
 .halfInput {
   flex: 1 !important;
+  min-width: 0 !important;
   width: auto !important;
   flex-shrink: 0;
 }
