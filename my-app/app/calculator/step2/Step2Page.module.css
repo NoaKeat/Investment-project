@@ -1,0 +1,905 @@
+/* ─── Page wrapper ───────────────────────────────────────────────────────── */
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px 24px;
+  gap: 24px;
+  width: 100%;
+  direction: rtl;
+  min-height: 100vh;
+  background: #f5f0e5;
+  box-sizing: border-box;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+}
+
+/* ─── Nav row ────────────────────────────────────────────────────────────── */
+
+.navRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* דוחף את הכפתורים לשמאל ואת הכותרת לימין */
+  align-items: center;
+  padding: 0px 122px;
+  gap: 12px;
+  width: 100%;
+  height: 52px;
+  direction: rtl;
+  box-sizing: border-box;
+}
+.navButtonsGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.navTitleGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+.nextBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 15px;
+  gap: 10px;
+  width: 168px;
+  height: 36px;
+  background: #E5B260;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  color: #1A1B3A;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+  /* הסרנו את ה-order */
+}
+
+.nextBtn:disabled { opacity: 0.45; cursor: not-allowed; }
+.nextBtn:hover:not(:disabled) { opacity: 0.88; }
+
+.saveBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 15px;
+  gap: 10px;
+  width: 198px;
+  height: 36px;
+  border-radius: 18px;
+  border: 1px solid rgba(37, 42, 98, 0.15); /* הוספת מסגרת עדינה כמו בתמונה */
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  color: #1A1B3A;
+  white-space: nowrap;
+  flex-shrink: 0;
+  /* הסרנו את ה-order */
+}
+
+
+.stepTitleBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+  flex: 1;
+}
+
+.stepTitle {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: right;
+  color: #E6B360;
+  margin: 0;
+  width: 100%;
+}
+
+.stepSubtitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  margin: 0;
+}
+
+.stepIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid #E6B360;
+  border-radius: 999px;
+  color: #E5B260;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* ─── Content layout ─────────────────────────────────────────────────────── */
+
+.contentRow {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px 122px;
+  gap: 16px;
+  width: 100%;
+}
+
+.summaryColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 423px;
+  filter: drop-shadow(0px 4px 15.3px rgba(158, 158, 158, 0.07));
+  position: sticky;
+  top: 24px;
+}
+
+.formsColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  width: 728px;
+}
+
+/* ─── Cards ──────────────────────────────────────────────────────────────── */
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 28px;
+  gap: 24px;
+  width: 728px;
+  background: #FFFFFF;
+  border: 1px solid rgba(37, 42, 98, 0.07);
+  box-shadow: 0px 4px 15.3px rgba(158, 158, 158, 0.07);
+  border-radius: 24px;
+}
+
+.cardTitle {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  width: 672px;
+  margin: 0;
+}
+
+.cardSubtitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  width: 672px;
+  margin: 0;
+}
+
+/* ─── Form fields ─────────────────────────────────────────────────────────── */
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;     /* ב-RTL, התחלת הציר (flex-start) היא צד ימין! */
+  gap: 4px;
+  width: 100%;                 /* או רוחב ספציפי, למשל 328px, תלוי בעיצוב שלכן */
+}
+
+.stepper {
+  margin-right: 0;
+  margin-left: auto;
+}
+.earlyRepaymentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.fieldLabel {
+   
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  width: 100%;
+}
+
+/* ─── Mortgage fields row ─────────────────────────────────────────────────── */
+
+.mortgageFieldsRow {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 16px;
+  width: 672px;
+}
+
+.mortgageField {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex: 1;
+}
+
+/* ─── Input styles ────────────────────────────────────────────────────────── */
+
+.inputWithSymbol {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  width: 100%;
+  height: 45px;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.inputWithSymbol:focus-within { border-color: #9CA6B6; }
+.inputWithSymbol.hasError { border-color: #e53e3e; }
+
+.currencySymbol {
+  padding: 0 12px;
+  color: #9CA6B6;
+  background: #faf8f3;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  border-inline-end: 1px solid rgba(37, 42, 98, 0.15);
+  flex-shrink: 0;
+}
+
+.percentSymbol {
+  padding: 0 12px;
+  color: #9CA6B6;
+  background: #faf8f3;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  border-inline-start: 1px solid rgba(37, 42, 98, 0.15);
+  flex-shrink: 0;
+}
+
+.input {
+  box-sizing: border-box;
+  padding: 12px;
+  width: 100%;
+  height: 45px;
+  background: #FFFFFF;
+  border: none;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  color: #1A1B3A;
+  text-align: right;
+  direction: ltr;
+  outline: none;
+}
+
+.input::placeholder { color: #9CA6B6; direction: rtl; text-align: right; }
+
+/* ─── Error / Warning messages ───────────────────────────────────────────── */
+
+.fieldHint {
+  font-size: 12px;
+  color: #9CA6B6;
+  margin-top: 4px;
+  width: 100%;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.errorMsg {
+  font-size: 12px;
+  color: #e53e3e;
+  margin-top: 2px;
+  width: 100%;
+  text-align: right;
+}
+
+.syncNote {
+  font-size: 11px;
+  color: #7a6a3a;
+  margin-top: 4px;
+  width: 100%;
+  text-align: right;
+  opacity: 0.8;
+}
+
+.ltvWarning {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: #fff8e6;
+  border: 1px solid #f6c042;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #7a5a00;
+  width: 672px;
+  box-sizing: border-box;
+}
+
+.ltvWarningIcon { flex-shrink: 0; font-size: 15px; }
+
+/* LTV chip */
+.ltvChip {
+  align-self: flex-end;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.ltvChipOk  { background: #e8f5e9; color: #2e7d32; }
+.ltvChipWarn { background: #fff8e1; color: #f57f17; }
+
+/* ─── Stepper ─────────────────────────────────────────────────────────────── */
+.stepper {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  height: 45px;
+
+  width: fit-content;
+  min-width: 180px; /* או רוחב שמתאים לך */
+}
+.stepperBtn {
+  width: 44px;
+  height: 45px;
+  border: none;
+  background: #faf8f3;
+  color: #1A1B3A;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s;
+  line-height: 1;
+}
+
+.stepperBtn:hover { background: #f0e8d8; }
+.stepperBtn:first-child { border-inline-end: 1px solid rgba(37, 42, 98, 0.15); }
+.stepperBtn:last-child  { border-inline-start: 1px solid rgba(37, 42, 98, 0.15); }
+
+.stepperValue {
+  flex: 1;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1A1B3A;
+  padding: 0 8px;
+}
+
+.stepperSuffix {
+  font-size: 12px;
+  font-weight: 400;
+  color: #888;
+  margin-right: 4px;
+}
+
+/* ─── Repayment method cards ─────────────────────────────────────────────── */
+
+.methodCards {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 672px;
+}
+
+.methodCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 12px;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 12px;
+  cursor: pointer;
+  min-height: 144px;
+  transition: background 0.15s, border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.methodCard:hover { background: #fffdf8; border-color: #E6B360; }
+
+.methodCardSelected {
+  background: #FFF8EA;
+  border-color: transparent;
+}
+.radioRow {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.radioIcon {
+  align-self: flex-start;
+  margin-left: auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.radioIconSelected {
+  border-color: #E6B360;
+  background: #FFFFFF;
+  position: relative;
+}
+.radioIconSelected::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #E6B360;
+  position: absolute;
+}
+
+.methodCardTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1A1B3A;
+  text-align: right;
+  width: 100%;
+}
+
+.methodCardDesc {
+  font-size: 11px;
+  color: #666;
+  line-height: 1.5;
+  text-align: right;
+  width: 100%;
+}
+.methodCardHeader {
+  display: flex;
+  flex-direction: row-reverse; /* האייקון לימין */
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+/* ─── Early repayment toggle ─────────────────────────────────────────────── */
+
+.earlyToggle {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.earlyToggle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #1A1B3A;
+  cursor: pointer;
+}
+
+.earlyToggleLabel {
+  font-size: 14px;
+  color: #1A1B3A;
+  cursor: pointer;
+}
+
+/* ─── Summary card ────────────────────────────────────────────────────────── */
+
+.summaryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 28px;
+  gap: 24px;
+  width: 423px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  box-sizing: border-box;
+}
+
+/* ── Header ── */
+.summaryHeader {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px 12px;
+  gap: 16px;
+  width: 100%;
+  height: 64px;
+  border-bottom: 1px solid rgba(37, 42, 98, 0.15);
+}
+
+.summaryTitleBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1;
+}
+
+.summaryTitle {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #1A1B3A;
+  text-align: right;
+  margin: 0;
+  width: 100%;
+}
+
+.summarySubtitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #1A1B3A;
+  text-align: right;
+  margin: 0;
+}
+
+.summaryIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid #1A1B3A;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+/* ── Empty state ── */
+.summaryEmpty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 367px;
+  min-height: 180px;
+  background: #FFFDF9;
+  border-radius: 16px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.summaryEmptyTitle {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #1A1B3A;
+  text-align: center;
+}
+
+.summaryEmptyText {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #404F69;
+  text-align: center;
+  width: 100%;
+}
+
+/* ── Collapsible Step 1 recap ── */
+.collapseRow {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #F6F8FF;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.collapseRowInner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 16px;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+  box-sizing: border-box;
+  
+  /* הוסיפי את השורה הזו כדי לבטל את המסגרת בלחיצה */
+  outline: none; 
+}
+
+/* ליתר ביטחון, בטלי את ה-outline גם במצב פוקוס */
+.collapseRowInner:focus {
+  outline: none;
+}
+.collapseLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1A1B3A;
+}
+
+.collapseLabelOpen {
+  font-weight: 600;
+}
+
+.collapseChevron {
+  font-size: 10px;
+  color: #888;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.collapseChevron.open { transform: rotate(180deg); }
+
+.collapseContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 16px 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── Recap rows (inside collapsible) ── */
+.recapRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 24px;
+}
+
+.recapLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #404F69;
+}
+
+.recapValue {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #404F69;
+}
+
+.recapTotal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 24px;
+  padding-top: 4px;
+  border-top: 1px solid rgba(37, 42, 98, 0.10);
+  margin-top: 4px;
+}
+
+.recapTotalLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1A1B3A;
+}
+
+.recapTotalValue {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1A1B3A;
+}
+
+/* ── Financing section ── */
+.financingSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.financingSectionTitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1A1B3A;
+  width: 100%;
+}
+
+.financingRows {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+/* ── Data rows ── */
+.dataRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 24px;
+}
+
+.dataLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #404F69;
+}
+
+.dataLabelMuted {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #888;
+}
+
+.dataValue {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #404F69;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 0.7; }
+}
+
+.shimmer {
+  opacity: 0.4;
+  animation: shimmer 1.2s infinite;
+}
+
+/* ── Monthly payment row ── */
+.monthlyRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 12px;
+  border-top: 1px solid rgba(37, 42, 98, 0.15);
+}
+
+.monthlyLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #404F69;
+}
+
+.monthlyValue {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #252A62;
+}
+
+/* ── Tip box ── */
+.tipBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 16px;
+  gap: 4px;
+  width: 100%;
+  background: #FFF8EA;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+.tipInner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.tipTextBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.tipTitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1A1B3A;
+  text-align: right;
+}
+
+.tipText {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #404F69;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.tipIcon { color: #E6B360; flex-shrink: 0; font-size: 18px; }
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 1460px) {
+  .pageWrapper { width: 100%; }
+  .navRow, .contentRow { width: 100%; padding: 0 48px; }
+  .card { width: 100%; }
+  .formsColumn { width: auto; flex: 1; }
+  .mortgageFieldsRow, .methodCards, .cardTitle, .cardSubtitle, .ltvWarning { width: 100%; }
+}
+
+@media (max-width: 900px) {
+  .pageWrapper { padding: 0 16px 24px; }
+  .navRow { flex-wrap: wrap; height: auto; padding: 16px 20px; gap: 8px; }
+  .contentRow { flex-direction: column; padding: 0 20px; }
+  .summaryColumn { width: 100%; position: static; }
+  .formsColumn { width: 100%; }
+  .card { width: 100%; }
+  .mortgageFieldsRow { flex-direction: column; width: 100%; }
+  .methodCards { flex-direction: column; width: 100%; }
+  .summaryCard { width: 100%; }
+  .summaryHeader, .summaryEmpty { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .navRow { padding: 12px 16px; }
+  .contentRow { padding: 0 16px; }
+  .card { padding: 20px 16px; }
+  .stepTitle { font-size: 18px; }
+  .stepSubtitle { font-size: 14px; }
+  .nextBtn, .saveBtn { width: 100%; }
+  .navButtonsGroup { width: 100%; flex-direction: column; gap: 6px; }
+  .ltvWarning { width: 100%; }
+}

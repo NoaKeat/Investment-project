@@ -43,15 +43,18 @@ router.post("/calculator/step1", async (req, res) => {
 router.post("/calculator/step2", async (req, res) => {
   try {
     const input = req.body as Step2Input;
+    const validMethods = ['spitzer', 'full_balloon', 'partial_balloon'];
     if (
       typeof input.propertyValue !== "number" ||
+      typeof input.totalCost !== "number" ||
       typeof input.mortgageAmount !== "number" ||
       typeof input.interestRate !== "number" ||
-      typeof input.loanTermYears !== "number"
+      typeof input.loanTermYears !== "number" ||
+      !validMethods.includes(input.repaymentMethod)
     ) {
       res.status(400).json({
         error:
-          "שדות חובה חסרים: propertyValue, mortgageAmount, interestRate, loanTermYears",
+          "שדות חובה חסרים: propertyValue, totalCost, mortgageAmount, interestRate, loanTermYears, repaymentMethod",
       });
       return;
     }

@@ -1,0 +1,1202 @@
+/* ─── Page wrapper ───────────────────────────────────────────────────────── */
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px 24px;
+  gap: 24px;
+  width: 100%;
+  direction: rtl;
+  min-height: 100vh;
+  background: #f5f0e5;
+  box-sizing: border-box;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+}
+
+/* ─── Nav row ────────────────────────────────────────────────────────────── */
+
+.navRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 122px;
+  gap: 12px;
+  width: 100%;
+  height: 52px;
+  direction: rtl;
+  box-sizing: border-box;
+}
+
+.navButtonsGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.navTitleGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.nextBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 15px;
+  gap: 10px;
+  width: 168px;
+  height: 36px;
+  background: #E5B260;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  color: #1A1B3A;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+
+.nextBtn:disabled { opacity: 0.45; cursor: not-allowed; }
+.nextBtn:hover:not(:disabled) { opacity: 0.88; }
+
+.saveBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 15px;
+  gap: 10px;
+  width: 198px;
+  height: 36px;
+  border-radius: 18px;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  color: #1A1B3A;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.stepTitleBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1;
+}
+
+.stepTitle {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: right;
+  color: #E6B360;
+  margin: 0;
+  width: 100%;
+}
+
+.stepSubtitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  margin: 0;
+}
+
+.stepIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid #E6B360;
+  border-radius: 999px;
+  color: #E5B260;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* ─── Content layout ─────────────────────────────────────────────────────── */
+
+.contentRow {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px 122px;
+  gap: 16px;
+  width: 100%;
+}
+
+.summaryColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 423px;
+  filter: drop-shadow(0px 4px 15.3px rgba(158, 158, 158, 0.07));
+  position: sticky;
+  top: 24px;
+}
+
+.formsColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  width: 728px;
+}
+
+/* ─── Cards ──────────────────────────────────────────────────────────────── */
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 28px;
+  gap: 24px;
+  width: 728px;
+  background: #FFFFFF;
+  border: 1px solid rgba(37, 42, 98, 0.07);
+  box-shadow: 0px 4px 15.3px rgba(158, 158, 158, 0.07);
+  border-radius: 24px;
+}
+
+.cardTitle {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  width: 672px;
+  margin: 0;
+}
+
+.cardSubtitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #6b7280;
+  width: 672px;
+  margin: 0;
+}
+
+/* ─── Form fields ─────────────────────────────────────────────────────────── */
+
+.fieldLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  width: 100%;
+}
+
+.fieldHint {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 11px;
+  color: #9CA6B6;
+  text-align: right;
+  width: 100%;
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  width: 100%;
+}
+
+.fieldsRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  width: 672px;
+}
+
+.halfField {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex: 1;
+}
+
+/* כשצריך ש-children יצמדו לימין (flex-start ב-RTL = ימין) */
+.halfFieldRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1;
+}
+
+.halfFieldNarrow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  width: 240px;
+  flex-shrink: 0;
+}
+
+/* ─── Input styles ────────────────────────────────────────────────────────── */
+
+.inputWithSymbol {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  width: 100%;
+  height: 45px;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.inputWithSymbol:focus-within { border-color: #9CA6B6; }
+.inputWithSymbol.readOnly { background: #f7f7f7; }
+
+.currencySymbol {
+  padding: 0 12px;
+  color: #9CA6B6;
+  background: #faf8f3;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  border-inline-end: 1px solid rgba(37, 42, 98, 0.15);
+  flex-shrink: 0;
+}
+
+.percentSymbol {
+  padding: 0 12px;
+  color: #9CA6B6;
+  background: #faf8f3;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  border-inline-start: 1px solid rgba(37, 42, 98, 0.15);
+  flex-shrink: 0;
+}
+
+.input {
+  box-sizing: border-box;
+  padding: 12px;
+  width: 100%;
+  height: 45px;
+  background: #FFFFFF;
+  border: none;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  color: #1A1B3A;
+  text-align: right;
+  direction: ltr;
+  outline: none;
+}
+
+.input::placeholder { color: #9CA6B6; direction: rtl; text-align: right; }
+.input:read-only { background: #f7f7f7; color: #9CA6B6; cursor: default; }
+
+/* ─── Stepper ─────────────────────────────────────────────────────────────── */
+
+.stepper {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  height: 45px;
+  width: fit-content;
+  min-width: 180px;
+}
+
+.stepperBtn {
+  width: 44px;
+  height: 45px;
+  border: none;
+  background: #faf8f3;
+  color: #1A1B3A;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s;
+  line-height: 1;
+}
+
+.stepperBtn:hover { background: #f0e8d8; }
+.stepperBtn:first-child { border-inline-end: 1px solid rgba(37, 42, 98, 0.15); }
+.stepperBtn:last-child  { border-inline-start: 1px solid rgba(37, 42, 98, 0.15); }
+
+.stepperValue {
+  flex: 1;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1A1B3A;
+  padding: 0 8px;
+}
+
+.stepperSuffix {
+  font-size: 12px;
+  font-weight: 400;
+  color: #888;
+  margin-right: 4px;
+}
+
+/* ─── Auto-calculate checkbox row ────────────────────────────────────────── */
+
+.checkboxRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.checkboxRow input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #E6B360;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checkboxLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  color: #1A1B3A;
+  cursor: pointer;
+}
+
+/* ─── Sale expenses table ────────────────────────────────────────────────── */
+
+.expensesTable {
+  display: flex;
+  flex-direction: column;
+  width: 672px;
+  border: 1px solid rgba(37, 42, 98, 0.10);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.expensesTableHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 16px;
+  gap: 8px;
+  background: #faf8f3;
+  border-bottom: 1px solid rgba(37, 42, 98, 0.10);
+}
+
+.tableHeaderCell {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.colType   { flex: 2; text-align: right; }
+.colUnit   { display: none; }
+.colAmount { flex: 1; text-align: right; }
+.colDelete { width: 32px; flex-shrink: 0; }
+
+.expenseRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 16px;
+  gap: 8px;
+  border-bottom: 1px solid rgba(37, 42, 98, 0.07);
+  background: #fff;
+  transition: background 0.15s;
+}
+
+.expenseRow:last-child { border-bottom: none; }
+.expenseRow:hover:not(.expenseRowReadOnly) { background: #fffdf8; }
+
+.expenseRowReadOnly { background: #faf8f3; }
+
+.selectBase {
+  width: 100%;
+  height: 36px;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  background: #fff;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  color: #1A1B3A;
+  padding: 0 8px;
+  text-align: right;
+  direction: rtl;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239CA6B6' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 8px center;
+}
+
+.selectBase:focus { border-color: #9CA6B6; }
+
+.inputSmall {
+  width: 100%;
+  height: 36px;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  background: #fff;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  color: #1A1B3A;
+  padding: 0 8px;
+  text-align: right;
+  direction: ltr;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.inputSmall::placeholder { color: #9CA6B6; direction: rtl; text-align: right; }
+.inputSmall:focus { border-color: #9CA6B6; }
+.inputSmall:read-only { background: #f0f0f0; color: #9CA6B6; cursor: default; border-color: transparent; }
+
+.readOnlyChip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 36px;
+  width: 100%;
+  padding: 0 8px;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  color: #9CA6B6;
+  text-align: right;
+  background: #f0f0f0;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+
+.deleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #fca5a5;
+  font-size: 15px;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+
+.deleteBtn:hover { background: #fee2e2; color: #dc2626; }
+
+.addExpenseBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 20px;
+  height: 36px;
+  border: 1px solid #E6B360;
+  border-radius: 18px;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  color: #E6B360;
+  transition: background 0.15s;
+  align-self: flex-start;
+}
+
+.addExpenseBtn:hover { background: #fff8ea; }
+
+/* ─── Summary card ────────────────────────────────────────────────────────── */
+
+.summaryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 28px;
+  gap: 16px;
+  width: 423px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  box-sizing: border-box;
+}
+
+.summaryHeader {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px 12px;
+  gap: 16px;
+  width: 100%;
+  border-bottom: 1px solid rgba(37, 42, 98, 0.15);
+}
+
+.summaryTitleBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1;
+}
+
+.summaryTitle {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #1A1B3A;
+  text-align: right;
+  margin: 0;
+  width: 100%;
+}
+
+.summarySubtitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  color: #9CA6B6;
+  text-align: right;
+  margin: 0;
+}
+
+.summaryIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid #1A1B3A;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+/* ─── Accordion ──────────────────────────────────────────────────────────── */
+
+.collapseRow {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #F6F8FF;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.collapseRowInner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  gap: 16px;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none; 
+}
+
+/* ליתר ביטחון, בטלי את ה-outline גם במצב פוקוס */
+.collapseRowInner:focus {
+  outline: none;
+}
+.collapseLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #1A1B3A;
+}
+
+.collapseLabelOpen { font-weight: 600; }
+
+.collapseChevron {
+  font-size: 10px;
+  color: #888;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.collapseChevron.open { transform: rotate(180deg); }
+
+.collapseContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 16px 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ─── Data rows ──────────────────────────────────────────────────────────── */
+
+.recapRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 22px;
+}
+
+.recapLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 12px;
+  color: #404F69;
+}
+
+.recapValue {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #404F69;
+}
+
+.recapTotal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 4px;
+  border-top: 1px solid rgba(37, 42, 98, 0.10);
+  margin-top: 4px;
+}
+
+.recapTotalLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1A1B3A;
+}
+
+.recapTotalValue {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1A1B3A;
+}
+
+/* ─── Live calculations section ──────────────────────────────────────────── */
+
+.liveSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.liveSectionTitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1A1B3A;
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.dataRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 22px;
+}
+
+.dataLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  color: #404F69;
+}
+
+.dataValue {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #404F69;
+}
+
+.divider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgba(37, 42, 98, 0.10);
+  margin: 2px 0;
+}
+
+/* ─── Net profit highlight ───────────────────────────────────────────────── */
+
+.netProfitRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 8px;
+  border-top: 1.5px solid rgba(37, 42, 98, 0.15);
+}
+
+.netProfitLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1B3A;
+}
+
+.netProfitValue {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.positive { color: #16a34a; }
+.negative { color: #dc2626; }
+
+/* ─── Tax breakdown accordion ────────────────────────────────────────────── */
+
+.taxCollapseRow {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #fff8ea;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(230, 179, 96, 0.25);
+}
+
+/* ─── Tip box ────────────────────────────────────────────────────────────── */
+
+.tipBox {
+  display: flex;
+  padding: 14px 16px;
+  gap: 8px;
+  width: 100%;
+  background: #FFF8EA;
+  border-radius: 14px;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.tipTextBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.tipTitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1A1B3A;
+  text-align: right;
+}
+
+.tipText {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 12px;
+  color: #404F69;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.tipIcon { color: #E6B360; flex-shrink: 0; font-size: 16px; }
+
+/* ─── Email popup ────────────────────────────────────────────────────────── */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 27, 58, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 28px;
+  gap: 24px;
+  width: 728px;
+  max-width: 100%;
+  background: #FFFFFF;
+  border: 1px solid rgba(37, 42, 98, 0.07);
+  box-shadow: 0px 4px 15.3px rgba(158, 158, 158, 0.07);
+  border-radius: 24px;
+  direction: rtl;
+  box-sizing: border-box;
+  animation: popIn 0.2s ease;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.95) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Header row: כותרת + X */
+.modalHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 672px;
+  height: 24px;
+}
+
+.modalTitle {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  margin: 0;
+  flex: 1;
+}
+
+.closeBtn {
+  width: 15px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  color: #1A1B3A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  line-height: 1;
+  transition: opacity 0.15s;
+}
+
+.closeBtn:hover { opacity: 0.6; }
+
+/* Illustration */
+.modalIllustration {
+  width: 180px;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+/* Body text */
+.modalText {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #1A1B3A;
+  width: 496px;
+  margin: 0;
+}
+
+/* Email section */
+.emailSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 672px;
+}
+
+.emailLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  width: 100%;
+}
+
+/* Input + button in one row */
+.emailRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 16px;
+  width: 672px;
+  height: 45px;
+}
+
+.emailInputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.emailInput {
+  width: 100%;
+  height: 45px;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  padding: 0 12px;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  color: #1A1B3A;
+  background: #FFFFFF;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+  text-align: left;
+  direction: ltr;
+}
+
+.emailInput:focus { border-color: #E6B360; }
+
+.emailInputError { border-color: #dc2626 !important; }
+
+.emailError {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 12px;
+  color: #dc2626;
+  text-align: right;
+}
+
+/* Submit button */
+.modalSubmitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 15px;
+  gap: 10px;
+  width: 167px;
+  height: 45px;
+  flex-shrink: 0;
+  background: #E5B260;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  color: #1A1B3A;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+.modalSubmitBtn:hover:not(:disabled) { opacity: 0.88; }
+.modalSubmitBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Consent — gold informational text */
+.consentText {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #E6B360;
+  direction: rtl;
+}
+
+.consentIcon {
+  font-size: 16px;
+  color: #E6B360;
+  flex-shrink: 0;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 1460px) {
+  .pageWrapper { width: 100%; }
+  .navRow, .contentRow { width: 100%; padding: 0 48px; }
+  .card { width: 100%; }
+  .formsColumn { width: auto; flex: 1; }
+  .fieldsRow, .expensesTable, .cardTitle, .cardSubtitle, .checkboxRow { width: 100%; }
+}
+
+@media (max-width: 900px) {
+  .pageWrapper { padding: 0 16px 24px; }
+  .navRow { flex-wrap: wrap; height: auto; padding: 16px 20px; gap: 8px; }
+  .contentRow { flex-direction: column; padding: 0 20px; }
+  .summaryColumn { width: 100%; position: static; }
+  .formsColumn { width: 100%; }
+  .card { width: 100%; }
+  .fieldsRow { flex-direction: column; width: 100%; }
+  .summaryCard { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .navRow { padding: 12px 16px; }
+  .contentRow { padding: 0 16px; }
+  .card { padding: 20px 16px; }
+  .stepTitle { font-size: 18px; }
+  .stepSubtitle { font-size: 14px; }
+  .nextBtn, .saveBtn { width: 100%; }
+  .navButtonsGroup { width: 100%; flex-direction: column; gap: 6px; }
+  .expensesTable { width: 100%; }
+  .modal { padding: 20px 16px; }
+  .modalHeader, .emailSection, .emailRow { width: 100%; }
+  .emailRow { flex-direction: column; height: auto; gap: 8px; }
+  .modalSubmitBtn { width: 100%; }
+  .modalText { width: 100%; }
+}
+
+.taxWarningHint {
+  font-size: 12px;
+  color: #9CA6B6;
+  margin: 4px 0 0;
+  text-align: right;
+  width: 100%;
+}
+
+/* ─── Sale expenses redesign ─────────────────────────────────────── */
+.saleExpensesBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  direction: rtl;
+}
+
+.saleExpenseSectionNew {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.saleExpenseRowNew {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  direction: rtl;
+}
+
+.saleHalfLabel {
+  flex: 1;
+  height: 45px;
+  border: 1px solid rgba(37,42,98,0.15);
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1B3A;
+  background: #faf8f3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  direction: rtl;
+  gap: 6px;
+}
+
+.salePctInput {
+  width: 36px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1B3A;
+  text-align: left;
+  padding: 0;
+}
+
+.salePctSuffix {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1B3A;
+  white-space: nowrap;
+}
+
+.saleHalfInput {
+  flex: 1;
+  height: 45px;
+  border: 1px solid rgba(37,42,98,0.15);
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #1A1B3A;
+  background: white;
+  box-sizing: border-box;
+  text-align: right;
+  outline: none;
+}
+
+.saleHalfInput:focus {
+  border-color: rgba(37,42,98,0.4);
+}
+
+.saleReadOnly {
+  flex: 1;
+  height: 45px;
+  border: 1px solid rgba(37,42,98,0.15);
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #9CA6B6;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+}
+
+.saleExpenseHint {
+  font-size: 12px;
+  color: #9CA6B6;
+  margin: 0;
+  text-align: left;
+  padding-left: 36px;
+}
+
+.saleTrashBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+  color: #9CA6B6;
+  flex-shrink: 0;
+  line-height: 1;
+}

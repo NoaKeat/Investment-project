@@ -43,7 +43,7 @@ export default function ContactForm() {
     const body = Object.fromEntries(formData);
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("http://localhost:5000/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

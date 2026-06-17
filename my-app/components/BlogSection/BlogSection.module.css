@@ -4,6 +4,7 @@
   padding-inline: clamp(24px, 6vw, 130px);
   direction: rtl;
   padding-bottom: 80px;
+  padding-top: 80px;
   /* 🔥 זה הפתרון */
 }
 

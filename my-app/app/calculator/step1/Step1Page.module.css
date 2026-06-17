@@ -1,473 +1,703 @@
-/* ─── Design Tokens ──────────────────────────────────────────────────────── */
-/* :root is not scoped in CSS Modules — these become global custom properties */
 
-:root {
-  --color-primary:      #E5B260;
-  --color-primary-text: #E6B360;
-  --color-dark:         #1A1B3A;
-  --color-dark-border:  rgba(37, 42, 98, 0.07);
-  --color-white:        #FFFFFF;
-  --color-shadow:       rgba(158, 158, 158, 0.07);
-}
-
-/* ─── Layout ─────────────────────────────────────────────────────────────── */
-
-.page {
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ◄ שונה מ-flex-end כדי שכל עמוד השדרה של האתר יהיה במרכז */
+  padding: 0 16px 24px;
+  gap: 24px;
+  width: 100%;
+  direction: rtl;
   min-height: 100vh;
   background: #f5f0e5;
-  direction: rtl;
-  padding: 32px 48px 64px;
   box-sizing: border-box;
   font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
 }
 
-/* header: progress bar + action buttons */
-.header {
+/* ─── Nav row ────────────────────────────────────────────────────────────── */
+
+.navRow {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* דוחף את הכפתורים לשמאל ואת הכותרת לימין */
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 28px;
-  flex-wrap: wrap;
+  padding: 0px 122px;
+  gap: 12px;
+  width: 100%;
+  height: 52px;
+  direction: rtl;
+  box-sizing: border-box; /* מבטיח שהפדינג לא ירחיב את הדיב */
+}
+.navButtonsGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 12px;
 }
-
-.headerActions {
+.nextBtn {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 15px;
   gap: 10px;
+  width: 168px;
+  height: 36px;
+  background: #E5B260;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  color: #1A1B3A;
+  white-space: nowrap;
   flex-shrink: 0;
+  transition: opacity 0.15s;
+  /* הסרנו את ה-order */
 }
 
-/* page title */
-.pageTitle {
-  margin-bottom: 32px;
+.nextBtn:disabled { opacity: 0.45; cursor: not-allowed; }
+.nextBtn:hover:not(:disabled) { opacity: 0.88; }
+
+.saveBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 15px;
+  gap: 10px;
+  width: 198px;
+  height: 36px;
+  border-radius: 18px;
+  border: 1px solid rgba(37, 42, 98, 0.15); /* הוספת מסגרת עדינה כמו בתמונה */
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  color: #1A1B3A;
+  white-space: nowrap;
+  flex-shrink: 0;
+  /* הסרנו את ה-order */
 }
 
-.pageTitleIcon {
+/* קבוצה שתחזיק את הכותרת והאייקון יחד בצד ימין */
+.navTitleGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px; /* מרווח בין האייקון לטקסט */
+}
+.stepTitleBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* יישור הטקסטים לימין בתוך הבלוק */
+  padding: 0px;
+  gap: 4px;
+}
+
+.stepTitle {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: right;
+  color: #E6B360;
+  margin: 0;
+}
+.stepSubtitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  margin: 0;
+}
+
+.stepIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 46px;
   height: 46px;
   border: 1.5px solid #E6B360;
   border-radius: 999px;
+  color: #E5B260;
+  font-size: 20px;
+  flex-shrink: 0;
+  /* הסרנו את ה-order */
+}
+
+/* ─── Content layout ─────────────────────────────────────────────────────── */
+
+.contentRow {
   display: flex;
+  flex-direction: row-reverse; /* ◄ הוקוס פוקוס! זה הופך את המיקומים: הטפסים לימין, הסיכום לשמאל */
   justify-content: center;
-  align-items: center;
-  padding: 0px;
-}
-
-.mainTitle {
-  font-size: 24px;
-  font-weight: 700;
-  font-family: var(--font-leon), 'Leon', sans-serif;
-  color: var(--color-primary-text);
-  margin: 0 0 6px;
-  line-height: 1.2;
-}
-
-.mainSubtitle {
-  font-size: 16px;
-  font-weight: 400;
-  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
-  color: var(--color-dark);
-  margin: 0;
-}
-
-/* two-column layout — form takes remaining space, summary is 423 px fixed */
-.layout {
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-  align-items: start;
-}
-
-.formColumn {
-  flex: 1;
-  min-width: 0; /* prevents flex child from overflowing */
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  align-items: flex-start;
+  padding: 0px 122px;
+  gap: 16px;
+  width: 100%;
+  direction: rtl;
 }
 
 .summaryColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   width: 423px;
-  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 15.3px rgba(158, 158, 158, 0.07));
   position: sticky;
   top: 24px;
+  direction: rtl;
+ 
 }
 
-/* ─── Buttons ────────────────────────────────────────────────────────────── */
+.formsColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  width: 728px;
+  direction: rtl;
 
-.btnPrimary {
-  height: 36px;
-  padding: 6px 15px;
-  border-radius: 18px;
-  border: none;
-  background: var(--color-primary);
-  color: var(--color-dark);
-  font-size: 16px;
-  font-weight: 400;
-  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: transform 0.15s, opacity 0.15s;
-}
-
-.btnPrimary:hover:not(:disabled) {
-  transform: scale(1.03);
-}
-
-.btnPrimary:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-
-.btnOutline {
-  height: 36px;
-  padding: 6px 15px;
-  border-radius: 18px;
-  border: 1px solid var(--color-dark);
-  background: transparent;
-  color: var(--color-dark);
-  font-size: 16px;
-  font-weight: 400;
-  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: transform 0.15s;
-}
-
-.btnOutline:hover {
-  transform: scale(1.03);
 }
 
 /* ─── Cards ──────────────────────────────────────────────────────────────── */
 
 .card {
-  background: var(--color-white);
-  border-radius: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   padding: 28px;
-  border: 1px solid var(--color-dark-border);
-  box-shadow: 0px 4px 15.3px var(--color-shadow);
+  gap: 24px;
+  width: 728px;
+  background: #FFFFFF;
+  border: 1px solid rgba(37, 42, 98, 0.07);
+  box-shadow: 0px 4px 15.3px rgba(158, 158, 158, 0.07);
+  border-radius: 24px;
+  direction: rtl;
 }
 
-.sectionTitle {
-  font-size: 18px;
+.cardTitle {
+  font-family: var(--font-leon), 'Leon', serif;
   font-weight: 700;
-  color: var(--color-dark);
-  margin: 0 0 18px;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  width: 672px;
+  margin: 0;
 }
 
-.sectionSubtitle {
-  font-size: 13px;
-  color: #888;
-  margin: -10px 0 18px;
+.cardSubtitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  width: 672px;
+  margin: 0;
 }
 
-/* ─── Property section ───────────────────────────────────────────────────── */
+/* ─── Form fields ─────────────────────────────────────────────────────────── */
 
-.propertyRow {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  align-items: start;
+.fieldsRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  width: 672px;
+  direction: rtl;
 }
 
 .fieldGroup {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: flex-end;
+  gap: 4px;
+  flex: 1;
 }
 
-.label {
-  font-size: 13px;
+.fieldLabel {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  width: 100%;
+}
+
+.fieldLabelBold {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
   font-weight: 600;
-  color: var(--color-dark);
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  flex: 1;
 }
 
-/* input with ₪ symbol — RTL: ₪ appears on the right side (flex start) */
+/* ─── Input styles ────────────────────────────────────────────────────────── */
+
 .inputWithSymbol {
   display: flex;
+  flex-direction: row-reverse;
   align-items: stretch;
-  border: 1.5px solid #ddd5c4;
-  border-radius: 30px;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
   overflow: hidden;
   background: #fff;
+  width: 100%;
+  height: 45px;
+  box-sizing: border-box;
   transition: border-color 0.15s;
 }
 
-.inputWithSymbol:focus-within {
-  border-color: var(--color-primary);
-}
+.inputWithSymbol:focus-within { border-color: #9CA6B6; }
 
-/* border-inline-end = left border in RTL — divider between ₪ and input */
 .currencySymbol {
-  padding: 0 14px;
-  color: #888;
+  padding: 0 12px;
+  color: #9CA6B6;
   background: #faf8f3;
   font-size: 15px;
   display: flex;
   align-items: center;
-  border-inline-end: 1.5px solid #ddd5c4;
+  border-inline-start: 1px solid rgba(37, 42, 98, 0.15);
   flex-shrink: 0;
 }
 
 .input {
-  border: none;
-  outline: none;
-  padding: 11px 16px;
-  font-size: 15px;
+  box-sizing: border-box;
+  padding: 12px;
   width: 100%;
-  font-family: inherit;
-  background: transparent;
-  text-align: right;
-  color: var(--color-dark);
-  direction: ltr; /* numbers always LTR */
-}
-
-.input::placeholder {
-  color: #bbb;
-  direction: rtl;   /* Hebrew placeholder */
-  text-align: right;
-}
-
-/* property type toggle buttons */
-.toggleGroup {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 24px;
-  width: 672px;
-  height: 73px;
-}
-
-.toggleBtn {
-  flex: 1;
-  padding: 11px 8px;
-  border: 1.5px solid #ddd5c4;
-  border-radius: 30px;
-  background: #fff;
-  color: #555;
+  height: 45px;
+  background: #FFFFFF;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
   font-size: 14px;
+  color: #1A1B3A;
+  text-align: right;
+  direction: rtl;
+  unicode-bidi: embed;
+  outline: none;
+}
+
+.input:focus { border-color: #9CA6B6; }
+.input::placeholder { color: #9CA6B6; direction: rtl; text-align: right; }
+
+/* override when nested inside .inputWithSymbol */
+.inputWithSymbol .input {
+  border: none;
+  border-radius: 0;
+  height: 100%;
+}
+
+/* select — expense type */
+.select {
+  width: 100%;
+  height: 45px;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  padding: 0 12px;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  color: #1A1B3A;
+  background: #fff;
+  direction: rtl;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.select:focus { border-color: #9CA6B6; }
+
+/* expense amount input */
+.expenseInput {
+  flex: 1;
+  width: 100%;
+  height: 45px;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  padding: 0 12px;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  color: #1A1B3A;
+  background: #fff;
+  direction: rtl;
+  text-align: right;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.expenseInput:focus { border-color: #9CA6B6; }
+.expenseInput::placeholder { color: #9CA6B6; }
+
+/* ─── Lawyer expense — % input + computed display ─────────────────────── */
+
+.lawyerFieldWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.lawyerPctInput {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  height: 45px;
+  width: 90px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.lawyerPctInput:focus-within { border-color: #9CA6B6; }
+
+.pctSuffix {
+  padding: 0 10px;
+  color: #9CA6B6;
+  background: #faf8f3;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  border-inline-start: 1px solid rgba(37, 42, 98, 0.15);
+  flex-shrink: 0;
+}
+
+.lawyerComputed {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 13px;
+  color: #9CA6B6;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ─── Property type toggle ────────────────────────────────────────────────── */
+
+.propertyTypeToggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 4px;
+  width: 328px;
+  height: 45px;
+  background: #F6F8FF;
+  border-radius: 12px;
+  direction: rtl;
+}
+
+.typeOption {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+  gap: 8px;
+  flex: 1;
+  height: 30px;
+  border-radius: 8px;
   cursor: pointer;
   font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
-  transition: all 0.2s;
+  font-size: 14px;
+  color: #404F69;
+  background: transparent;
+  border: none;
+  transition: background 0.15s;
 }
 
-.toggleBtn:hover {
-  border-color: var(--color-primary);
-  color: var(--color-dark);
-}
-
-.toggleBtnActive {
-  background: var(--color-dark);
-  color: var(--color-primary);
-  border-color: var(--color-dark);
-  font-weight: 600;
+.typeOptionSelected {
+  background: #FFFFFF;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  font-weight: 400;
+  color: #404F69;
 }
 
 /* ─── Expenses section ───────────────────────────────────────────────────── */
 
-.expensesHeader {
-  display: grid;
-  grid-template-columns: 1fr 1fr 40px;
+.expensesBody {
+  display: flex;
+  flex-direction: column;
   gap: 12px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ede8df;
-  margin-bottom: 10px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #999;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.expenseRow {
-  display: grid;
-  grid-template-columns: 1fr 1fr 40px;
-  gap: 12px;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.select {
-  border: 1.5px solid #ddd5c4;
-  border-radius: 30px;
-  padding: 10px 16px;
-  font-size: 14px;
-  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
-  background: #fff;
-  color: var(--color-dark);
-  outline: none;
+  width: 100%;
   direction: rtl;
-  cursor: pointer;
+}
+
+.fixedExpenseSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   width: 100%;
-  transition: border-color 0.15s;
 }
 
-.select:focus {
-  border-color: var(--color-primary);
+.fixedExpenseRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  direction: rtl;
 }
 
-.expenseInput {
-  border: 1.5px solid #ddd5c4;
-  border-radius: 30px;
-  padding: 10px 16px;
-  font-size: 14px;
+.fixedExpenseLabel {
   font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
-  background: #fff;
-  color: var(--color-dark);
-  outline: none;
-  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1B3A;
+  min-width: 72px;
   text-align: right;
-  box-sizing: border-box;
-  direction: ltr;
-  transition: border-color 0.15s;
+  flex-shrink: 0;
 }
 
-.expenseInput:focus {
-  border-color: var(--color-primary);
+.vatHint {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 12px;
+  color: #9CA6B6;
+  margin: 0;
+  text-align: left;
+  padding-left: 28px;
 }
 
-.expenseInput::placeholder {
-  color: #bbb;
+.otherExpenseRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  direction: rtl;
 }
 
-.deleteBtn {
-  width: 40px;
-  height: 40px;
-  border: none;
-  background: transparent;
-  color: var(--color-primary);
+
+.trashIcon {
+  font-size: 16px;
+  color: #E6B360;
   cursor: pointer;
-  border-radius: 50%;
-  font-size: 17px;
+  width: 20px;
+  height: 45px;
+  background: transparent;
+  border: none;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: background 0.15s;
 }
 
-.deleteBtn:hover {
-  background: #fdf4e0;
+/* ─── New two-box expense row ─────────────────────────────────────────────── */
+
+.newExpenseRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  direction: rtl;
 }
 
-.addExpenseBtn {
-  background: transparent;
-  border: 1.5px dashed var(--color-primary);
-  color: var(--color-primary);
-  padding: 11px 20px;
-  border-radius: 30px;
+.halfLabel {
+  flex: 1;
+  height: 45px;
+  border: 1px solid rgba(37, 42, 98, 0.15);
+  border-radius: 8px;
+  padding: 0 12px;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
   font-size: 14px;
   font-weight: 600;
+  color: #1A1B3A;
+  background: #faf8f3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  direction: rtl;
+  flex-shrink: 0;
+}
+
+.halfInput {
+  flex: 1 !important;
+  width: auto !important;
+  flex-shrink: 0;
+}
+
+/* ─── Add expense button ──────────────────────────────────────────────────── */
+
+.addExpenseBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 15px;
+  gap: 10px;
+  width: 142px;
+  height: 36px;
+  border-radius: 18px;
+  border: 1.5px dashed #E6B360;
+  background: transparent;
   cursor: pointer;
   font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
-  margin-top: 6px;
-  width: 100%;
-  transition: background 0.15s;
+  font-size: 16px;
+  color: #1A1B3A;
+  align-self: flex-start;
 }
 
-.addExpenseBtn:hover {
-  background: #fdf8ee;
-}
+.addExpenseBtn:hover { background: #FFF8EA; }
 
-/* ─── Summary card ───────────────────────────────────────────────────────── */
+/* ─── Summary card ────────────────────────────────────────────────────────── */
 
-/* empty state */
-.emptyCard {
-  background: var(--color-white);
-  border-radius: 24px;
-  padding: 48px 24px;
-  border: 1px solid var(--color-dark-border);
-  box-shadow: 0px 4px 15.3px var(--color-shadow);
-  text-align: center;
-}
-
-.emptyIcon {
-  font-size: 52px;
-  margin-bottom: 14px;
-  display: block;
-}
-
-.emptyTitle {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--color-dark);
-  margin: 0 0 8px;
-}
-
-.emptyText {
-  font-size: 14px;
-  color: #888;
-  margin: 0;
-  line-height: 1.6;
-}
-
-/* filled state */
 .summaryCard {
-  background: var(--color-white);
-  border-radius: 24px;
-  padding: 28px;
-  border: 1px solid var(--color-dark-border);
-  box-shadow: 0px 4px 15.3px var(--color-shadow);
-}
-
-.summaryHeaderRow {
   display: flex;
   flex-direction: column;
-  margin-bottom: 18px;
+  align-items: flex-end;
+  padding: 28px;
+  gap: 24px;
+  width: 423px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+/* ── Header ── */
+.summaryHeader {
+  display: flex;
+  flex-direction: row-reverse; /* ◄ משנים ל-row-reverse כדי שהאייקון יקפוץ לימין והטקסטים לשמאל */
+  justify-content: flex-end;   /* ◄ דוחף את שניהם יחד לצד ימין של הכרטיס */
+  align-items: center;
+  padding: 0px 0px 12px;
+  gap: 16px;                   /* המרווח בין האייקון לטקסט */
+  width: 100%;
+  border-bottom: 1px solid rgba(37, 42, 98, 0.15);
+}
+
+.summaryTitleBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;     /* ◄ משנים ל-flex-start כדי שהשורה השנייה תתיישר פרפקט לימין מתחת לראשונה (בגלל שהאבא הפוך) */
+  gap: 4px;
+  flex: 1;
 }
 
 .summaryTitle {
-  font-size: 17px;
+  font-family: var(--font-leon), 'Leon', serif;
   font-weight: 700;
-  color: var(--color-dark);
-  margin: 0 0 4px;
+  font-size: 20px;
+  color: #1A1B3A;
+  text-align: right;          /* מבטיח יישור טקסט לימין */
+  margin: 0;
+  width: 100%;
 }
 
 .summarySubtitle {
-  font-size: 12px;
-  color: #aaa;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #1A1B3A;
+  text-align: right;          /* מבטיח יישור טקסט לימין */
+  margin: 0;
+  width: 100%;
 }
 
+.summaryIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid #1A1B3A;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+/* ── Empty state ── */
+.summaryEmpty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-height: 180px;
+  background: #FFFDF9;
+  border-radius: 16px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.summaryEmptyTitle {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #1A1B3A;
+  text-align: center;
+}
+
+.summaryEmptyText {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #404F69;
+  text-align: center;
+  width: 100%;
+}
+
+/* ── Data rows ── */
 .summaryRow {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 7px 0;
   font-size: 14px;
-  color: var(--color-dark);
+  color: #1A1B3A;
+  width: 100%;
+  direction: rtl;
 }
 
-.summaryRowLabel {
-  color: #555;
-}
-
-.summaryRowValue {
-  font-weight: 600;
-  color: var(--color-dark);
-}
-
-/* shimmer — compound selector works in CSS Modules (both classes are scoped) */
-.summaryRowValue.shimmer {
-  opacity: 0.4;
-  animation: shimmer 1.2s infinite;
-}
+.summaryRowLabel { color: #555; font-size: 14px; text-align: right; }
+.summaryRowValue { font-weight: 600; color: #1A1B3A; font-size: 14px; text-align: left; }
 
 @keyframes shimmer {
   0%, 100% { opacity: 0.3; }
   50%       { opacity: 0.7; }
 }
 
+.shimmer {
+  opacity: 0.4;
+  animation: shimmer 1.2s infinite;
+}
+
 .taxNote {
   font-size: 12px;
-  color: var(--color-primary);
+  color: #E6B360;
   padding: 2px 0 10px;
+  width: 100%;
+  margin: 0;
+  text-align: right;
 }
 
 .divider {
   border: none;
   border-top: 1px solid #ede8df;
-  margin: 8px 0;
+  margin: 0;
+  width: 100%;
 }
 
 .summarySectionLabel {
@@ -477,34 +707,34 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   padding: 8px 0 4px;
+  width: 100%;
+  text-align: right;
 }
 
-/* total row */
 .summaryTotalRow {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 12px 0;
+  width: 100%;
+  direction: rtl;
 }
 
 .summaryTotalLabel {
   font-size: 15px;
   font-weight: 700;
-  color: var(--color-dark);
+  color: #1A1B3A;
+  text-align: right;
 }
 
 .summaryTotalValue {
   font-size: 18px;
   font-weight: 700;
-  color: var(--color-primary);
+  color: #E6B360;
+  text-align: left;
 }
 
-.summaryTotalValue.shimmer {
-  opacity: 0.4;
-  animation: shimmer 1.2s infinite;
-}
-
-/* footer note */
 .summaryFooter {
   background: #faf8f3;
   border: 1px solid #ede8df;
@@ -512,27 +742,44 @@
   padding: 12px 14px;
   font-size: 13px;
   color: #666;
-  margin-top: 14px;
   line-height: 1.6;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: right;
+  direction: rtl;
 }
 
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
 
+@media (max-width: 1460px) {
+  .pageWrapper { width: 100%; }
+  .navRow, .contentRow { width: 100%; padding: 0 48px; }
+  .card { width: 100%; }
+  .formsColumn { width: auto; flex: 1; }
+  .fieldsRow, .expensesBody { width: 100%; }
+  .cardTitle, .cardSubtitle { width: 100%; }
+}
+
 @media (max-width: 900px) {
-  .page {
-    padding: 20px 20px 48px;
-  }
+  .pageWrapper { padding: 0 16px 24px; }
+  .navRow { flex-wrap: wrap; height: auto; padding: 16px 20px; gap: 8px; }
+  .contentRow { flex-direction: column; padding: 0 20px; }
+  .summaryColumn { width: 100%; position: static; }
+  .formsColumn { width: 100%; }
+  .card { width: 100%; }
+  .fieldsRow { flex-direction: column; width: 100%; }
+  .propertyTypeToggle { width: 100%; }
+  .expensesBody { width: 100%; }
+  .summaryCard { width: 100%; }
+  .summaryHeader, .summaryEmpty { width: 100%; }
+}
 
-  .layout {
-    flex-direction: column;
-  }
-
-  .summaryColumn {
-    width: 100%;
-    position: static;
-  }
-
-  .propertyRow {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 480px) {
+  .navRow { padding: 12px 16px; }
+  .contentRow { padding: 0 16px; }
+  .card { padding: 20px 16px; }
+  .stepTitle { font-size: 18px; }
+  .stepSubtitle { font-size: 14px; }
+  .nextBtn, .saveBtn { width: 100%; }
+  .navButtonsGroup { width: 100%; flex-direction: column; gap: 6px; }
 }

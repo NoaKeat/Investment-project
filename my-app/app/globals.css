@@ -7,6 +7,21 @@ body {
   font-family: var(--font-noto), sans-serif;
   overflow-x: hidden;
   margin: 0;
-  background: #1A1B3A; 
+  background: #1A1B3A;
+}
+
+/* ─── Shared design tokens (used by all calculator steps) ── */
+:root {
+  --color-navy:           #1A1B3A;
+  --color-gold:           #E6B360;
+  --color-gold-light:     #FFFCC1;
+  --color-text-secondary: #404F69;
+  --color-text-value:     #252A62;
+  --color-border:         rgba(37, 42, 98, 0.15);
+  --color-border-light:   rgba(37, 42, 98, 0.07);
+  --color-bg-page:        #FFFDF9;
+  --color-bg-input:       #F6F8FF;
+  --color-bg-tip:         #FFF8EA;
+  --color-shadow:         rgba(158, 158, 158, 0.07);
 }
 

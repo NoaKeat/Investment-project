@@ -1,0 +1,564 @@
+/* ============================================================
+   BusinessSummaryPage / DealSummary — Figma-exact styles
+   ============================================================ */
+
+/* ── Wrapper ──────────────────────────────────────────────── */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 32px 0;
+  gap: 16px;
+  width: 100%;
+  max-width: 1411px;
+  margin: 0 auto;
+  direction: rtl;
+  font-family: 'Ploni ML v2 AAA', 'Heebo', sans-serif;
+  box-sizing: border-box;
+}
+
+/* ── Section 1 — Header row ───────────────────────────────── */
+.headerRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; /* כותרת ימין, כפתורים שמאל */
+  padding: 0 122px;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;    /* flex-start = ימין ב-RTL */
+  gap: 2px;
+  /* לא flex:1 — הכותרת תופסת רק את רוחבה הטבעי */
+}
+
+.pageTitle {
+  font-family: 'Leon', 'Georgia', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1A1B3A;
+  margin: 0;
+  text-align: right;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.pageSubtitle {
+  font-size: 13px;
+  font-weight: 400;
+  color: #718096;
+  margin: 0;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.buttonsGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.btnGold {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 32px;
+  background: #E5B260;
+  border-radius: 18px;
+  border: none;
+  padding: 5px 14px;
+  font-family: 'Ploni ML v2 AAA', 'Heebo', sans-serif;
+  font-size: 14px;
+  color: #1A1B3A;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+.btnGold:hover  { opacity: 0.88; }
+.btnGold:active { transform: scale(0.98); }
+
+.btnOutline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 32px;
+  background: transparent;
+  border: 1.5px solid #1A1B3A;
+  border-radius: 18px;
+  padding: 5px 14px;
+  font-family: 'Ploni ML v2 AAA', 'Heebo', sans-serif;
+  font-size: 14px;
+  color: #1A1B3A;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+.btnOutline:hover  { opacity: 0.88; }
+.btnOutline:active { transform: scale(0.98); }
+
+/* ── Section 2 — Content area ────────────────────────────── */
+.contentRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 122px;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.innerColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Card A — Hero net profit ─────────────────────────────── */
+.heroCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 24px;
+  gap: 12px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15.3px rgba(158, 158, 158, 0.07);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.iconCircleGold {
+  width: 40px;
+  height: 40px;
+  background: #FFF8EA;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E5B260;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.iconCircleBlue {
+  width: 34px;
+  height: 34px;
+  background: #F6F8FF;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #252A62;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.heroLabel {
+  font-family: 'Leon', 'Georgia', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1A1B3A;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+.heroValue {
+  font-family: 'Leon', 'Georgia', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #252A62;
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  direction: ltr;
+}
+
+.heroFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.footerText {
+  font-family: 'Ploni ML v2 AAA', 'Heebo', sans-serif;
+  font-size: 13px;
+  color: #718096;
+  margin: 0;
+}
+
+/* ── Tooltip ──────────────────────────────────────────────── */
+.tooltipAnchor {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tooltipIcon {
+  color: #1A1B3A;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  display: flex;
+  align-items: center;
+}
+.tooltipIcon:hover { opacity: 0.6; }
+
+.tooltipBox {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  right: 50%;
+  transform: translateX(50%);
+  width: 227px;
+  background: #FFF8EA;
+  border-radius: 12px;
+  padding: 12px 16px;
+  box-shadow: 0px 4px 8.3px rgba(179, 179, 179, 0.25);
+  font-family: 'Ploni ML v2 AAA', 'Heebo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #1A1B3A;
+  direction: rtl;
+  text-align: right;
+  z-index: 100;
+  pointer-events: none;
+  animation: tooltipIn 0.18s ease forwards;
+  white-space: normal;
+}
+
+.tooltipBox::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 50%;
+  transform: translateX(50%);
+  border: 6px solid transparent;
+  border-top-color: #FFF8EA;
+  filter: drop-shadow(0 1px 0 rgba(179, 179, 179, 0.25));
+}
+
+@keyframes tooltipIn {
+  from { opacity: 0; transform: translateX(50%) translateY(4px); }
+  to   { opacity: 1; transform: translateX(50%) translateY(0);   }
+}
+
+/* ── Row B — 3 stat cards ─────────────────────────────────── */
+.statRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.statCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 16px;
+  gap: 10px;
+  background: #FFFFFF;
+  border: 1px solid rgba(37, 42, 98, 0.07);
+  border-radius: 20px;
+  box-shadow: 0px 4px 15.3px rgba(158, 158, 158, 0.07);
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.statIconCircle {
+  width: 38px;
+  height: 38px;
+  background: #FFF8EA;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E6B360;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.statTextBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  align-items: center;
+}
+
+.statTitle {
+  font-family: 'Leon', 'Georgia', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1A1B3A;
+  text-align: center;
+  margin: 0;
+}
+
+.statValue {
+  font-family: 'Leon', 'Georgia', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #252A62;
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: center;
+  margin: 0;
+  direction: ltr;
+}
+
+.statValue.negative { color: #EF4444; }
+.statValue.positive { color: #16A34A; }
+
+.statFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-top: 1px solid rgba(37, 42, 98, 0.07);
+  padding-top: 10px;
+  width: 100%;
+}
+
+.statFooterText {
+  font-family: 'Ploni ML v2 AAA', 'Heebo', sans-serif;
+  font-size: 12px;
+  color: #718096;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Row C — Accordion ────────────────────────────────────── */
+.accordionList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;   /* gap between section cards */
+}
+
+.accordionItem {
+  background: #FFFFFF;
+  border: 1px solid rgba(37, 42, 98, 0.1);
+  border-radius: 12px;
+  box-shadow: 0px 1px 4px rgba(37, 42, 98, 0.06);
+  overflow: hidden;
+}
+
+/* ── Header ── */
+.accordionHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 14px 16px;
+  gap: 10px;
+  min-height: 54px;
+  cursor: pointer;
+  user-select: none;
+  background: #FFFFFF;
+  /* RTL: first child = right side */
+}
+
+.accordionHeader:hover { background: #FAFAFA; }
+
+/* RIGHT side: icon circle */
+.accordionIconCircle {
+  width: 32px;
+  height: 32px;
+  background: #F0F4FF;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #252A62;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* CENTER: title — takes remaining space */
+.accordionTitle {
+  font-family: 'Ploni ML v2 AAA', 'Heebo', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1A1B3A;
+  text-align: right;
+  flex: 1;
+  margin: 0;
+}
+
+/* LEFT side controls: edit button + chevron */
+.accordionControls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.editPill {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 28px;
+  padding: 0 12px;
+  background: #FFFFFF;
+  border-radius: 999px;
+  border: 1px solid rgba(37, 42, 98, 0.18);
+  font-family: 'Ploni ML v2 AAA', 'Heebo', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #252A62;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.editPill:hover  { background: #F0F4FF; }
+.editPill:active { transform: scale(0.97); }
+
+.chevronCircle {
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6B7280;
+  font-size: 12px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, color 0.15s;
+  cursor: pointer;
+}
+
+.chevronCircle.open {
+  transform: rotate(180deg);
+  color: #252A62;
+}
+
+/* ── Body ── */
+.accordionBody {
+  padding: 4px 16px 16px;
+  background: #FAFAFA;
+  border-top: 1px solid rgba(37, 42, 98, 0.07);
+}
+
+/* ── Data rows ── */
+.dataRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  /* NO border, NO dotted line — just spacing */
+}
+
+.dataLabel {
+  font-family: 'Ploni ML v2 AAA', 'Heebo', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #6B7280;
+}
+
+.dataValue {
+  font-family: 'Ploni ML v2 AAA', 'Heebo', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1A1B3A;
+  direction: ltr;
+  unicode-bidi: isolate;
+  direction: ltr;
+}
+
+/* ── Total row — last child in each section ── */
+.accordionBody .dataRow:last-child {
+  padding-top: 12px;
+  margin-top: 6px;
+  border-top: 1px solid rgba(37, 42, 98, 0.1);
+}
+
+.accordionBody .dataRow:last-child .dataLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1A1B3A;
+}
+
+.accordionBody .dataRow:last-child .dataValue {
+  font-size: 16px;
+  font-weight: 700;
+  color: #252A62;
+}
+
+/* Colour overrides */
+.dataValue.red   { color: #EF4444 !important; }
+.dataValue.green { color: #16A34A !important; }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .headerRow,
+  .contentRow { padding: 0 40px; }
+}
+
+@media (max-width: 900px) {
+  .wrapper { padding: 24px 0; }
+
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    padding: 0 20px;
+  }
+
+  .pageTitle { font-size: 22px; }
+  .pageSubtitle { white-space: normal; max-width: 100%; }
+
+  .contentRow { padding: 0 20px; }
+
+  .statRow { flex-direction: column; }
+
+  .statCard { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .headerRow { padding: 0 16px; }
+  .contentRow { padding: 0 16px; }
+  .pageTitle { font-size: 20px; }
+  .buttonsGroup { flex-direction: column; align-items: stretch; width: 100%; }
+  .btnGold, .btnOutline { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 600px) {
+  .heroValue { font-size: 36px; }
+  .buttonsGroup { flex-direction: column; align-items: stretch; }
+  .btnGold, .btnOutline { width: 100%; }
+}

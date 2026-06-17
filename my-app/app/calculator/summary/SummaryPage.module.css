@@ -1,0 +1,498 @@
+/* ==========================================================================
+   ─── 1. שכבות מבנה, צבעים ומיקומים חיצוניים (מעודכן לפי פיגמה) ───
+   ========================================================================== */
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px 24px;
+  gap: 0;
+  width: 100%;
+  direction: rtl;
+  min-height: 100vh;
+  background: #f5f0e5;
+  box-sizing: border-box;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+}
+
+.navRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 122px; /* ריווח צד מדויק התואם לתוכן */
+  gap: 12px;
+  width: 1411px;
+  height: 72px; /* מרווח נשימה מוגדל לכותרת הראשית */
+  direction: rtl;
+  box-sizing: border-box;
+  align-self: stretch;
+  flex: none;
+}
+
+.contentRow {
+  display: flex;
+  flex-direction: row-reverse; /* היפוך כיוון לפריסה נכונה של הזרמת האלמנטים */
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px 122px;
+  gap: 16px;
+  width: 1411px;
+  box-sizing: border-box;
+  align-self: stretch;
+  flex: none;
+}
+
+.formsColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  width: 1167px; /* רוחב עמודה רחב ומלא לסיכום במקום 728px הצר */
+  flex: none;
+}
+
+.summaryColumn {
+  display: none; /* מסתיר את עמודת הצד הישנה בדף הסיכום הסופי */
+}
+
+
+/* ==========================================================================
+   ─── 2. קארד הירו המרכזי והמדדים (Hero & KPI Grid) ───
+   ========================================================================== */
+
+/* קארד עליון ראשי - רווח נטו צפוי מהעסקה */
+.hero {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px;
+  gap: 16px;
+  width: 100%;
+  max-width: 1167px;
+  background: #FFFFFF;
+  border: 1px solid rgba(37, 42, 98, 0.04);
+  box-shadow: 0px 4px 15.3px rgba(158, 158, 158, 0.07);
+  border-radius: 24px;
+}
+
+.heroIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: #FFF8EA;
+  border-radius: 999px;
+  font-size: 22px;
+  color: #E6B360;
+}
+
+.heroLabel {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #1A1B3A;
+  margin: 0;
+  text-align: center;
+}
+
+.heroValue {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 50px;
+  color: #252A62;
+  margin: 0;
+  text-align: center;
+  direction: ltr;
+}
+
+.heroSub {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #718096;
+  margin: 0;
+  text-align: center;
+}
+
+/* גריד שלושת הכרטיסים המשניים */
+.kpiGrid {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  max-width: 1167px;
+}
+
+.kpiCard {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 28px;
+  gap: 16px;
+  flex: 1;
+  background: #FFFFFF;
+  border: 1px solid rgba(37, 42, 98, 0.07);
+  box-shadow: 0px 4px 15.3px rgba(158, 158, 158, 0.07);
+  border-radius: 24px;
+}
+
+.kpiIcon {
+  width: 44px;
+  height: 44px;
+  background: #FFF8EA;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #E6B360;
+}
+
+.kpiTitle {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #1A1B3A;
+  margin: 0;
+  text-align: center;
+}
+
+.kpiValue {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #252A62;
+  margin: 0;
+  text-align: center;
+  direction: ltr;
+}
+
+
+/* ==========================================================================
+   ─── 3. רשימת האקורדיונים המשוכבת (Sections & Accordions) ───
+   ========================================================================== */
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1167px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #FFFFFF;
+  border-left: 1px solid rgba(37, 42, 98, 0.07);
+  border-right: 1px solid rgba(37, 42, 98, 0.07);
+  border-bottom: 1px solid rgba(37, 42, 98, 0.07);
+  box-shadow: 0px 4px 15.3px rgba(158, 158, 158, 0.07);
+  transition: background 0.15s ease;
+}
+
+/* חיבור ועיגול פינות חכם רק לקצוות החיצוניים של הרשימה */
+.section:first-child {
+  border-top: 1px solid rgba(37, 42, 98, 0.07);
+  border-radius: 24px 24px 0px 0px;
+}
+
+.section:first-child .sectionHeader {
+  border-radius: 24px 24px 0px 0px;
+}
+
+.section:last-child {
+  border-radius: 0px 0px 24px 24px;
+}
+
+.section:last-child .sectionHeader {
+  border-radius: 0px 0px 24px 24px;
+}
+
+/* כפתור שורת הכותרת של האקורדיון */
+.sectionHeader {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  width: 100%;
+  background: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.sectionHeaderLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.chevron {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: #FFF8EA;
+  border-radius: 999px;
+  font-size: 11px;
+  color: #1A1B3A;
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.sectionTitle {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #1A1B3A;
+}
+
+.sectionActions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.editBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 16px;
+  background: #F6F8FF;
+  border-radius: 999px;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 14px;
+  color: #252A62;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.editBtn:hover {
+  background: #E0E7FF;
+}
+
+.sectionIcon {
+  width: 36px;
+  height: 36px;
+  background: #F6F8FF;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+/* פנים האקורדיון הפתוח (התוכן הסטטיסטי) */
+.sectionBody {
+  padding: 24px;
+  background: #f5f0e5;
+  border-top: 1px solid rgba(37, 42, 98, 0.04);
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+}
+
+.sectionRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
+}
+
+.rowLabel {
+  color: #4A5568;
+  font-size: 15px;
+}
+
+.rowValue {
+  font-weight: 700;
+  color: #1A1B3A;
+  font-size: 15px;
+}
+
+.sectionGroup {
+  display: flex;
+  flex-direction: column;
+  margin: 12px 0;
+}
+
+.sectionGroupTitle {
+  font-weight: 700;
+  font-size: 14px;
+  color: #718096;
+  margin-bottom: 8px;
+  text-align: right;
+}
+
+.rowTotal {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0 0 0;
+  font-weight: 700;
+  font-size: 16px;
+  color: #252A62;
+  border-top: 1px solid rgba(37, 42, 98, 0.1);
+}
+
+.rowHighlight {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  margin: 12px 0;
+}
+
+.rowHighlight.positive {
+  background: #E6F4EA;
+  color: #137333 !important;
+}
+
+.rowHighlight.negative {
+  background: #FCE8E6;
+  color: #C5221F !important;
+}
+
+
+/* ==========================================================================
+   ─── 4. ניווט עליון, פונטים וצבעים גלובליים ───
+   ========================================================================== */
+
+.navTitleGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.navButtonsGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.stepTitleBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1;
+}
+
+.stepTitle {
+  font-family: var(--font-leon), 'Leon', serif;
+  font-weight: 700;
+  font-size: 40px; /* גודל כותרת מוגדל כמו בפיגמה */
+  line-height: 44px;
+  text-align: right;
+  color: #1A1B3A; /* צבע כותרת כהה לעיצוב הבהיר */
+  margin: 0;
+  width: 100%;
+}
+
+.stepSubtitle {
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #1A1B3A;
+  margin: 0;
+}
+
+.nextBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 15px;
+  gap: 10px;
+  width: 172px;
+  height: 36px;
+  background: #E5B260;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  color: #1A1B3A;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+
+.nextBtn:disabled { opacity: 0.45; cursor: not-allowed; }
+.nextBtn:hover:not(:disabled) { opacity: 0.88; }
+
+.saveBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 15px;
+  gap: 10px;
+  width: 195px;
+  height: 36px;
+  border-radius: 18px;
+  border: 1px solid rgba(26, 27, 58, 0.2);
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Ploni ML v2 AAA', var(--font-noto), 'Assistant', sans-serif;
+  font-size: 16px;
+  color: #1A1B3A;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.saveBtn:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.positive { color: #10B981 !important; }
+.negative { color: #EF4444 !important; }
+
+
+/* ==========================================================================
+   ─── 5. רספונסיביות והתאמה למסכי מובייל וטאבלט ───
+   ========================================================================== */
+
+@media (max-width: 1460px) {
+  .pageWrapper { width: 100%; }
+  .navRow, .contentRow { width: 100%; padding: 0 48px; }
+  .formsColumn { width: 100%; }
+  .kpiGrid { width: 100%; }
+}
+
+@media (max-width: 900px) {
+  .pageWrapper { padding: 24px 16px; }
+  .navRow { flex-direction: column-reverse; height: auto; padding: 16px 20px; gap: 16px; align-items: flex-start; }
+  .stepTitle { font-size: 28px; line-height: 32px; }
+  .navButtonsGroup { width: 100%; justify-content: flex-start; }
+  .contentRow { padding: 0 20px; }
+  .kpiGrid { flex-direction: column; width: 100%; }
+  .kpiCard { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .navRow { padding: 12px 16px; }
+  .contentRow { padding: 0 16px; }
+  .stepTitle { font-size: 22px; }
+}

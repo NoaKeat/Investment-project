@@ -1,22 +1,22 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import styles from './InvestmentCalculatorTeaser.module.css';
 import data from '@/data/investment.json';
-import CalculatorIcon from './icons/CalculatorIcon';
+
 
 const t = data.investmentCalculatorTeaser;
 
 export default function InvestmentCalculatorTeaser() {
+  const router = useRouter();
+
   return (
     <div className={styles.wrapper}>
 
       {/* ── כרטיס עם מסגרת זהובה ── */}
       <div className={styles.rectangle}>
 
-        {/* "בקרוב" — watermark בתוך הכרטיס, position: absolute */}
-        <span className={styles.comingSoonBadge} aria-hidden="true">
-          {t.comingSoonBadge}
-        </span>
-
-        {/* ── תוכן פנימי — z-index: 1 מעל ה-watermark ── */}
+        {/* ── תוכן פנימי ── */}
         <div className={styles.frame80}>
 
           <h2 className={styles.heading}>
@@ -32,11 +32,10 @@ export default function InvestmentCalculatorTeaser() {
 
           <button
             className={styles.ctaButton}
-            disabled
-            aria-disabled="true"
+            onClick={() => router.push('/calculator/step1')}
           >
             <div className={styles.iconCircle}>
-              <CalculatorIcon />
+           
             </div>
             <span className={styles.ctaText}>{t.ctaButtonText}</span>
           </button>
