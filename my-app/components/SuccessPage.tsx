@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { InlineWidget } from 'react-calendly';
 
 // 2. הקומפוננטה הפנימית שמבצעת את הלוגיקה
 const SuccessPageContent = () => {
@@ -22,12 +21,14 @@ const SuccessPageContent = () => {
       {isAuthorized ? (
         <>
           <h1 className="text-2xl font-bold mb-4">תודה רבה! התשלום בוצע בהצלחה.</h1>
-          <p>כעת ניתן לקבוע את הפגישה שלך ביומן למטה:</p>
-          
-          <div style={{ height: '700px' }}>
-            {/* כאן תכניסי את הלינק המלא של קלנדלי שלך */}
-            <InlineWidget url="https://calendly.com/YOUR_LINK" />
-          </div>
+          <p className="mb-6">קיבלנו את הפרטים שלך — נחזור אליך בהקדם לתיאום הפגישה. ניתן גם להשאיר פרטים ליצירת קשר:</p>
+
+          <a
+            href="/#contact"
+            className="inline-block px-6 py-2 rounded-full border border-[#E6B360] text-[#E6B360] transition hover:bg-[#E6B360] hover:text-[#1A1B3A]"
+          >
+            לקביעת פגישה
+          </a>
         </>
       ) : (
         <h1 className="text-red-500">משהו השתבש, לא ניתן לאמת את התשלום.</h1>

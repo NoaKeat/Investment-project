@@ -1,5 +1,4 @@
 import styles from "./MeetingContent.module.css";
-import CalendlyButton from "@/components/CalendlyButton/CalendlyButton";
 
 type Props = {
     title: string;

@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./Header.module.css";
 import data from "@/data/header.json";
-import CalendlyButton from "@/components/CalendlyButton/CalendlyButton";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,8 +55,10 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* כאן נשאר רק כפתור הצירוף לפגישות בדסקטופ */}
-          <CalendlyButton className={styles.button} />
+          {/* כפתור קביעת פגישה — גולל לטופס יצירת הקשר */}
+          <a href="/#contact" className={styles.button}>
+            {data.ctaButton ?? "לקביעת פגישה"}
+          </a>
         </div>
       </div>
 
@@ -80,8 +81,10 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* החלפנו גם כאן לכפתור ה-Calendly שייסגר/יופיע במובייל */}
-        <CalendlyButton className={styles.button} />
+        {/* כפתור קביעת פגישה במובייל — גולל לטופס יצירת הקשר */}
+        <a href="/#contact" className={styles.button} onClick={closeMenu}>
+          {data.ctaButton ?? "לקביעת פגישה"}
+        </a>
       </div>
     </header>
   );

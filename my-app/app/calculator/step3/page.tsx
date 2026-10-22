@@ -34,6 +34,13 @@ interface LocalExpense {
   amount: number | null; // סכום שנתי בשקלים
 }
 
+// שורת הכנסה נוספת (מעבר לשכ"ד) — סכום שנתי בשקלים
+interface LocalIncomeRow {
+  id: number;
+  label: string;
+  amount: number | null;
+}
+
 const DEFAULT_EXPENSES: LocalExpense[] = [
   { id: 1, type: 'תחזוקה שוטפת', amount: null },
   { id: 2, type: 'חברת ניהול',   amount: null },

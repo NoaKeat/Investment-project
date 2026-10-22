@@ -1,8 +1,6 @@
 import Header from "@/components/Header/Header";
 import ContactForm from "@/components/ContactForm/ContactForm";
 import styles from "./MeetingPage.module.css";
-import { PopupWidget } from "react-calendly";
-import CalendlyButton from "@/components/CalendlyButton/CalendlyButton";
 import ServiceCard from "../ServiceCard/ServiceCard";
 import servicesStyles from "@/components/Services/Services.module.css";
 import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSection2";
@@ -60,7 +58,11 @@ export default function MeetingPage({
                     <p className={styles.subtitle}>{subtitle}</p>
 
                     
-                    {hasCalendar && <CalendlyButton className={promoStyles.button} />}
+                    {hasCalendar && (
+                        <a href="#contact" className={promoStyles.button}>
+                            לקביעת פגישה
+                        </a>
+                    )}
                 </div>
             </section>
 

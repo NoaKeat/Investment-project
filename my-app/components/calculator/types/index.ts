@@ -36,6 +36,7 @@ export interface SaleExpense {
   id: string;
   label: string;
   amount: number | null;
+  unit?: 'auto' | 'percent' | 'ils'; // percent = תיווך באחוזים (יחושב × מחיר מכירה × מע״מ)
 }
 
 export interface Step1Input {
@@ -98,6 +99,7 @@ export interface Step2Result {
   totalInterest: number;
   balloonPayment?: number;
   remainingBalance?: number;
+  totalPaidUntilExit?: number;
   totalCostUntilExit?: number;
 }
 

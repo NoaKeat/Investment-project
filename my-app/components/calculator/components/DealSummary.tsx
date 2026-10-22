@@ -12,7 +12,6 @@ import {
   FaChevronDown,
   FaPen,
 } from 'react-icons/fa6';
-import CalendlyButton from '@/components/CalendlyButton';
 import { generateSummaryPDF } from '@/lib/generateSummaryPDF';
 import styles from './DealSummary.module.css';
 
@@ -201,9 +200,9 @@ export default function DealSummary({ dealData }: { dealData: DealData }) {
           </p>
         </div>
         <div className={styles.buttonsGroup}>
-          <CalendlyButton className={styles.btnGold}>
+          <a href="/#contact" className={styles.btnGold}>
             קביעת פגישת ייעוץ
-          </CalendlyButton>
+          </a>
           <button
             type="button"
             className={styles.btnOutline}

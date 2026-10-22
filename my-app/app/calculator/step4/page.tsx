@@ -698,7 +698,7 @@ export default function Step4Page() {
                     <div className={styles.saleHalfLabel}>מס שבח</div>
                     <div className={styles.saleReadOnly}>
                       {capitalGainsTax === 0 && !capitalGainsTaxWarning && isSingleApt
-                        ? 'פטור – דירה יחידה'
+                        ? 'פטור — דירה יחידה'
                         : `${fmt(capitalGainsTax)} ₪`}
                     </div>
                     <button
@@ -896,7 +896,7 @@ function SummaryPanel(p: SummaryPanelProps) {
         <Row label="רווח מעליית ערך"
           value={hasData ? `₪ ${fmt(p.capitalGain)}` : '—'} />
         <Row label="מס שבח משוער"
-          value={hasData ? (p.capitalGainsTax === 0 && !p.capitalGainsTaxWarning && p.isSingleApt ? 'פטור – דירה יחידה' : `₪ ${fmt(p.capitalGainsTax)}`) : '—'} />
+          value={hasData ? (p.capitalGainsTax === 0 && !p.capitalGainsTaxWarning && p.isSingleApt ? 'פטור — דירה יחידה' : `₪ ${fmt(p.capitalGainsTax)}`) : '—'} />
         <Row label="יתרת משכנתא במועד המכירה"
           value={hasData ? `₪ ${fmt(p.remainingMortgage)}` : '—'} />
       </div>
@@ -927,7 +927,7 @@ function SummaryPanel(p: SummaryPanelProps) {
             <TotalRow label="שבח חייב במס"        value={`₪ ${fmt(Math.max(0, p.totalGain))}`} />
             <TotalRow
               label={p.isSingleApt ? 'מס שבח' : 'מס שבח (25%)'}
-              value={p.capitalGainsTax === 0 && !p.capitalGainsTaxWarning && p.isSingleApt ? 'פטור – דירה יחידה' : `₪ ${fmt(p.capitalGainsTax)}`}
+              value={p.capitalGainsTax === 0 && !p.capitalGainsTaxWarning && p.isSingleApt ? 'פטור — דירה יחידה' : `₪ ${fmt(p.capitalGainsTax)}`}
             />
             {p.capitalGainsTaxWarning && (
               <p style={{ fontSize: '12px', color: '#9CA6B6', margin: '4px 0 0', textAlign: 'right' }}>

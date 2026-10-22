@@ -8,15 +8,12 @@ import type {
   Step4Input, Step4Result,
 } from '../types/index';
 
-// NEXT_PUBLIC_ — הערך נאפה ל-bundle בזמן build ונגיש בצד הלקוח
-const API_URL =
-  process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:5000';
-
 async function postToCalculator<TInput, TResult>(
   endpoint: string,
   input: TInput
 ): Promise<TResult> {
-  const res = await fetch(`${API_URL}/api/calculator/${endpoint}`, {
+  // same-origin — מגיש ע"י Next API route (app/api/calculator/[step])
+  const res = await fetch(`/api/calculator/${endpoint}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(input),

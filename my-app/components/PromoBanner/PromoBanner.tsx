@@ -1,4 +1,3 @@
-import CalendlyButton from "@/components/CalendlyButton/CalendlyButton";
 import styles from "./PromoBanner.module.css";
 import promoStyles from "@/components/CalendlyButton/CalendlyButton.module.css";
 interface PromoData {
@@ -72,7 +71,9 @@ const rectPoints: Point[] = [
             </div>
 
             <div className={styles.buttonGroup}>
-              <CalendlyButton className={promoStyles.button} />
+              <a href="#contact" className={promoStyles.button}>
+                {data.buttonText}
+              </a>
             </div>
           </div>
         </foreignObject>
